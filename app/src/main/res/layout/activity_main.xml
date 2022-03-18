@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="#9ACD32">
+    android:background="#9D4978">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -64,23 +64,35 @@
         </RelativeLayout>
 
     </RelativeLayout>
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_gravity="center">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="8dp">
-
+            android:layout_margin="8dp"
+            >
             <RelativeLayout
-                android:layout_width="76dp"
+                android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/img_1"
-                android:elevation="8dp" />
+                android:elevation="8dp"
+                android:layout_margin="10dp">
+
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/img_1"
+                    android:onClick="truck"/>
+
+
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,7 +119,8 @@
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/mechanic" />
+                    android:background="@drawable/mechanic"
+                    android:onClick="mechanic"/>
 
 
             </RelativeLayout>
@@ -133,7 +146,8 @@
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/sarch_icon" />
+                    android:background="@drawable/sarch_icon"
+                    android:onClick="searchPart"/>
 
 
             </RelativeLayout>
@@ -148,7 +162,69 @@
 
     </LinearLayout>
 
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="#835D68"
+    >
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TableRow>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="30dp">
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/home"
+            android:onClick="homepage"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="@string/home"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="30dp">
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/setting"
+                android:onClick="setting"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="@string/setting"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/updatepng"
+                android:onClick="updateProfile"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="@string/update_profile"/>
+            </LinearLayout>
+        </TableRow>
 
 
 
+    </TableLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>

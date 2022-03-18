@@ -6,4 +6,7 @@
     <string name="TruckTransport" />
     <string name="Truck" />
     <string name="search_part">Search part</string>
+    <string name="update_profile">update profile</string>
+    <string name="setting">setting</string>
+    <string name="home">home</string>
 </resources>
