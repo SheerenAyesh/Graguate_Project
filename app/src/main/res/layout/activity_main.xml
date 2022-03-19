@@ -7,61 +7,36 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="#9D4978">
+    android:background="#DAA520">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="20dp">-->
 
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/menu_icon" />
+<!--        <ImageButton-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:background="@drawable/menu_icon" />-->
 
 
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="200dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/get"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:text="@string/get_a_way"
-            android:textSize="24sp" />
+            android:layout_marginTop="90dp"
+            android:layout_marginRight="118dp"
+            android:gravity="center"
+            android:text="@string/choose"
+            android:textSize="60dp"
+            android:textStyle="bold" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_below="@id/get"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@color/white"
-            android:elevation="8dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="15dp"
-                android:text="@string/search"
-                android:textSize="20dp" />
-
-            <ImageButton
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/sarch_icon" />
-
-
-        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -69,8 +44,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginTop="140dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -79,8 +54,8 @@
             android:layout_margin="8dp"
             >
             <RelativeLayout
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:elevation="8dp"
                 android:layout_margin="10dp">
 
@@ -88,8 +63,8 @@
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/img_1"
-                    android:onClick="truck"/>
+                    android:background="@drawable/immg"
+                    android:onClick="truck" />
 
 
             </RelativeLayout>
@@ -98,7 +73,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Truck Transport"
+                android:text="@string/truck"
+                android:textSize="22dp"
+                android:textStyle="bold"
 
                 />
 
@@ -110,8 +87,8 @@
             android:layout_margin="8dp"
             >
             <RelativeLayout
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:elevation="8dp"
                 android:layout_margin="10dp">
 
@@ -120,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/mechanic"
-                    android:onClick="mechanic"/>
+                    android:onClick="mechanic" />
 
 
             </RelativeLayout>
@@ -128,7 +105,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="@string/mechanic"/>
+                android:text="@string/mecanic"
+                android:textSize="22dp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
         <LinearLayout
@@ -138,7 +117,7 @@
             android:layout_margin="8dp">
             <RelativeLayout
                 android:layout_width="80dp"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:elevation="8dp"
                 android:layout_margin="10dp">
 
@@ -147,84 +126,89 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/sarch_icon"
-                    android:onClick="searchPart"/>
+                    android:onClick="searchPart" />
 
 
             </RelativeLayout>
+
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/search"
                 android:textAlignment="center"
-                android:text="@string/search_part"/>
+                android:gravity="center"
+               android:layout_marginLeft="30dp"
+                android:textSize="22dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
 
     </LinearLayout>
 
-<androidx.appcompat.widget.LinearLayoutCompat
-    android:layout_width="match_parent"
-    android:layout_height="80dp"
-    android:background="#835D68"
-    >
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TableRow>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginRight="30dp">
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:background="@drawable/home"
-            android:onClick="homepage"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:text="@string/home"/>
+<!--<androidx.appcompat.widget.LinearLayoutCompat-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="80dp"-->
+<!--    android:background="#835D68"-->
+<!--    >-->
+<!--    <TableLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+<!--        <TableRow>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_marginRight="30dp">-->
+<!--        <ImageButton-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:background="@drawable/home"-->
+<!--            android:onClick="homepage"/>-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:text="@string/home"/>-->
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginRight="30dp">
-            <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:background="@drawable/setting"
-                android:onClick="setting"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:text="@string/setting"/>
-            </LinearLayout>
+<!--            </LinearLayout>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_marginRight="30dp">-->
+<!--            <ImageButton-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:background="@drawable/setting"-->
+<!--                android:onClick="setting"/>-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:text="@string/setting"/>-->
+<!--            </LinearLayout>-->
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="8dp">
-            <ImageButton
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:background="@drawable/updatepng"
-                android:onClick="updateProfile"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:text="@string/update_profile"/>
-            </LinearLayout>
-        </TableRow>
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_margin="8dp">-->
+<!--            <ImageButton-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:background="@drawable/updatepng"-->
+<!--                android:onClick="updateProfile"/>-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:text="@string/update_profile"/>-->
+<!--            </LinearLayout>-->
+<!--        </TableRow>-->
 
 
 
-    </TableLayout>
-</androidx.appcompat.widget.LinearLayoutCompat>
+<!--    </TableLayout>-->
+<!--</androidx.appcompat.widget.LinearLayoutCompat>-->
 </androidx.appcompat.widget.LinearLayoutCompat>

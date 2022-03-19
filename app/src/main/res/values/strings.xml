@@ -1,12 +1,8 @@
 <resources>
     <string name="app_name">graduation_project</string>
-    <string name="get_a_way">Get A Way</string>
-    <string name="search">Search.....</string>
-    <string name="mechanic">Mechanic</string>
-    <string name="TruckTransport" />
-    <string name="Truck" />
-    <string name="search_part">Search part</string>
-    <string name="update_profile">update profile</string>
-    <string name="setting">setting</string>
-    <string name="home">home</string>
+
+    <string name="choose">اٍبحث عن... !</string>
+    <string name="search"> قطعة</string>
+    <string name="mecanic">ميكانيكي</string>
+    <string name="truck">نقل مركبة</string>
 </resources>

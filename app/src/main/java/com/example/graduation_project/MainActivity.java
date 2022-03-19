@@ -32,21 +32,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void homepage(View view) {
-        Intent intent = new Intent(this ,homePage.class);
-        // intent.putExtra("username",uname);
-        startActivity(intent);
-    }
-
-    public void setting(View view) {
-        Intent intent = new Intent(this ,setting.class);
-        // intent.putExtra("username",uname);
-        startActivity(intent);
-    }
-
-    public void updateProfile(View view) {
-        Intent intent = new Intent(this ,updateProfile.class);
-        // intent.putExtra("username",uname);
-        startActivity(intent);
-    }
+//    public void homepage(View view) {
+//        Intent intent = new Intent(this ,homePage.class);
+//        // intent.putExtra("username",uname);
+//        startActivity(intent);
+//    }
+//
+//    public void setting(View view) {
+//        Intent intent = new Intent(this ,setting.class);
+//        // intent.putExtra("username",uname);
+//        startActivity(intent);
+//    }
+//
+//    public void updateProfile(View view) {
+//        Intent intent = new Intent(this ,updateProfile.class);
+//        // intent.putExtra("username",uname);
+//        startActivity(intent);
+//    }
 }
