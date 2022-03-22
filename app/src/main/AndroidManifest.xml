@@ -14,6 +14,9 @@
             android:name=".login"
             android:exported="true" />
         <activity
+            android:name=".signup"
+            android:exported="true" />
+        <activity
             android:name=".updateProfile"
             android:exported="true" />
         <activity

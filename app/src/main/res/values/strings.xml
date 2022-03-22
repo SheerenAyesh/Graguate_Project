@@ -7,4 +7,5 @@
     <string name="truck">نقل مركبة</string>
     <string name="register">انشاء حساب</string>
     <string name="login_welcome">صفحة تسجيل الدخول</string>
+    <string name="signup_word">اٍنشاء حساب جديد</string>
 </resources>

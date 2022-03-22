@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void register(View view) {
+        Intent intent = new Intent(this ,signup.class);
+        startActivity(intent);
     }
 
 
