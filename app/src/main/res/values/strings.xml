@@ -5,4 +5,5 @@
     <string name="search"> قطعة</string>
     <string name="mecanic">ميكانيكي</string>
     <string name="truck">نقل مركبة</string>
+    <string name="register">انشاء حساب</string>
 </resources>

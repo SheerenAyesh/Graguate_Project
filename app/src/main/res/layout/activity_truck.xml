@@ -17,7 +17,6 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:layout_below="@id/get"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="40dp"

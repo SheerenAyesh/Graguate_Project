@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -32,6 +35,14 @@ public class MainActivity extends AppCompatActivity
         // intent.putExtra("username",uname);
         startActivity(intent);
     }
+
+    public void login(View view) {
+
+    }
+
+    public void register(View view) {
+    }
+
 
 //    public void homepage(View view) {
 //        Intent intent = new Intent(this ,homePage.class);
