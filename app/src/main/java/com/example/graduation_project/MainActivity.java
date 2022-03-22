@@ -37,7 +37,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void login(View view) {
-
+        Intent intent = new Intent(this ,login.class);
+        // intent.putExtra("username",uname);
+        startActivity(intent);
     }
 
     public void register(View view) {

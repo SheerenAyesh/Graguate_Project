@@ -6,4 +6,5 @@
     <string name="mecanic">ميكانيكي</string>
     <string name="truck">نقل مركبة</string>
     <string name="register">انشاء حساب</string>
+    <string name="login_welcome">صفحة تسجيل الدخول</string>
 </resources>

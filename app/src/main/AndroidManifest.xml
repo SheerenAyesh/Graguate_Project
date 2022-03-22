@@ -11,6 +11,9 @@
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".login"
+            android:exported="true" />
+        <activity
             android:name=".updateProfile"
             android:exported="true" />
         <activity
