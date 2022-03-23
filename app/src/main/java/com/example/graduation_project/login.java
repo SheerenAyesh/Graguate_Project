@@ -2,6 +2,7 @@ package com.example.graduation_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,6 +48,11 @@ TextInputLayout username,password;
         chicklogin(user,pass);
 
     }
+    public void openmainpage(String user){
+        Intent intent = new Intent(this ,MainActivity.class);
+         intent.putExtra("username",user);
+        startActivity(intent);
+    }
 
     public void chicklogin(String user, String pass) {
 
@@ -61,6 +67,9 @@ TextInputLayout username,password;
                     // on below line we are displaying a success toast message.
                     Toast.makeText(login.this,
                             jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                    if(jsonObject.getString("message").equals("true")){
+                        openmainpage(user);
+                    }
 
 
                 } catch (JSONException e) {

@@ -11,11 +11,19 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity
 {
+    String username;
+    LinearLayout login_and_reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        login_and_reg=findViewById(R.id.login_and_reg);
+        Intent intent=getIntent();
+        username=intent.getStringExtra("username");
+        if(username!=null){
+      login_and_reg.setVisibility(View.GONE);
+        }
     }
 
     public void searchPart(View view) {
