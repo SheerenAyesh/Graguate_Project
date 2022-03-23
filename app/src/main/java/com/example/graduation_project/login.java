@@ -56,7 +56,7 @@ TextInputLayout username,password;
 
     public void chicklogin(String user, String pass) {
 
-        String url = "http://10.0.2.2/graduation_project/login.php";
+        String url = "http://10.0.2.2:84/graduation_project/login.php";
         RequestQueue queue = Volley.newRequestQueue(login.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
