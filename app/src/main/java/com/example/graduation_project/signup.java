@@ -24,10 +24,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class signup extends AppCompatActivity {
-    private TextInputLayout firstname,lastname,password,email,username,phonenumber,gender,street,city;
-    private RadioButton jawwal, palpay, cash,user,store;
-    private RadioGroup payment,type;
-    private String user1 , store1 ,jawwal1, palpay1, cash1;
+    private TextInputLayout firstname,lastname,password,email,username,phonenumber,street,city;
+    private RadioButton jawwal, palpay, cash,user,store,male,female;
+    private RadioGroup payment,type,gender;
+    private String user1 , store1 ,jawwal1, palpay1, cash1,male1,female1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,8 @@ public class signup extends AppCompatActivity {
         cash=findViewById(R.id.cash);
         user=findViewById(R.id.user);
         store=findViewById(R.id.store);
+        male=findViewById(R.id.male);
+        female=findViewById(R.id.female);
 
 
     }
@@ -84,6 +86,20 @@ public class signup extends AppCompatActivity {
                     break;
         }
     }
+    public void onRadioButtonClickedgender(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch(view.getId()) {
+            case R.id.male:
+                if (checked)
+                    male1 = "male";
+                break;
+            case R.id.female:
+                if (checked)
+                    female1 = "female";
+                break;
+
+        }
+    }
     public void creat(View view) {
         String uname=username.getEditText().getText().toString();
         String fname=firstname.getEditText().getText().toString();
@@ -91,15 +107,15 @@ public class signup extends AppCompatActivity {
         String pass=password.getEditText().getText().toString();
         String mail=email.getEditText().getText().toString();
         String phone=phonenumber.getEditText().getText().toString();
-        String gen=gender.getEditText().getText().toString();
         String strt=street.getEditText().getText().toString();
         String cty=city.getEditText().getText().toString();
 
-        checkusername(uname,fname,lname,pass,mail,phone,gen,strt,cty,store1,user1,jawwal1,palpay1,cash1);
+
+        checkusername(uname,fname,lname,pass,mail,phone,cty,strt,store1,user1,jawwal1,palpay1,cash1,male1,female1);
     }
 
 
-    public void checkusername(String uname,String fname,String lname,String pass,String mail,String phone,String gen,String strt,String cty,String store1,String user1,String jawwal1,String palpay1,String cash1){
+    public void checkusername(String uname,String fname,String lname,String pass,String mail,String phone,String cty,String strt,String store1,String user1,String jawwal1,String palpay1,String cash1,String male1,String female1){
         String url = "http://10.0.2.2:84/graduation_project/checkusername.php";
         RequestQueue queue = Volley.newRequestQueue(signup.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
@@ -110,7 +126,7 @@ public class signup extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     // on below line we are displaying a success toast message.
                     if(jsonObject.getString("message").equals("true")) {
-                        signup(uname,fname,lname,pass,mail,phone,gen,strt,cty,store1,user1,jawwal1,palpay1,cash1);
+                        signup(uname,fname,lname,pass,mail,phone,cty,strt,store1,user1,jawwal1,palpay1,cash1,male1,female1);
                     }
                     else
                         Toast.makeText(signup.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
@@ -153,7 +169,7 @@ public class signup extends AppCompatActivity {
 
     }
     /////////////////////////////////
-    public void signup(String uname,String fname,String lname,String pass,String mail,String phone,String gen,String strt,String cty,String store1,String user1,String jawwal1,String palpay1,String cash1){
+    public void signup(String uname,String fname,String lname,String pass,String mail,String phone,String cty,String strt,String store1,String user1,String jawwal1,String palpay1,String cash1,String male1,String female1){
         String url = "http://10.0.2.2:84/graduation_project/signup.php";
         RequestQueue queue = Volley.newRequestQueue(signup.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
@@ -193,12 +209,22 @@ public class signup extends AppCompatActivity {
 
                 params.put("username", uname);
                 params.put("password", pass);
-
                if(user1!= null)
                    params.put("type", user1);
                else
                    if(store1 !=null)
                        params.put("type", store1);
+                params.put("email", mail);
+                params.put("phonenumber", phone);
+                params.put("city", cty);
+                if(male1!= null)
+                    params.put("gender", male1);
+                else
+                if(female1 !=null)
+                    params.put("gender", female1);
+
+                params.put("street", strt);
+
                 if(jawwal1!= null)
                     params.put("payment", jawwal1);
                 else
@@ -208,11 +234,6 @@ public class signup extends AppCompatActivity {
                 if(cash1 !=null)
                     params.put("payment", cash1);
 
-                params.put("email", mail);
-                params.put("phonenumber", fname);
-                params.put("city", lname);
-                params.put("gender", gen);
-                params.put("street", strt);
                 params.put("firstname", fname);
                 params.put("lastname", lname);
 

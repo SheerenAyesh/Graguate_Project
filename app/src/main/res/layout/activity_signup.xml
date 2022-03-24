@@ -121,17 +121,39 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/gender"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+**************************************************************************
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint=" الجنس">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:hint=" الجنس"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+            <RadioGroup
+                android:id="@+id/gender"
+                android:layout_marginLeft="200dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClickedgender"
+                    android:text=" ذكر"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <RadioButton android:id="@+id/female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="أنثى"
+                    android:onClick="onRadioButtonClickedgender"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"/>
+            </RadioGroup>
+
+            *******************************************************************
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
