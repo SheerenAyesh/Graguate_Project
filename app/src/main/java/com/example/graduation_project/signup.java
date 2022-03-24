@@ -2,6 +2,7 @@ package com.example.graduation_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -116,7 +117,7 @@ public class signup extends AppCompatActivity {
 
 
     public void checkusername(String uname,String fname,String lname,String pass,String mail,String phone,String cty,String strt,String store1,String user1,String jawwal1,String palpay1,String cash1,String male1,String female1){
-        String url = "http://10.0.2.2:84/graduation_project/checkusername.php";
+        String url = "http://10.0.2.2/graduation_project/checkusername.php";
         RequestQueue queue = Volley.newRequestQueue(signup.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
@@ -169,8 +170,22 @@ public class signup extends AppCompatActivity {
 
     }
     /////////////////////////////////
+   public void go_to_another_page(String uname){
+        if(user1!=null){
+            Intent intent = new Intent(this ,homepageuser.class);
+             intent.putExtra("username",uname);
+            startActivity(intent);
+        }
+        else if(store1!=null){
+            Intent intent = new Intent(this ,homepagestore.class);
+            intent.putExtra("username",uname);
+            startActivity(intent);
+        }
+
+   }
+    ///////////////////////////////
     public void signup(String uname,String fname,String lname,String pass,String mail,String phone,String cty,String strt,String store1,String user1,String jawwal1,String palpay1,String cash1,String male1,String female1){
-        String url = "http://10.0.2.2:84/graduation_project/signup.php";
+        String url = "http://10.0.2.2/graduation_project/signup.php";
         RequestQueue queue = Volley.newRequestQueue(signup.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
@@ -181,6 +196,7 @@ public class signup extends AppCompatActivity {
                     // on below line we are displaying a success toast message.
                     Toast.makeText(signup.this,
                             jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                    go_to_another_page(uname);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
