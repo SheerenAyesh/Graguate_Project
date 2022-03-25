@@ -117,7 +117,7 @@ public class signup extends AppCompatActivity {
 
 
     public void checkusername(String uname,String fname,String lname,String pass,String mail,String phone,String cty,String strt,String store1,String user1,String jawwal1,String palpay1,String cash1,String male1,String female1){
-        String url = "http://10.0.2.2/graduation_project/checkusername.php";
+        String url = "http://10.0.2.2:84/graduation_project/checkusername.php";
         RequestQueue queue = Volley.newRequestQueue(signup.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
@@ -185,7 +185,7 @@ public class signup extends AppCompatActivity {
    }
     ///////////////////////////////
     public void signup(String uname,String fname,String lname,String pass,String mail,String phone,String cty,String strt,String store1,String user1,String jawwal1,String palpay1,String cash1,String male1,String female1){
-        String url = "http://10.0.2.2/graduation_project/signup.php";
+        String url = "http://10.0.2.2:84/graduation_project/signup.php";
         RequestQueue queue = Volley.newRequestQueue(signup.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
