@@ -29,6 +29,7 @@ import java.util.Map;
 public class login extends AppCompatActivity {
 TextInputLayout username,password;
 CheckBox check;
+String uname;
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
     private static final  String NAME = "NAME"  ;
@@ -62,6 +63,7 @@ CheckBox check;
 
     public void login(View view) {
        String user=username.getEditText().getText().toString();
+
        String pass=password.getEditText().getText().toString();
         if(check.isChecked()){
             editor.putString(NAME,user);

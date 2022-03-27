@@ -3,6 +3,11 @@
     package="com.example.graduation_project">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".mecaccount"
+            android:exported="true" />
         <activity
             android:name=".homepagestore"
             android:exported="true" />
