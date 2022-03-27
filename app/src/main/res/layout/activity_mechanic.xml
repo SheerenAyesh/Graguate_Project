@@ -8,43 +8,11 @@
     tools:context=".mechanic"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="276dp"
-        android:layout_height="109dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="3dp">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@color/white">
-
-            <EditText
-                android:layout_width="380dp"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="40dp"
-                android:hint="بحث"
-                android:textSize="25dp" />
-
-            <ImageButton
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="294dp"
-                android:background="@drawable/sss" />
-        </RelativeLayout>
-    </LinearLayout>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="133dp"
-        android:layout_height="38dp"
+
+        android:layout_width="183dp"
+        android:layout_height="42dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/shap"
         android:hint="بحث عن ميكانيكي"
@@ -58,6 +26,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.064"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:onClick="nearset"/>
+
+    <Button
+        android:layout_width="183dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/shap"
+        android:hint="انشاء حساب ميكانيكي"
+        android:shadowColor="@color/white"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058"
+        tools:ignore="MissingConstraints"
+        android:onClick="mecacount"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
