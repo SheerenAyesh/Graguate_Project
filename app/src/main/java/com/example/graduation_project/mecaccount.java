@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
+
 import android.os.Build;
 import android.os.Bundle;
 
@@ -57,7 +58,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class mecaccount extends AppCompatActivity {
-String mecname1;
+    String mecname1;
     TextInputLayout username,mecname;
     String lat,log;
     private LocationRequest locationRequest;
@@ -141,19 +142,20 @@ String mecname1;
 
 
                 params.put("username", mecname1);
-            //    params.put("storename", mecstore);
-if(lat==null){
-    lat="aa";
+                params.put("mecname", mecstore);
+                if(lat==null){
+                   lat="aa";
                 params.put("latitude", lat);}
-else{
-    params.put("latitude", lat);
-}
+                else{
+                 params.put("latitude", lat);
+                        }
                 if(log==null){
                     log="aa";
                     params.put("latitude", log);}
                 else {
                     params.put("longitude", log);
                 }
+
                 return params;
             }
         };
@@ -226,10 +228,10 @@ else{
                                         double longitude = locationResult.getLocations().get(index).getLongitude();
                                         lat=String.valueOf(latitude);
                                         log=String.valueOf(longitude);
-                                        username.getEditText().setText(lat+"  "+log);
-                                        System.out.println("///////////////////////////////////////");
-                                        System.out.println(lat);
-                                        System.out.println(log);
+//                                        username.getEditText().setText(lat+"  "+log);
+//                                        System.out.println("///////////////////////////////////////");
+//                                        System.out.println(lat);
+//                                        System.out.println(log);
 
 
                                     }

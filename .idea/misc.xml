@@ -3,10 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project/app/src/main/res/layout/activity_login.xml" value="0.11676798378926039" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project/app/src/main/res/layout/activity_mecaccount.xml" value="0.23822463768115942" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project/app/src/main/res/layout/activity_mechanic.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/drawable/shap.xml" value="0.228125" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/drawable/style.xml" value="0.16111111111111112" />
@@ -14,7 +11,8 @@
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/layout/activity_homepagestore.xml" value="0.264" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/layout/activity_login.xml" value="0.176" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/layout/activity_mechanic.xml" value="0.176" />
+        <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/layout/activity_mecaccount.xml" value="0.176" />
+        <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/layout/activity_mechanic.xml" value="0.264" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/layout/activity_searchpart.xml" value="0.1" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/layout/activity_signup.xml" value="0.152" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/graduation_project/app/src/main/res/layout/activity_truck.xml" value="0.1" />
