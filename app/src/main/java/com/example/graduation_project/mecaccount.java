@@ -143,18 +143,13 @@ public class mecaccount extends AppCompatActivity {
 
                 params.put("username", mecname1);
                 params.put("mecname", mecstore);
-                if(lat==null){
-                   lat="aa";
-                params.put("latitude", lat);}
-                else{
-                 params.put("latitude", lat);
-                        }
-                if(log==null){
-                    log="aa";
-                    params.put("latitude", log);}
-                else {
-                    params.put("longitude", log);
-                }
+
+                params.put("latitude", lat);
+
+
+                    params.put("latitude", log);
+
+
 
                 return params;
             }
