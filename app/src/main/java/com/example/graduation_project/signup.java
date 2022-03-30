@@ -98,7 +98,6 @@ public class signup extends AppCompatActivity {
                 if (checked)
                     female1 = "female";
                 break;
-
         }
     }
     public void creat(View view) {
@@ -111,11 +110,8 @@ public class signup extends AppCompatActivity {
         String strt=street.getEditText().getText().toString();
         String cty=city.getEditText().getText().toString();
 
-
         checkusername(uname,fname,lname,pass,mail,phone,cty,strt,store1,user1,jawwal1,palpay1,cash1,male1,female1);
     }
-
-
     public void checkusername(String uname,String fname,String lname,String pass,String mail,String phone,String cty,String strt,String store1,String user1,String jawwal1,String palpay1,String cash1,String male1,String female1){
         String url = "http://10.0.2.2:84/graduation_project/checkusername.php";
         RequestQueue queue = Volley.newRequestQueue(signup.this);
@@ -149,25 +145,14 @@ public class signup extends AppCompatActivity {
 
                 return "application/x-www-form-urlencoded; charset=UTF-8";
             }
-
             @Override
             protected Map<String, String> getParams() {
-
-
                 Map<String, String> params = new HashMap<String, String>();
-
                 params.put("username", uname);
-
-
-
-
                 return params;
             }
         };
-
         queue.add(request);
-
-
     }
     /////////////////////////////////
    public void go_to_another_page(String uname){
@@ -181,7 +166,6 @@ public class signup extends AppCompatActivity {
             intent.putExtra("username",uname);
             startActivity(intent);
         }
-
    }
     ///////////////////////////////
     public void signup(String uname,String fname,String lname,String pass,String mail,String phone,String cty,String strt,String store1,String user1,String jawwal1,String palpay1,String cash1,String male1,String female1){
@@ -215,14 +199,9 @@ public class signup extends AppCompatActivity {
 
                 return "application/x-www-form-urlencoded; charset=UTF-8";
             }
-
             @Override
             protected Map<String, String> getParams() {
-
-
                 Map<String, String> params = new HashMap<String, String>();
-
-
                 params.put("username", uname);
                 params.put("password", pass);
                if(user1!= null)
@@ -256,13 +235,6 @@ public class signup extends AppCompatActivity {
                 return params;
             }
         };
-
         queue.add(request);
-
-
-
     }
-
-
-
 }

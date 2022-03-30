@@ -38,7 +38,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/mecname"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:passwordToggleEnabled="true"
             android:hint="اسم المحل">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
