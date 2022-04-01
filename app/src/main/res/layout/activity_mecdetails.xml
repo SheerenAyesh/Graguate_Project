@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mecdetails">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="اسم الميكانيكي"
+               android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/mecname"/>
+            <TextView
+                android:layout_width="100dp"
+
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:text="اسم الميكانيكي : :"
+                />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="رقم الهاتف "
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/mecphone"/>
+            <TextView
+                android:layout_width="100dp"
+
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:text="رقم الهاتف :"
+                />
+        </TableRow>
+
+
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="اسم المحل"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/mecstore"/>
+            <TextView
+                android:layout_width="100dp"
+
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:text="اسم المحل :"
+                />
+        </TableRow>
+
+
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="المسافة"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/mecdes"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="المسافه بينك وبين الميكانيكي :" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="ايميل الميكانيكي"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/mecemail"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="ايميل الميكانيكي :" />
+        </TableRow>
+
+
+    </TableLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="اطلب الميكانيكي "
+        android:textSize="25dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="30dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="اضغط هنا"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="15dp"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
