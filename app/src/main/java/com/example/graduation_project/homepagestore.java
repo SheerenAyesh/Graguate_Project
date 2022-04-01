@@ -29,6 +29,10 @@ String store;
     }
 
     public void truck(View view) {
+        Intent intent = new Intent(this ,truck.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
+
     }
 
     public void searchPart(View view) {
