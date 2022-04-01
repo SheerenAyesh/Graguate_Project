@@ -55,15 +55,19 @@ public class truckaccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truckaccount);
 //        username = findViewById(R.id.username);
+
         Intent intent=getIntent();
         owner=intent.getStringExtra("username");
+
 //        username.getEditText().setText(owner);
         LocationButton=findViewById(R.id.LocationButton);
 
 
         truckowner=findViewById(R.id.truckowner);
         truckowner.getEditText().setText(owner);
+
         truckweight=findViewById(R.id.truckweight);
+
         locationRequest = LocationRequest.create();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         locationRequest.setInterval(5000);

@@ -22,7 +22,7 @@ import org.json.JSONObject;
 public class mecdetails extends AppCompatActivity {
     TextView mecname,mecphone,mecstore,mecdes,mecemail;
     private RequestQueue queue;
-    String s;
+    String s,lat,log;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +34,8 @@ public class mecdetails extends AppCompatActivity {
         mecemail=findViewById(R.id.mecemail);
         Intent intent=getIntent();
          s=intent.getStringExtra("username");
+         lat=intent.getStringExtra("latitude");
+         log=intent.getStringExtra("longitude");
         mecname.setText(s);
         queue = Volley.newRequestQueue(this);
         fill_text1();
@@ -53,7 +55,26 @@ public class mecdetails extends AppCompatActivity {
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject obj = response.getJSONObject(i);
-                        mecdes.setText(obj.getString("latitude"));
+//                        mecdes.setText(obj.getString("latitude"));
+                        String x, y;
+                        x= obj.getString("latitude");
+                        y= obj.getString("longitude");
+                        double log1 ,log2,lat1,lat2;
+                        log1 = Math.toRadians(Double.parseDouble(log));
+                        log2 = Math.toRadians(Double.parseDouble(y));
+                        lat1 = Math.toRadians(Double.parseDouble(lat));
+                        lat2 = Math.toRadians(Double.parseDouble(x));
+                        double dlon = log2 - log1;
+                        double dlat = lat2 - lat1;
+                        double a = Math.pow(Math.sin(dlat / 2), 2)
+                                + Math.cos(lat1) * Math.cos(lat2)
+                                * Math.pow(Math.sin(dlon / 2),2);
+
+                        double c = 2 * Math.asin(Math.sqrt(a));
+
+                        double r = 6371;
+                        double result = c*r;
+                        mecdes.setText(String.valueOf(result));
                         mecstore.setText(obj.getString("mecname"));
 
 
