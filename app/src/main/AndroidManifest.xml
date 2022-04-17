@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".addpart"
+            android:exported="true" />
+        <activity
             android:name=".mecdetails"
             android:exported="true" />
         <activity
@@ -47,6 +50,9 @@
             android:exported="true" />
         <activity
             android:name=".mechanic"
+            android:exported="true" />
+        <activity
+            android:name=".truckaccount"
             android:exported="true" />
         <activity
             android:name=".searchpart"

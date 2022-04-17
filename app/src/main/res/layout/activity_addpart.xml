@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".addpart">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/welcome"
+        android:textSize="25dp"
+        android:layout_marginTop="25dp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        >
+
+
+
+        <TableRow
+            >
+
+            <TextView
+                android:layout_marginLeft="150dp"
+                android:hint="اسم المستخدم"
+                android:id="@+id/username"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="اسم المستخدم :"
+                android:layout_marginLeft="35dp"
+                android:textSize="20dp"
+                />
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_marginLeft="150dp"
+                android:hint="رقم الجوال :"
+                android:id="@+id/phonenumber"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="رقم الجوال :"
+                android:layout_marginLeft="40dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_marginLeft="150dp"
+                android:hint="المدينة :"
+                android:id="@+id/city"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="المدينة :"
+                android:layout_marginLeft="40dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="150dp"
+                android:hint="اسم القطعة :"
+                android:id="@+id/partname"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="اسم القطعة :"
+                android:layout_marginLeft="40dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="150dp"
+                android:hint="الموديل :"
+                android:id="@+id/model"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="الموديل :"
+                android:layout_marginLeft="40dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="150dp"
+                android:hint="وصف القطعة :"
+                android:id="@+id/desc"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="وصف القطعة :"
+                android:layout_marginLeft="40dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="150dp"
+                android:hint="سعر القطعة:"
+                android:id="@+id/price"
+                android:textSize="20dp"/>
+
+            <TextView android:text="سعر القطعة :"
+                android:layout_marginLeft="40dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
+
+
+
+
+    </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="اضافة القطعة"
+        android:onClick="addpartonclick"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

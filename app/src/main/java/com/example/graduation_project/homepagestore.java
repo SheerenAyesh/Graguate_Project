@@ -36,6 +36,9 @@ String store;
     }
 
     public void searchPart(View view) {
+        Intent intent = new Intent(this ,searchpart.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
     }
 
     public void orders(View view) {
