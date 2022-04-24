@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
@@ -44,6 +45,7 @@ String uname;
         username=findViewById(R.id.username);
         password=findViewById(R.id.password);
         queue = Volley.newRequestQueue(this);
+
         check=findViewById(R.id.check);
         prefs= PreferenceManager.getDefaultSharedPreferences(this );
         editor=prefs.edit();
@@ -95,6 +97,13 @@ String uname;
         String url = "http://10.0.2.2:84/graduation_project/gettype.php";
         RequestQueue queue = Volley.newRequestQueue(login.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
+
+//                  public int TIMEOUT_MS=10000  ;      //10 seconds
+//
+//                  request.setRetryPolicy(new DefaultRetryPolicy(
+//                    TIMEOUT_MS,
+//                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+//                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
             @Override
             public void onResponse(String response) {
                 Log.e("TAG", "RESPONSE IS " + response);
