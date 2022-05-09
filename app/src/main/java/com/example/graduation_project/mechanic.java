@@ -143,9 +143,14 @@ private RequestQueue queue;
     public void go_to_det(int i) {
         Intent intent = new Intent(this ,mecdetails.class);
         intent.putExtra("username",arr[i]);
+        if(lat!=null)
         intent.putExtra("latitude",lat);
+        else
+            intent.putExtra("latitude","40.55");
+if(log!=null)
         intent.putExtra("longitude",log);
-
+else
+    intent.putExtra("longitude","40.55");
         startActivity(intent);
     }
 
