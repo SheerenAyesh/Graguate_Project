@@ -130,6 +130,20 @@ String uname;
                 Toast.makeText(login.this,
                         "Fail to get response = " + error, Toast.LENGTH_SHORT).show();
             }
+//            request.retryPolicy = object : RetryPolicy {
+//                override fun getCurrentTimeout(): Int {
+//                    return 20000
+//                }
+//
+//                override fun getCurrentRetryCount(): Int {
+//                    return 20000
+//                }
+//
+//                @Throws(VolleyError::class)
+//                override fun retry(error: VolleyError) {
+//
+//                }
+//            }
         }) {
             @Override
             public String getBodyContentType() {

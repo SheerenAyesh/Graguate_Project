@@ -146,11 +146,11 @@ public class mecaccount extends AppCompatActivity {
                 if(lat!=null)
                 params.put("latitude", lat);
                 else
-                    params.put("latitude","aa");
+                    params.put("latitude","17.55");
                 if(log!=null)
                 params.put("longitude", log);
 else
-                    params.put("longitude", "bb");
+                    params.put("longitude", "18.55");
 
 
                 return params;
