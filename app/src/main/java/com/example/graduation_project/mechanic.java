@@ -145,6 +145,7 @@ private RequestQueue queue;
         intent.putExtra("username",arr[i]);
         intent.putExtra("latitude","17.55");
         intent.putExtra("longitude","14.55");
+        intent.putExtra("userreq",store);
 
         startActivity(intent);
     }

@@ -112,7 +112,8 @@
         android:layout_height="wrap_content"
         android:text="اضغط هنا"
         android:layout_marginLeft="280dp"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:onClick="senddata"/>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

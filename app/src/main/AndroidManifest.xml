@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".order"
+            android:exported="true" />
+        <activity
             android:name=".addpart"
             android:exported="true" />
         <activity

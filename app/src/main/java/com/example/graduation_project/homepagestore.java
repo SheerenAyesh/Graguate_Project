@@ -42,9 +42,16 @@ String store;
     }
 
     public void orders(View view) {
+        Intent intent = new Intent(this ,order.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
+
     }
 
     public void home(View view) {
+        Intent intent = new Intent(this ,homepagestore.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
     }
 
     public void user(View view) {

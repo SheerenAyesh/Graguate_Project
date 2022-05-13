@@ -97,7 +97,7 @@ public class mecaccount extends AppCompatActivity {
     }
 /////////////////////////////////////////////
     public void create(View view) {
-        String mecstore=mecname.getEditText().getText().toString();
+        String mecstore=mecname1;
         create(mecstore);
 
     }
