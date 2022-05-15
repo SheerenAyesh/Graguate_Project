@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".cart">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="صفحة الطلبات التي لديك"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="طلبات القطع:"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/partlist"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="طلبات الميكانيكي:"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/meclist"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="طلبات الترك:"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/trucklist"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

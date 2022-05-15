@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -23,42 +22,24 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class order extends AppCompatActivity {
-ListView orderlist;
+public class cart extends AppCompatActivity {
+ListView meclist;
 String store;
     private RequestQueue queue;
-    String[] arr;
+    String []arr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order);
-        orderlist=findViewById(R.id.orderlist);
+        setContentView(R.layout.activity_cart);
+        meclist=findViewById(R.id.meclist);
         Intent intent=getIntent();
         store= intent.getStringExtra("username");
         queue = Volley.newRequestQueue(this);
-
-        filllist();
-
-
-    }
-    public void orders(View view) {
-        Intent intent = new Intent(this ,order.class);
-        intent.putExtra("username",store);
-        startActivity(intent);
-
+        fillmec();
     }
 
-    public void home(View view) {
-        Intent intent = new Intent(this ,homepagestore.class);
-        intent.putExtra("username",store);
-        startActivity(intent);
-    }
-
-    public void user(View view) {
-    }
-
-    public void filllist() {
-        String url = "http://10.0.2.2:84/graduation_project/show_to_mec_his_orders.php?mecname="+store;
+    public void fillmec() {
+        String url = "http://10.0.2.2:84/graduation_project/mec_req_by_user.php?username="+store;
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new Response.Listener<JSONArray>() {
             @Override
@@ -68,8 +49,8 @@ String store;
                     try {
                         JSONObject obj = response.getJSONObject(i);
 
-                        String s=obj.getString("username")+" "+obj.getString("phonenumber")+" "+obj.getString("city")+" "+obj.getString("email")+" "+obj.getString("distance");
-                      System.out.println(s);
+                        String s=obj.getString("mecname")+"  "+obj.getString("phonenumber");
+
                         orders.add(s);
 
                     }catch(JSONException exception){
@@ -79,16 +60,16 @@ String store;
                 arr = new String[orders.size()];
                 arr = orders.toArray(arr);
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                        order.this, android.R.layout.simple_list_item_1,
+                        cart.this, android.R.layout.simple_list_item_1,
                         arr);
-                orderlist.setAdapter(adapter);
+                meclist.setAdapter(adapter);
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(order.this, error.toString(),
+                Toast.makeText(cart.this, error.toString(),
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -96,4 +77,5 @@ String store;
         queue.add(request);
 
     }
-}
+
+    }

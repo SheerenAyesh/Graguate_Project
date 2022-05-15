@@ -84,6 +84,21 @@ private RequestQueue queue;
 
     }
 
+    public void orders(View view) {
+        Intent intent = new Intent(this ,order.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
+
+    }
+
+    public void home(View view) {
+        Intent intent = new Intent(this ,homepagestore.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
+    }
+
+    public void user(View view) {
+    }
     public void getmec() {
 
         String url = "http://10.0.2.2:84/graduation_project/get_all_mec.php";

@@ -56,4 +56,10 @@ String store;
 
     public void user(View view) {
     }
+
+    public void cart(View view) {
+        Intent intent = new Intent(this ,cart.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
+    }
 }

@@ -153,10 +153,12 @@ public class mecdetails extends AppCompatActivity {
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject obj = response.getJSONObject(i);
+
                         username=obj.getString("username");
                         city=obj.getString("city");
                         phonenumber=obj.getString("phonenumber");
                         email=obj.getString("email");
+
 
 
                     }catch(JSONException exception){

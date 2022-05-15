@@ -60,6 +60,64 @@
         android:layout_height="wrap_content" />
 
 </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_marginTop="79dp"
+            android:layout_width="wrap_content"
+            android:layout_height="680dp">
+
+            <ImageButton
+                android:id="@+id/home"
+                android:layout_width="46dp"
+                android:layout_height="51dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="480dp"
+                android:background="@drawable/homee"
+                android:onClick="home" />
+
+            <ImageButton
+                android:id="@+id/order"
+                android:layout_width="48dp"
+                android:layout_height="49dp"
+                android:layout_marginLeft="160dp"
+                android:layout_marginTop="480dp"
+                android:background="@drawable/order"
+                android:onClick="orders" />
+
+            <ImageButton
+                android:id="@+id/personal"
+                android:layout_width="51dp"
+                android:layout_height="51dp"
+                android:layout_marginLeft="290dp"
+                android:layout_marginTop="480dp"
+                android:background="@drawable/user"
+                android:onClick="user" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="222dp">
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp">
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
