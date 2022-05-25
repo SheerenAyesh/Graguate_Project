@@ -106,18 +106,18 @@ private RequestQueue queue;
                 null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                ArrayList<String> rooms = new ArrayList<>();
+                ArrayList<String> mec = new ArrayList<>();
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject obj = response.getJSONObject(i);
                         String s=obj.getString("username");
-                        rooms.add(s);
+                        mec.add(s);
                     }catch(JSONException exception){
                         Log.d("Error", exception.toString());
                     }
                 }
-                arr = new String[rooms.size()];
-                arr = rooms.toArray(arr);
+                arr = new String[mec.size()];
+                arr = mec.toArray(arr);
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(
                         mechanic.this, android.R.layout.simple_list_item_1,
                         arr);

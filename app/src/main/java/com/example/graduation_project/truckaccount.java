@@ -131,8 +131,8 @@ public class truckaccount extends AppCompatActivity {
 
 
                 params.put("username", owner);
-                params.put("latitude", lat);
-                params.put("longitude", log);
+                params.put("latitude", "18.5");
+                params.put("longitude", "19.5");
                 params.put("ownertruck", truck);
                 params.put("truckweight", wght);
                 return params;

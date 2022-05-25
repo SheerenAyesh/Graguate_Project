@@ -27,6 +27,7 @@ ListView meclist;
 String store;
     private RequestQueue queue;
     String []arr;
+    String phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,7 @@ String store;
     }
 
     public void fillmec() {
+
         String url = "http://10.0.2.2:84/graduation_project/mec_req_by_user.php?username="+store;
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new Response.Listener<JSONArray>() {
@@ -49,7 +51,8 @@ String store;
                     try {
                         JSONObject obj = response.getJSONObject(i);
 
-                        String s=obj.getString("mecname")+"  "+obj.getString("phonenumber");
+                      String s=obj.getString("mecname")+"  "+obj.getString("mecphone");
+
 
                         orders.add(s);
 
@@ -65,6 +68,13 @@ String store;
                 meclist.setAdapter(adapter);
 
             }
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+            ///////////////////////////////////////////////////////////////
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {

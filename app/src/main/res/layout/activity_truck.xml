@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".truck">
 
 <!--    <LinearLayout-->
@@ -47,7 +48,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+
         android:background="@drawable/shap"
         android:hint="أقرب شاحنة نقل"
         android:shadowColor="@color/white"
@@ -69,8 +70,8 @@
         android:layout_width="171dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="30dp"
+
         android:background="@drawable/shap"
         android:hint="تسجيل كشاحنة للنقل  "
         android:onClick="truuck"
@@ -80,31 +81,80 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.014"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="171dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/shap"
-        android:shadowColor="@color/white"
-        android:hint="حمولة الشحن"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints"
-        android:onClick="weight"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ListView
+            android:id="@+id/listtruck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_marginTop="79dp"
+            android:layout_width="wrap_content"
+            android:layout_height="680dp">
+
+            <ImageButton
+                android:id="@+id/home"
+                android:layout_width="46dp"
+                android:layout_height="51dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="400dp"
+                android:background="@drawable/homee"
+                android:onClick="home" />
+
+            <ImageButton
+                android:id="@+id/order"
+                android:layout_width="48dp"
+                android:layout_height="49dp"
+                android:layout_marginLeft="160dp"
+                android:layout_marginTop="400dp"
+                android:background="@drawable/order"
+                android:onClick="orders" />
+
+            <ImageButton
+                android:id="@+id/personal"
+                android:layout_width="51dp"
+                android:layout_height="51dp"
+                android:layout_marginLeft="290dp"
+                android:layout_marginTop="400dp"
+                android:background="@drawable/user"
+                android:onClick="user" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="222dp">
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp">
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

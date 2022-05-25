@@ -227,6 +227,8 @@ public class mecdetails extends AppCompatActivity {
 
                 params.put("distance", dec);
                 params.put("city", city);
+                params.put("mecphone",mecphone.getText().toString());
+
 
                 return params;
             }
