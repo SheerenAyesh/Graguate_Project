@@ -143,6 +143,7 @@ public class mecdetails extends AppCompatActivity {
     }
 
     public void senddata(View view) {
+
         String url = "http://10.0.2.2:84/graduation_project/orderrequest.php?username=" + storereq;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,

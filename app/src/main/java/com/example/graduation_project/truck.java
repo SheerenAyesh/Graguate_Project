@@ -82,7 +82,7 @@ ListView listtruck;
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject obj = response.getJSONObject(i);
-                        String s=obj.getString("username")+" the truckweight is "+obj.getString("truckweight");
+                        String s=obj.getString("username");
 
                         truckown.add(s);
                     }catch(JSONException exception){
@@ -150,6 +150,9 @@ ListView listtruck;
     }
 
     public void home(View view) {
+        Intent intent = new Intent(this ,homepagestore.class);
+        intent.putExtra("username",username);
+        startActivity(intent);
     }
 
     public void orders(View view) {
