@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".order_truck"
+            android:exported="true" />
+        <activity
             android:name=".truckdetails"
             android:exported="true" />
         <activity

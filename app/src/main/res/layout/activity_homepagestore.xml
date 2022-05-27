@@ -177,24 +177,35 @@
             android:layout_marginTop="380dp"
             android:background="@drawable/homee"
             android:onClick="home" />
+
+
         <ImageButton
             android:id="@+id/cart"
             android:layout_width="46dp"
             android:layout_height="51dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="380dp"
             android:background="@drawable/shopping_cart"
             android:onClick="cart" />
 
-
         <ImageButton
-            android:id="@+id/order"
+            android:id="@+id/ordermec"
             android:layout_width="48dp"
             android:layout_height="49dp"
-            android:layout_marginLeft="210dp"
+            android:layout_marginLeft="150dp"
             android:layout_marginTop="380dp"
             android:background="@drawable/order"
-            android:onClick="orders" />
+            android:onClick="orders_mec" />
+
+        <ImageButton
+            android:id="@+id/ordertruck"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="380dp"
+
+            android:background="@drawable/truckimg"
+            android:onClick="orders_truck" />
 
         <ImageButton
             android:id="@+id/personal"

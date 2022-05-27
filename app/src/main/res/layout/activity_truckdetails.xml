@@ -23,7 +23,7 @@
 
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
-                android:text="اسم الميكانيكي : :"
+                android:text="اسم سائق الترك : :"
                 />
         </TableRow>
 
@@ -63,6 +63,22 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="المسافه بينك وبين الترك :" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="وزن الحمولة"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/truckweight"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="الوزن" />
         </TableRow>
         <TableRow>
             <TextView

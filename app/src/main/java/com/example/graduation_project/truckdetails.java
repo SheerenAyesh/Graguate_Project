@@ -14,17 +14,22 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class truckdetails extends AppCompatActivity {
-    TextView truckname,truckphone,truckdes,truckemail;
+    TextView truckname,truckphone,truckdes,truckemail,truckweight;
     private RequestQueue queue;
     String s,lat,log,storereq;
     String username,city,email,phonenumber,dec;
+
     double result;
 
     @Override
@@ -35,6 +40,7 @@ public class truckdetails extends AppCompatActivity {
         truckname=findViewById(R.id.truckname);
         truckdes=findViewById(R.id.truckdes);
         truckphone=findViewById(R.id.truckphone);
+        truckweight=findViewById(R.id.truckweight);
         Intent intent=getIntent();
         s=intent.getStringExtra("username");
         lat=intent.getStringExtra("latitude");
@@ -80,6 +86,7 @@ public class truckdetails extends AppCompatActivity {
                         double r = 6371;
                         result = c*r;
                         truckdes.setText(String.valueOf(result));
+                        truckweight.setText(obj.getString("truckweight"));
 
                     }catch(JSONException exception){
                         Log.d("Error", exception.toString());
@@ -139,5 +146,110 @@ public class truckdetails extends AppCompatActivity {
 
 
     public void senddata(View view) {
+
+        String url = "http://10.0.2.2:84/graduation_project/orderrequest.php?username=" + storereq;
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
+                null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject obj = response.getJSONObject(i);
+
+                        username=obj.getString("username");
+                        city=obj.getString("city");
+                        phonenumber=obj.getString("phonenumber");
+                        email=obj.getString("email");
+
+
+
+                    }catch(JSONException exception){
+                        Log.d("Error", exception.toString());
+                    }
+                }
+                go_to_order_page();
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(truckdetails.this, error.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(request);
+
+
     }
+
+
+
+
+    public void go_to_order_page()
+    {
+        dec=String.valueOf(result);
+        String url = "http://10.0.2.2:84/graduation_project/send_request_to_truck.php";
+        RequestQueue queue = Volley.newRequestQueue(truckdetails.this);
+        StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.e("TAG", "RESPONSE IS " + response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    // on below line we are displaying a success toast message.
+                    Toast.makeText(truckdetails.this,
+                            jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // method to handle errors.
+                Toast.makeText(truckdetails.this,
+                        "Fail to get response = " + error, Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("truckname", s);
+                params.put("username", username);
+
+                params.put("phonenumber", phonenumber);
+
+
+                params.put("email", email);
+
+                params.put("distance", dec);
+                params.put("city", city);
+                params.put("truckphone",truckphone.getText().toString());
+
+
+                return params;
+            }
+        };
+        queue.add(request);
+
+
+    }
+
+
+
+
+
+
+
 }
