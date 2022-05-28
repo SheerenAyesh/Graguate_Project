@@ -148,7 +148,22 @@ private RequestQueue queue;
 
     }
 
+
     public void addpartonclick(View view) {
         inserttodatabase();
+    }
+
+    public void addimage(View view) {
+
+        Intent intent = new Intent(this ,add_image.class);
+        intent.putExtra("username",username1);
+        intent.putExtra("latitude","12");
+        intent.putExtra("longitude","12");
+        intent.putExtra("partname",partname.getText().toString());
+        intent.putExtra("model",model.getText().toString());
+        intent.putExtra("description",desc.getText().toString());
+        intent.putExtra("price",price.getText().toString());
+
+        startActivity(intent);
     }
 }

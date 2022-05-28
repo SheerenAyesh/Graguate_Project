@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:layout_marginRight="15dp"
         >
 
 
@@ -29,14 +30,15 @@
             >
 
             <TextView
-                android:layout_marginLeft="150dp"
+                android:layout_marginLeft="130dp"
                 android:hint="اسم المستخدم"
                 android:id="@+id/username"
                 android:textSize="20dp"
                 android:layout_marginBottom="20dp"/>
 
             <TextView android:text="اسم المستخدم :"
-                android:layout_marginLeft="35dp"
+                android:layout_marginRight="15dp"
+
                 android:textSize="20dp"
                 />
 
@@ -54,7 +56,7 @@
                 android:layout_marginBottom="20dp"/>
 
             <TextView android:text="رقم الجوال :"
-                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 />
@@ -73,7 +75,7 @@
                 android:layout_marginBottom="20dp"/>
 
             <TextView android:text="المدينة :"
-                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 />
@@ -92,7 +94,7 @@
                 android:layout_marginBottom="20dp"/>
 
             <TextView android:text="اسم القطعة :"
-                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 />
@@ -111,7 +113,7 @@
                 android:layout_marginBottom="20dp"/>
 
             <TextView android:text="الموديل :"
-                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 />
@@ -130,7 +132,7 @@
                 android:layout_marginBottom="20dp"/>
 
             <TextView android:text="وصف القطعة :"
-                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 />
@@ -148,7 +150,7 @@
                 android:textSize="20dp"/>
 
             <TextView android:text="سعر القطعة :"
-                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 />
@@ -162,6 +164,14 @@
 
 
     </TableLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"
+        android:text="اضافة صوره للقطعة"
+        android:onClick="addimage"/>
 
     <Button
         android:layout_width="wrap_content"
