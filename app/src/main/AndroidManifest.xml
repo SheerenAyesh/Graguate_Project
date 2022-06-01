@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".search_part_by_user"
+            android:exported="true" />
+        <activity
             android:name=".add_image"
             android:exported="true" />
         <activity

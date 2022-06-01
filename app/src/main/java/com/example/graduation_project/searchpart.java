@@ -25,5 +25,7 @@ public class searchpart extends AppCompatActivity {
 
     public void search(View view) {
 
+        startActivity(new Intent(this, search_part_by_user.class));
+
     }
 }
