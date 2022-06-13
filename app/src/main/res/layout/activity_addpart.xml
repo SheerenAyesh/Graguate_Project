@@ -8,6 +8,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".addpart">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="إضافة قطعة"
+        android:textSize="40dp"
+        />
+
 
     <TextView
         android:layout_width="wrap_content"

@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class add_image extends AppCompatActivity implements View.OnClickListener {
-    public static final String UPLOAD_URL = "http://10.0.2.2:84/graduation_project/upload_image_part_to_database.php";
+    public static final String UPLOAD_URL = "http://10.0.2.2:84/graduation_project/upload.php";
     public static final String UPLOAD_KEY = "image";
     public static final String TAG = "MY MESSAGE";
 

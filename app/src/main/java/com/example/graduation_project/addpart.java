@@ -155,7 +155,7 @@ private RequestQueue queue;
 
     public void addimage(View view) {
 
-        Intent intent = new Intent(this ,add_image.class);
+        Intent intent = new Intent(this ,sheeren_add_image.class);
         intent.putExtra("username",username1);
         intent.putExtra("latitude","12");
         intent.putExtra("longitude","12");

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -29,6 +30,7 @@ import java.util.Map;
 
 public class login extends AppCompatActivity {
 TextInputLayout username,password;
+TextView textView;
 CheckBox check;
 String uname;
     private SharedPreferences prefs;
@@ -44,7 +46,10 @@ String uname;
         setContentView(R.layout.activity_login);
         username=findViewById(R.id.username);
         password=findViewById(R.id.password);
+        textView = findViewById(R.id.textView);
         queue = Volley.newRequestQueue(this);
+
+
 
         check=findViewById(R.id.check);
         prefs= PreferenceManager.getDefaultSharedPreferences(this );
@@ -59,9 +64,16 @@ String uname;
         }
 
 
-
+        textView.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(login.this,confpass.class);
+                startActivity(intent);
+            }
+        });
+        textView.setPaintFlags(textView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
     }
+
 
     public void login(View view) {
        String user=username.getEditText().getText().toString();
