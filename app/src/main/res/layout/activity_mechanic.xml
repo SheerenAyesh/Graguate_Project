@@ -41,6 +41,7 @@
         android:textColor="@color/black"
         android:textSize="13dp"
         android:textStyle="bold"
+        android:id="@+id/mec"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.036"
@@ -77,14 +78,7 @@
                 android:background="@drawable/homee"
                 android:onClick="home" />
 
-            <ImageButton
-                android:id="@+id/order"
-                android:layout_width="48dp"
-                android:layout_height="49dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="480dp"
-                android:background="@drawable/order"
-                android:onClick="orders" />
+
 
             <ImageButton
                 android:id="@+id/personal"

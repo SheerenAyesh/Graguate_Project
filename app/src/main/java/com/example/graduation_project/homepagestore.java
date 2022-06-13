@@ -128,6 +128,7 @@ ImageButton ordertruck,ordermec;
     public void mechanic(View view) {
         Intent intent = new Intent(this ,mechanic.class);
         intent.putExtra("username",store);
+        intent.putExtra("type","store");
         startActivity(intent);
 
     }
@@ -135,6 +136,7 @@ ImageButton ordertruck,ordermec;
     public void truck(View view) {
         Intent intent = new Intent(this ,truck.class);
         intent.putExtra("username",store);
+        intent.putExtra("type","store");
         startActivity(intent);
 
     }
@@ -142,6 +144,7 @@ ImageButton ordertruck,ordermec;
     public void searchPart(View view) {
         Intent intent = new Intent(this ,searchpart.class);
         intent.putExtra("username",store);
+        intent.putExtra("type","store");
         startActivity(intent);
     }
 

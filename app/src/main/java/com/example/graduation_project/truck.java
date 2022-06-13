@@ -51,17 +51,24 @@ Button button2;
 String []arr;
 ListView listtruck;
     private RequestQueue queue;
+    Button truck;
     private LocationRequest locationRequest;
+    String user="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truck);
         listtruck=findViewById(R.id.listtruck);
         queue = Volley.newRequestQueue(this);
+        truck=findViewById(R.id.truck);
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
         button2=findViewById(R.id.button2);
+         user=intent.getStringExtra("type");
+        if(user.equals("user")){
+            truck.setVisibility(View.INVISIBLE);
+        }
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,6 +140,7 @@ ListView listtruck;
         intent.putExtra("latitude","17.55");
         intent.putExtra("longitude","14.55");
         intent.putExtra("userreq",username);
+        intent.putExtra("type",user);
 
         startActivity(intent);
     }
@@ -150,9 +158,16 @@ ListView listtruck;
     }
 
     public void home(View view) {
+        if(!user.equals("user")){
         Intent intent = new Intent(this ,homepagestore.class);
         intent.putExtra("username",username);
-        startActivity(intent);
+        startActivity(intent);}
+        else{
+            Intent intent = new Intent(this ,homepageuser.class);
+            intent.putExtra("username",username);
+            startActivity(intent);
+
+        }
     }
 
     public void orders(View view) {

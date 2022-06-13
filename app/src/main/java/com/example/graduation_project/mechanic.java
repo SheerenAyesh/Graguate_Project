@@ -48,21 +48,27 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class mechanic extends AppCompatActivity {
-String store;
+String store,type;
 ListView listmec;
     String lat,log;
     String[] arr;
 private RequestQueue queue;
     private LocationRequest locationRequest;
-    Button LocationButto;
+    Button LocationButto,mec;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mechanic);
         Intent intent=getIntent();
         store=intent.getStringExtra("username");
+        type=intent.getStringExtra("type");
         listmec=findViewById(R.id.listmec);
         queue = Volley.newRequestQueue(this);
+        mec=findViewById(R.id.mec);
+
+        if(type.equals("user")){
+            mec.setVisibility(View.INVISIBLE);
+        }
         LocationButto=findViewById(R.id.LocationButto);
 
         locationRequest = LocationRequest.create();
@@ -92,9 +98,16 @@ private RequestQueue queue;
     }
 
     public void home(View view) {
+        if(!type.equals("user")){
         Intent intent = new Intent(this ,homepagestore.class);
         intent.putExtra("username",store);
-        startActivity(intent);
+        startActivity(intent);}
+        else{
+            Intent intent = new Intent(this ,homepageuser.class);
+            intent.putExtra("username",store);
+            startActivity(intent);
+
+        }
     }
 
     public void user(View view) {
@@ -161,6 +174,7 @@ private RequestQueue queue;
         intent.putExtra("latitude","17.55");
         intent.putExtra("longitude","14.55");
         intent.putExtra("userreq",store);
+        intent.putExtra("type",type);
 
         startActivity(intent);
     }

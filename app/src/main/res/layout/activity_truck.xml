@@ -71,6 +71,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
+        android:id="@+id/truck"
 
         android:background="@drawable/shap"
         android:hint="تسجيل كشاحنة للنقل  "
@@ -97,7 +98,7 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-    <LinearLayout
+       <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -114,14 +115,7 @@
                 android:background="@drawable/homee"
                 android:onClick="home" />
 
-            <ImageButton
-                android:id="@+id/order"
-                android:layout_width="48dp"
-                android:layout_height="49dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="400dp"
-                android:background="@drawable/order"
-                android:onClick="orders" />
+
 
             <ImageButton
                 android:id="@+id/personal"

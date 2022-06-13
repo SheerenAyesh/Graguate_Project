@@ -5,30 +5,27 @@
     android:layout_height="match_parent"
     tools:context=".search_part_by_user"
     >
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/editTextId" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Get Image"
-            android:id="@+id/buttonGetImage" />
-
-    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+android:layout_marginTop="20dp"
+        android:hint="ادخل رقم الصوره"
+        android:id="@+id/editTextId"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonGetImage"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        />
+</LinearLayout>
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/imageViewShow" />
-
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewShow"/>
 
 </LinearLayout>

@@ -20,6 +20,7 @@
      android:textColor="@color/black"
      android:textSize="13dp"
      android:textStyle="bold"
+     android:id="@+id/seachpart"
      app:layout_constraintBottom_toBottomOf="parent"
      app:layout_constraintEnd_toEndOf="parent"
      app:layout_constraintHorizontal_bias="0.992"
@@ -47,6 +48,59 @@
      app:layout_constraintVertical_bias="0.058"
      tools:ignore="MissingConstraints"
      android:onClick="search"/>
+
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+  <RelativeLayout
+      android:layout_marginTop="1dp"
+      android:layout_width="wrap_content"
+      android:layout_height="350dp">
+
+   <ImageButton
+       android:id="@+id/home"
+       android:layout_width="46dp"
+       android:layout_height="51dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginTop="300dp"
+       android:background="@drawable/homee"
+       android:onClick="home" />
+
+
+
+   <ImageButton
+       android:id="@+id/personal"
+       android:layout_width="51dp"
+       android:layout_height="51dp"
+       android:layout_marginLeft="290dp"
+       android:layout_marginTop="300dp"
+       android:background="@drawable/user"
+       android:onClick="user" />
+
+  </RelativeLayout>
+
+
+
+  <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginRight="222dp">
+
+
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="20dp">
+
+
+  </RelativeLayout>
+
+
+
+ </LinearLayout>
+
 
 
 

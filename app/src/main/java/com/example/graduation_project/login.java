@@ -98,12 +98,7 @@ String uname;
         RequestQueue queue = Volley.newRequestQueue(login.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
 
-//                  public int TIMEOUT_MS=10000  ;      //10 seconds
-//
-//                  request.setRetryPolicy(new DefaultRetryPolicy(
-//                    TIMEOUT_MS,
-//                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-//                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
             @Override
             public void onResponse(String response) {
                 Log.e("TAG", "RESPONSE IS " + response);

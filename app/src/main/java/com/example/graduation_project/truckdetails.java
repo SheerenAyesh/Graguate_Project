@@ -25,10 +25,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class truckdetails extends AppCompatActivity {
-    TextView truckname,truckphone,truckdes,truckemail,truckweight;
+    TextView truckname, truckphone, truckdes, truckemail, truckweight;
     private RequestQueue queue;
-    String s,lat,log,storereq;
-    String username,city,email,phonenumber,dec;
+    String s, lat, log, storereq;
+    String username, city, email, phonenumber, dec, type;
 
     double result;
 
@@ -36,16 +36,18 @@ public class truckdetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truckdetails);
-        truckemail=findViewById(R.id.truckemail);
-        truckname=findViewById(R.id.truckname);
-        truckdes=findViewById(R.id.truckdes);
-        truckphone=findViewById(R.id.truckphone);
-        truckweight=findViewById(R.id.truckweight);
-        Intent intent=getIntent();
-        s=intent.getStringExtra("username");
-        lat=intent.getStringExtra("latitude");
-        log=intent.getStringExtra("longitude");
-        storereq=intent.getStringExtra("userreq");
+        truckemail = findViewById(R.id.truckemail);
+        truckname = findViewById(R.id.truckname);
+        truckdes = findViewById(R.id.truckdes);
+        truckphone = findViewById(R.id.truckphone);
+        truckweight = findViewById(R.id.truckweight);
+        Intent intent = getIntent();
+        s = intent.getStringExtra("username");
+        lat = intent.getStringExtra("latitude");
+        log = intent.getStringExtra("longitude");
+        storereq = intent.getStringExtra("userreq");
+        type = intent.getStringExtra("type");
+
         truckname.setText(s);
         queue = Volley.newRequestQueue(this);
         fill_text1();
@@ -54,8 +56,7 @@ public class truckdetails extends AppCompatActivity {
     }
 
 
-    public void fill_text2()
-    {
+    public void fill_text2() {
         String url = "http://10.0.2.2:84/graduation_project/get_all_truck_by_username.php?username=" + s;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
@@ -68,9 +69,9 @@ public class truckdetails extends AppCompatActivity {
                         JSONObject obj = response.getJSONObject(i);
 //                        mecdes.setText(obj.getString("latitude"));
                         String x, y;
-                        x= obj.getString("latitude");
-                        y= obj.getString("longitude");
-                        double log1 ,log2,lat1,lat2;
+                        x = obj.getString("latitude");
+                        y = obj.getString("longitude");
+                        double log1, log2, lat1, lat2;
                         log1 = Math.toRadians(Double.parseDouble(log));
                         log2 = Math.toRadians(Double.parseDouble(y));
                         lat1 = Math.toRadians(Double.parseDouble(lat));
@@ -79,16 +80,16 @@ public class truckdetails extends AppCompatActivity {
                         double dlat = lat2 - lat1;
                         double a = Math.pow(Math.sin(dlat / 2), 2)
                                 + Math.cos(lat1) * Math.cos(lat2)
-                                * Math.pow(Math.sin(dlon / 2),2);
+                                * Math.pow(Math.sin(dlon / 2), 2);
 
                         double c = 2 * Math.asin(Math.sqrt(a));
 
                         double r = 6371;
-                        result = c*r;
+                        result = c * r;
                         truckdes.setText(String.valueOf(result));
                         truckweight.setText(obj.getString("truckweight"));
 
-                    }catch(JSONException exception){
+                    } catch (JSONException exception) {
                         Log.d("Error", exception.toString());
                     }
                 }
@@ -107,8 +108,8 @@ public class truckdetails extends AppCompatActivity {
 
 
     }
-    public void fill_text1()
-    {
+
+    public void fill_text1() {
 
         String url = "http://10.0.2.2:84/graduation_project/get_all_truck_by_username2.php?username=" + s;
 
@@ -124,7 +125,7 @@ public class truckdetails extends AppCompatActivity {
                         truckemail.setText(obj.getString("email"));
 
 
-                    }catch(JSONException exception){
+                    } catch (JSONException exception) {
                         Log.d("Error", exception.toString());
                     }
                 }
@@ -144,7 +145,6 @@ public class truckdetails extends AppCompatActivity {
     }
 
 
-
     public void senddata(View view) {
 
         String url = "http://10.0.2.2:84/graduation_project/orderrequest.php?username=" + storereq;
@@ -158,14 +158,13 @@ public class truckdetails extends AppCompatActivity {
                     try {
                         JSONObject obj = response.getJSONObject(i);
 
-                        username=obj.getString("username");
-                        city=obj.getString("city");
-                        phonenumber=obj.getString("phonenumber");
-                        email=obj.getString("email");
+                        username = obj.getString("username");
+                        city = obj.getString("city");
+                        phonenumber = obj.getString("phonenumber");
+                        email = obj.getString("email");
 
 
-
-                    }catch(JSONException exception){
+                    } catch (JSONException exception) {
                         Log.d("Error", exception.toString());
                     }
                 }
@@ -187,11 +186,8 @@ public class truckdetails extends AppCompatActivity {
     }
 
 
-
-
-    public void go_to_order_page()
-    {
-        dec=String.valueOf(result);
+    public void go_to_order_page() {
+        dec = String.valueOf(result);
         String url = "http://10.0.2.2:84/graduation_project/send_request_to_truck.php";
         RequestQueue queue = Volley.newRequestQueue(truckdetails.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
@@ -222,6 +218,7 @@ public class truckdetails extends AppCompatActivity {
 
                 return "application/x-www-form-urlencoded; charset=UTF-8";
             }
+
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
@@ -235,7 +232,7 @@ public class truckdetails extends AppCompatActivity {
 
                 params.put("distance", dec);
                 params.put("city", city);
-                params.put("truckphone",truckphone.getText().toString());
+                params.put("truckphone", truckphone.getText().toString());
 
 
                 return params;
@@ -247,9 +244,23 @@ public class truckdetails extends AppCompatActivity {
     }
 
 
+    public void home(View view) {
+        if (!type.equals("user")) {
+            Intent intent = new Intent(this, homepagestore.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(this, homepageuser.class);
+            intent.putExtra("username", username);
+            startActivity(intent);
+        }
+    }
 
 
 
 
 
-}
+    ///////////////////////////////////////////////////////////////////////////////
+        public void user (View view){
+        }
+    }

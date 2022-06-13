@@ -28,7 +28,7 @@ public class mecdetails extends AppCompatActivity {
     TextView mecname,mecphone,mecstore,mecdes,mecemail;
     private RequestQueue queue;
     String s,lat,log,storereq;
-    String username,city,email,phonenumber,dec;
+    String username,city,email,phonenumber,dec,type;
     double result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,7 @@ public class mecdetails extends AppCompatActivity {
          lat=intent.getStringExtra("latitude");
          log=intent.getStringExtra("longitude");
          storereq=intent.getStringExtra("userreq");
+         type=intent.getStringExtra("type");
         mecname.setText(s);
         queue = Volley.newRequestQueue(this);
         fill_text1();
@@ -237,5 +238,20 @@ public class mecdetails extends AppCompatActivity {
         queue.add(request);
 
 
+    }
+
+    public void home(View view) {
+        if (!type.equals("user")) {
+            Intent intent = new Intent(this, homepagestore.class);
+            intent.putExtra("username", storereq);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(this, homepageuser.class);
+            intent.putExtra("username", storereq);
+            startActivity(intent);
+        }
+    }
+
+    public void user(View view) {
     }
 }
