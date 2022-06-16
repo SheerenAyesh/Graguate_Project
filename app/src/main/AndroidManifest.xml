@@ -17,6 +17,9 @@
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".detailspart"
+            android:exported="true" />
+        <activity
             android:name=".ShowImages"
             android:exported="true" />
         <activity

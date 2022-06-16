@@ -39,7 +39,7 @@ public class ShowImages extends AppCompatActivity {
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         imageList = new ArrayList<>();
-        myAdapter = new MyAdapter(this,imageList);
+       // myAdapter = new MyAdapter(this,imageList);
         recyclerView.setAdapter(myAdapter);
 
         fetchImages();
