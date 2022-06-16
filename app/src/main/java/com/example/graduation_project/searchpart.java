@@ -109,11 +109,16 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
                                     String id = object.getString("id");
                                     String imageurl = object.getString("file_name");
                                     String partname = object.getString("partname");
-
+                                    String username=object.getString("username");
+                                    String model=object.getString("model");
+                                    String description=object.getString("description");
+                                    String price=object.getString("price");
+                                    String partnumber=object.getString("partnumber");
 
                                     String url = "http://10.0.2.2:84/graduation_project/uploads/"+imageurl;
 
-                                    modelImage = new ModelImage(id,url,partname);
+                                    modelImage = new ModelImage(id,url,username,partnumber,model,description,price,partname);
+
                                     imageList.add(modelImage);
                                     myAdapter.notifyDataSetChanged();
 
@@ -151,6 +156,12 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
     public void onClick( int position) {
         Intent intent =new Intent(getApplicationContext(),detailspart.class);
         intent.putExtra("partname",imageList.get(position).getPartname());
+        intent.putExtra("partnumber",imageList.get(position).getPartnumber());
+        intent.putExtra("price",imageList.get(position).getPrice());
+        intent.putExtra("description",imageList.get(position).getDescription());
+        intent.putExtra("username",imageList.get(position).getUsername());
+        intent.putExtra("id",imageList.get(position).getId());
+        intent.putExtra("model",imageList.get(position).getModel());
         startActivity(intent);
     }
 }

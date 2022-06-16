@@ -43,7 +43,7 @@ public class sheeren_add_image extends AppCompatActivity {
     Bitmap bitmap;
 
     String encodedImage;
-    String user,partname,model,price,latitude,longitude,description;
+    String user,partname,model,price,latitude,longitude,description,partnumber;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +56,8 @@ public class sheeren_add_image extends AppCompatActivity {
         latitude=intent.getStringExtra("latitude");
         longitude=intent.getStringExtra("longitude");
         description=intent.getStringExtra("description");
+        partnumber=intent.getStringExtra("partnumber");
+
 
 
         btnSelectImage = findViewById(R.id.btnSelectImage);
@@ -114,6 +116,7 @@ public class sheeren_add_image extends AppCompatActivity {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<>();
+                        params.put("partnumber",partnumber);
                         params.put("file_name", encodedImage);
                         params.put("username",user);
                         params.put("partname",partname);

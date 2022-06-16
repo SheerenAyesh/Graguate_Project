@@ -31,8 +31,8 @@ import java.util.Map;
 public class addpart extends AppCompatActivity {
 String username1;
 TextView welcome;
-TextView username,phonenumber,city;
-EditText desc,price,partname,model;
+TextView username,phonenumber,city,alarm;
+EditText desc,price,partname,model,partnumber;
 private RequestQueue queue;
 
     @Override
@@ -47,11 +47,13 @@ private RequestQueue queue;
         price=findViewById(R.id.price);
         partname=findViewById(R.id.partname);
         model=findViewById(R.id.model);
+        partnumber=findViewById(R.id.partnumber);
         Intent intent=getIntent();
         username1=intent.getStringExtra("username");
         welcome=findViewById(R.id.welcome);
         welcome.setText("اهلا "+username1+" في صفحة اضافة القطعة");
         username.setText(username1);
+        alarm=findViewById(R.id.alarm);
 
         filltext();
 
@@ -156,7 +158,10 @@ private RequestQueue queue;
     public void addimage(View view) {
 
         Intent intent = new Intent(this ,sheeren_add_image.class);
+        if(!(partnumber.getText().toString().isEmpty()||partname.getText().toString().isEmpty()
+        ||model.getText().toString().isEmpty()||desc.getText().toString().isEmpty()||price.getText().toString().isEmpty())){
         intent.putExtra("username",username1);
+        intent.putExtra("partnumber",partnumber.getText().toString());
         intent.putExtra("latitude","12");
         intent.putExtra("longitude","12");
         intent.putExtra("partname",partname.getText().toString());
@@ -164,6 +169,10 @@ private RequestQueue queue;
         intent.putExtra("description",desc.getText().toString());
         intent.putExtra("price",price.getText().toString());
 
-        startActivity(intent);
+        startActivity(intent);}
+        else{
+            alarm.setText("الرجاء ادخال جميع المعلومات المطلوبة !!");
+        }
+
     }
 }

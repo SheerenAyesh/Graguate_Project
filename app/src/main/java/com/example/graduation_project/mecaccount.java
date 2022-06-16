@@ -58,7 +58,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class mecaccount extends AppCompatActivity {
-    String mecname1;
+    String username1;
     TextInputLayout username,mecname;
     String lat,log;
     private LocationRequest locationRequest;
@@ -68,13 +68,13 @@ public class mecaccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mecaccount);
         Intent intent=getIntent();
-        mecname1=intent.getStringExtra("username");
+        username1=intent.getStringExtra("username");
          LocationButton=findViewById(R.id.LocationButton);
 
         username=findViewById(R.id.username);
         mecname=findViewById(R.id.mecname);
 
-        username.getEditText().setText(mecname1);
+        username.getEditText().setText(username1);
         locationRequest = LocationRequest.create();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         locationRequest.setInterval(5000);
@@ -97,7 +97,7 @@ public class mecaccount extends AppCompatActivity {
     }
 /////////////////////////////////////////////
     public void create(View view) {
-        String mecstore=mecname1;
+        String mecstore=mecname.getEditText().getText().toString();
         create(mecstore);
 
     }
@@ -141,7 +141,7 @@ public class mecaccount extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
 
-                params.put("username", mecname1);
+                params.put("username", username1);
                 params.put("mecname", mecstore);
                 if(lat!=null)
                 params.put("latitude", lat);

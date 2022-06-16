@@ -7,10 +7,118 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".detailspart">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/txt"/>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="اسم مالك القطعة"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/username"/>
+            <TextView
+                android:layout_width="100dp"
+
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:text="اسم مالك القطعة :"
+                />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="اسم القطعة:"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/partname"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="اسم القطعة :" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="رقم القطعة "
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/partnumber"/>
+            <TextView
+                android:layout_width="100dp"
+
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:text="رقم القطعة :"
+                />
+        </TableRow>
+
+
+
+
+
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="موديل القطعة"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/model"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="موديل القطعة:" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="وصف القطعة"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/desc"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="وصف القطعة" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="السعر:"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/price"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="السعر :" />
+        </TableRow>
+
+
+    </TableLayout>
+
+
+
+
 
 
 

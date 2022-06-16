@@ -72,7 +72,7 @@ public class ShowImages extends AppCompatActivity {
 
                                     String url = "http://10.0.2.2:84/graduation_project/uploads/"+imageurl;
 
-                                    modelImage = new ModelImage(id,url,partname);
+                                   // modelImage = new ModelImage(id,url,partname);
                                     imageList.add(modelImage);
                                     myAdapter.notifyDataSetChanged();
 

@@ -109,6 +109,25 @@
 
 
         </TableRow>
+        <TableRow
+            >
+
+            <EditText
+                android:layout_marginLeft="130dp"
+                android:hint="رقم القطعة"
+                android:id="@+id/partnumber"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="رقم القطعة :"
+                android:layout_marginRight="15dp"
+
+                android:textSize="20dp"
+                />
+
+
+
+        </TableRow>
 
         <TableRow>
 
@@ -172,6 +191,16 @@
 
     </TableLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/purple_700"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:id="@+id/alarm"
+        />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -180,12 +209,6 @@
         android:text="اضافة صوره للقطعة"
         android:onClick="addimage"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:text="اضافة القطعة"
-        android:onClick="addpartonclick"/>
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
