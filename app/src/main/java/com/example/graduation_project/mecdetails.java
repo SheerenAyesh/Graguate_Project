@@ -69,20 +69,38 @@ public class mecdetails extends AppCompatActivity {
                         x= obj.getString("latitude");
                         y= obj.getString("longitude");
                         double log1 ,log2,lat1,lat2;
-                        log1 = Math.toRadians(Double.parseDouble(log));
-                        log2 = Math.toRadians(Double.parseDouble(y));
-                        lat1 = Math.toRadians(Double.parseDouble(lat));
-                        lat2 = Math.toRadians(Double.parseDouble(x));
-                        double dlon = log2 - log1;
-                        double dlat = lat2 - lat1;
-                        double a = Math.pow(Math.sin(dlat / 2), 2)
-                                + Math.cos(lat1) * Math.cos(lat2)
-                                * Math.pow(Math.sin(dlon / 2),2);
+                        if (log!=null && lat!=null){
+                            log1 = Math.toRadians(Double.parseDouble(log));
+                            log2 = Math.toRadians(Double.parseDouble(y));
+                            lat1 = Math.toRadians(Double.parseDouble(lat));
+                            lat2 = Math.toRadians(Double.parseDouble(x));
+                            double dlon = log2 - log1;
+                            double dlat = lat2 - lat1;
+                            double a = Math.pow(Math.sin(dlat / 2), 2)
+                                    + Math.cos(lat1) * Math.cos(lat2)
+                                    * Math.pow(Math.sin(dlon / 2),2);
 
-                        double c = 2 * Math.asin(Math.sqrt(a));
+                            double c = 2 * Math.asin(Math.sqrt(a));
 
-                        double r = 6371;
-                         result = c*r;
+                            double r = 6371;
+                            result = c*r;
+                        }else{
+                            log1 = Math.toRadians(Double.parseDouble("17.3"));
+                            log2 = Math.toRadians(Double.parseDouble(y));
+                            lat1 = Math.toRadians(Double.parseDouble("2.3"));
+                            lat2 = Math.toRadians(Double.parseDouble(x));
+                            double dlon = log2 - log1;
+                            double dlat = lat2 - lat1;
+                            double a = Math.pow(Math.sin(dlat / 2), 2)
+                                    + Math.cos(lat1) * Math.cos(lat2)
+                                    * Math.pow(Math.sin(dlon / 2),2);
+
+                            double c = 2 * Math.asin(Math.sqrt(a));
+
+                            double r = 6371;
+                            result = c*r;
+                        }
+
                         mecdes.setText(String.valueOf(result));
                         mecstore.setText(obj.getString("mecname"));
 

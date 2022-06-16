@@ -29,6 +29,7 @@ public class ShowImages extends AppCompatActivity {
     List<ModelImage> imageList;
     ModelImage modelImage;
     LinearLayoutManager linearLayoutManager;
+    String partname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

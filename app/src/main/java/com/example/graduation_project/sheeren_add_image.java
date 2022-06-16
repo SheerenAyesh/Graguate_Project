@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -40,6 +41,7 @@ public class sheeren_add_image extends AppCompatActivity {
     Button btnSelectImage,btnUploadImage;
     ImageView imageView;
     Bitmap bitmap;
+
     String encodedImage;
     String user,partname,model,price,latitude,longitude,description;
     @Override

@@ -18,6 +18,7 @@ public class ModelImage {
     public void setId(String id) {
         this.id = id;
     }
+
     public String getPartname() {
         return partname;
     }

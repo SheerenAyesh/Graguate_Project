@@ -137,8 +137,8 @@ ListView listtruck;
     public void go_to_det(int i) {
         Intent intent = new Intent(this ,truckdetails.class);
         intent.putExtra("username",arr[i]);
-        intent.putExtra("latitude","17.55");
-        intent.putExtra("longitude","14.55");
+        intent.putExtra("latitude",lat);
+        intent.putExtra("longitude",log);
         intent.putExtra("userreq",username);
         intent.putExtra("type",user);
 
