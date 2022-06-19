@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,11 +26,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class homepagestore extends AppCompatActivity {
 String store;
+TextView notification ,reqPage;
 ImageButton ordertruck,ordermec;
     private RequestQueue queue;
     int x=0,x1=0;
+    int counter=0;
     TextView welcome;
     @Override
 
@@ -38,11 +45,75 @@ ImageButton ordertruck,ordermec;
          store=intent.getStringExtra("username");
          ordermec=findViewById(R.id.ordermec);
          ordertruck=findViewById(R.id.ordertruck);
+        reqPage=findViewById(R.id.reqPage);
+        reqPage.setVisibility(View.INVISIBLE);
+
+        notification=findViewById(R.id.notification);
         queue = Volley.newRequestQueue(this);
         welcome=findViewById(R.id.welcome);
         welcome.setText("اهلا بك "+store+" في صفحة المتجر ");
          check_truck();
          check_mec();
+         check_notification();
+    }
+
+    public void check_notification() {
+
+        String url = "http://10.0.2.2:84/graduation_project/check_if_user_have_partreq.php?partowner=" + store;
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
+                null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+
+
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject obj = response.getJSONObject(i);
+
+                        counter++;
+
+                    }catch(JSONException exception){
+                        Log.d("Error", exception.toString());
+                    }
+                }
+                if(counter>0){
+                    notification.setText("لديك "+counter+" من طلبات القطع لم تقم بقبولها او برفضها");
+                    reqPage.setVisibility(View.VISIBLE);
+                    go_to_req_page();
+
+                }
+
+
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(homepagestore.this, error.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(request);
+
+
+
+
+    }
+
+    public void go_to_req_page() {
+        reqPage.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(homepagestore.this ,partrequest.class);
+                intent.putExtra("username",store);
+                startActivity(intent);
+            }
+        });
+        reqPage.setPaintFlags(reqPage.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
     }
 
     private void check_mec() {
@@ -184,7 +255,6 @@ ImageButton ordertruck,ordermec;
         Intent intent = new Intent(this ,partrequest.class);
         intent.putExtra("username",store);
         startActivity(intent);
-
 
     }
 }

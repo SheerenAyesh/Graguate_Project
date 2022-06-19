@@ -65,8 +65,8 @@ String uname;
 
 
         textView.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                Intent intent = new Intent(login.this,confpass.class);
+                    public void onClick(View v){
+                        Intent intent = new Intent(login.this,confpass.class);
                 startActivity(intent);
             }
         });

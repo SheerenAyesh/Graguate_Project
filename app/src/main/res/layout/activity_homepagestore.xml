@@ -17,45 +17,8 @@
         android:textColor="@color/purple_700"
         android:id="@+id/welcome"
         />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="طلبات القطع"
-        android:gravity="center"
-        android:onClick="partreq"/>
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="70dp"-->
-<!--        android:layout_marginLeft="5dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginBottom="20dp"-->
-<!--        android:background="@color/white">-->
 
-<!--        <ImageButton-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_marginLeft="350dp"-->
-<!--            android:layout_marginRight="237dp"-->
-<!--            android:background="@drawable/shopping" />-->
-
-<!--        <EditText-->
-<!--            android:layout_width="290dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_centerVertical="true"-->
-<!--            android:layout_marginLeft="40dp"-->
-<!--            android:hint="بحث"-->
-<!--            android:textSize="25dp" />-->
-
-<!--        <ImageButton-->
-<!--            android:layout_width="30dp"-->
-<!--            android:layout_height="30dp"-->
-<!--            android:layout_alignParentRight="true"-->
-<!--            android:layout_marginTop="23dp"-->
-<!--            android:layout_marginRight="367dp"-->
-<!--            android:background="@drawable/loupe" />-->
-
-<!--    </RelativeLayout>-->
 
 
     *****************************************
@@ -176,9 +139,30 @@
     *********************************
 
     **********************************
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/cardview_dark_background"
+        android:id="@+id/notification"
+        android:layout_marginRight="15dp"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/reqPage"
+        android:text="انقر هنا لرؤية الطلبات"
+        android:textSize="20dp"
+        android:textColor="@color/purple_700"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"/>
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
     <RelativeLayout
         android:layout_marginTop="79dp"
         android:layout_width="match_parent"
@@ -189,7 +173,7 @@
             android:layout_width="46dp"
             android:layout_height="51dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="230dp"
             android:background="@drawable/homee"
             android:onClick="home" />
 
@@ -199,7 +183,7 @@
             android:layout_width="46dp"
             android:layout_height="51dp"
             android:layout_marginLeft="80dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="230dp"
             android:background="@drawable/shopping_cart"
             android:onClick="cart" />
 
@@ -208,7 +192,7 @@
             android:layout_width="48dp"
             android:layout_height="49dp"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="230dp"
             android:background="@drawable/order"
             android:onClick="orders_mec" />
 
@@ -217,7 +201,7 @@
             android:layout_width="48dp"
             android:layout_height="49dp"
             android:layout_marginLeft="230dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="230dp"
 
             android:background="@drawable/truckimg"
             android:onClick="orders_truck" />
@@ -227,7 +211,7 @@
             android:layout_width="51dp"
             android:layout_height="51dp"
             android:layout_marginLeft="320dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="230dp"
             android:background="@drawable/user"
             android:onClick="user" />
 
@@ -243,13 +227,7 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp">
 
-
-    </RelativeLayout>
 
 
 

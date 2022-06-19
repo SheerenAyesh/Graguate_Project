@@ -268,11 +268,11 @@ public class truckdetails extends AppCompatActivity {
     public void home(View view) {
         if (!type.equals("user")) {
             Intent intent = new Intent(this, homepagestore.class);
-            intent.putExtra("username", username);
+            intent.putExtra("username", storereq);
             startActivity(intent);
         } else {
             Intent intent = new Intent(this, homepageuser.class);
-            intent.putExtra("username", username);
+            intent.putExtra("username", storereq);
             startActivity(intent);
         }
     }
