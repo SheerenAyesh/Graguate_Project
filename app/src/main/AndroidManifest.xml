@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.graduation_project" >
+    package="com.example.graduation_project">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,13 +15,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Graduation_project"
-        android:usesCleartextTraffic="true" >
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ApproveOrRejectPartRequest"
+            android:exported="true" />
+        <activity
+            android:name=".partrequest"
+            android:exported="true" />
+        <activity
+            android:name=".partResResult"
+            android:exported="true" />
+        <activity
+            android:name=".spinnerresult"
+            android:exported="true" />
         <activity
             android:name=".personal"
             android:exported="true" />
-
-
-
         <activity
             android:name=".detailspart"
             android:exported="true" />
@@ -94,13 +103,12 @@
         <activity
             android:name=".searchpart"
             android:exported="true" />
-
-            <activity
-                android:name=".google"
-                android:exported="true" />
+        <activity
+            android:name=".google"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

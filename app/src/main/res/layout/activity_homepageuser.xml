@@ -8,11 +8,22 @@
     tools:context=".homepageuser"
     android:orientation="vertical"
     >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"
+        android:id="@+id/welcome1"
+        />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="80dp"
         android:layout_gravity="center"
         >
 
@@ -138,7 +149,7 @@
                 android:layout_width="46dp"
                 android:layout_height="51dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="380dp"
+                android:layout_marginTop="280dp"
                 android:background="@drawable/homee"
                 android:onClick="home" />
 
@@ -148,7 +159,7 @@
                 android:layout_width="46dp"
                 android:layout_height="51dp"
                 android:layout_marginLeft="160dp"
-                android:layout_marginTop="380dp"
+                android:layout_marginTop="280dp"
                 android:background="@drawable/shopping_cart"
                 android:onClick="cart" />
 
@@ -159,7 +170,7 @@
                 android:layout_width="51dp"
                 android:layout_height="51dp"
                 android:layout_marginLeft="320dp"
-                android:layout_marginTop="380dp"
+                android:layout_marginTop="280dp"
                 android:background="@drawable/user"
                 android:onClick="user" />
 

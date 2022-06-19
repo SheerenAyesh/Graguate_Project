@@ -15,18 +15,7 @@
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textSize="25dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="طلبات القطع:"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:textSize="25dp"/>
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/partlist"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,7 +27,9 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/meclist"/>
+        android:id="@+id/meclist"
+        />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,5 +42,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/trucklist"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="طلبات القطع:"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="25dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:id="@+id/recyclerView"
+        android:layout_width="300dp"
+        android:layout_marginLeft="50dp"
+        android:layout_height="500dp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

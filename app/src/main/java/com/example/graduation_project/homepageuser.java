@@ -5,15 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class homepageuser extends AppCompatActivity {
 String user="";
+TextView welcome1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepageuser);
         Intent intent=getIntent();
         user=intent.getStringExtra("username");
+        welcome1=findViewById(R.id.welcome1);
+        welcome1.setText("اهلا بك "+user+" في صفحة المستخدم");
+
 
     }
 

@@ -3,81 +3,92 @@ package com.example.graduation_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class search_part_by_user extends AppCompatActivity implements View.OnClickListener{
-    private EditText editTextId;
-    private Button buttonGetImage;
-    private ImageView imageView;
-
-    private RequestHandler requestHandler;
-
+public class search_part_by_user extends AppCompatActivity {
+Spinner spinner;
+EditText searchtype;
+Button btn;
+String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_part_by_user);
-        editTextId = (EditText) findViewById(R.id.editTextId);
-        buttonGetImage = (Button) findViewById(R.id.buttonGetImage);
-        imageView = (ImageView) findViewById(R.id.imageViewShow);
+        spinner=findViewById(R.id.spinner);
+        String []s={"اختر :","البحث بواسطة اسم القطعة","البحث بواسطة رقم القطعة","البحث بواسطة الموديل"};
+        ArrayAdapter<String> adapter= new ArrayAdapter<>(this , android.R.layout.simple_spinner_item,s);
+        spinner.setAdapter(adapter);
+        searchtype=findViewById(R.id.searchtype);
+        btn=findViewById(R.id.btn);
+        searchtype.setVisibility(View.INVISIBLE);
+        btn.setVisibility(View.INVISIBLE);
+        Intent intent=getIntent();
+        username=intent.getStringExtra("username");
 
-        requestHandler = new RequestHandler();
 
-        buttonGetImage.setOnClickListener((View.OnClickListener) this);
+
+
+
     }
-    private void getImage() {
-        String id = editTextId.getText().toString().trim();
-        class GetImage extends AsyncTask<String,Void, Bitmap> {
-            ProgressDialog loading;
 
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                loading = ProgressDialog.show(search_part_by_user.this, "Uploading...", null,true,true);
+
+    public void search(View view) {
+        if((spinner.getSelectedItem().equals("البحث بواسطة الموديل")
+                ||spinner.getSelectedItem().equals("البحث بواسطة رقم القطعة")||spinner.getSelectedItem().equals("البحث بواسطة اسم القطعة"))){
+            if(spinner.getSelectedItem().equals("البحث بواسطة الموديل")){
+                Intent intent=new Intent(this,spinnerresult.class);
+                intent.putExtra("username",username);
+                intent.putExtra("type","model");
+                intent.putExtra("value",searchtype.getText().toString());
+                startActivity(intent);
+
+            }  else if(spinner.getSelectedItem().equals("البحث بواسطة رقم القطعة")){
+                Intent intent=new Intent(this,spinnerresult.class);
+                intent.putExtra("username",username);
+                intent.putExtra("type","partnumber");
+                intent.putExtra("value",searchtype.getText().toString());startActivity(intent);
+
+            }else if(spinner.getSelectedItem().equals("البحث بواسطة اسم القطعة")){
+                Intent intent=new Intent(this,spinnerresult.class);
+                intent.putExtra("username",username);
+                intent.putExtra("type","partname");
+                intent.putExtra("value",searchtype.getText().toString());
+                startActivity(intent);
+
             }
 
-            @Override
-            protected void onPostExecute(Bitmap b) {
-                super.onPostExecute(b);
-                loading.dismiss();
-                imageView.setImageBitmap(b);
-            }
 
-            @Override
-            protected Bitmap doInBackground(String... params) {
-                String id = params[0];
-                String add = "http://10.0.2.2:84/graduation_project/search_part.php?id="+id;
-                URL url = null;
-                Bitmap image = null;
-                try {
-                    url = new URL(add);
-                    image = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                return image;
-            }
         }
-
-        GetImage gi = new GetImage();
-        gi.execute(id);
     }
 
-    @Override
-    public void onClick(View v) {
-        getImage();
+    public void method(View view) {
+        if((spinner.getSelectedItem().equals("البحث بواسطة الموديل")
+                ||spinner.getSelectedItem().equals("البحث بواسطة رقم القطعة")||spinner.getSelectedItem().equals("البحث بواسطة اسم القطعة"))){
+            searchtype.setVisibility(View.VISIBLE);
+            btn.setVisibility(View.VISIBLE);
+            if(spinner.getSelectedItem().equals("البحث بواسطة الموديل"))
+            searchtype.setHint("ادخل الموديل");
+            else if(spinner.getSelectedItem().equals("البحث بواسطة رقم القطعة"))
+                searchtype.setHint("ادخل رقم القطعة");
+            else if(spinner.getSelectedItem().equals("البحث بواسطة اسم القطعة"))
+                searchtype.setHint("ادخل اسم القطعة");
+
+
+        }
     }
 }

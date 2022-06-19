@@ -125,6 +125,7 @@ public class sheeren_add_image extends AppCompatActivity {
                         params.put("latitude",latitude);
                         params.put("longitude",longitude);
                         params.put("description",description);
+                        params.put("status","Available");
                         return params;
                     }
                 };

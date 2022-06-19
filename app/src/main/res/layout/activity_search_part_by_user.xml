@@ -5,27 +5,52 @@
     android:layout_height="match_parent"
     tools:context=".search_part_by_user"
     >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="اختر طريقة البحث عن القطعة"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/purple_700"
+        android:textStyle="bold"
+        android:textSize="25dp"
+
+        />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <EditText
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-android:layout_marginTop="20dp"
-        android:hint="ادخل رقم الصوره"
-        android:id="@+id/editTextId"/>
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonGetImage"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="80dp"
+        android:text="اضغط عندما تختار الطريقة"
+        android:onClick="method"
+        />
+    <Spinner
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_gravity="center"
+        android:id="@+id/spinner"
         />
 </LinearLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
+    <EditText
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageViewShow"/>
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:id="@+id/searchtype"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="ابحث"
+        android:textSize="25dp"
+        android:onClick="search"
+        android:id="@+id/btn"/>
 
 </LinearLayout>

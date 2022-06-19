@@ -64,7 +64,10 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
 
     public void search(View view) {
 
-        startActivity(new Intent(this, search_part_by_user.class));
+
+        Intent intent=new Intent(this,search_part_by_user.class);
+        intent.putExtra("username",username);
+        startActivity(intent);
 
     }
 
@@ -155,13 +158,15 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
     @Override
     public void onClick( int position) {
         Intent intent =new Intent(getApplicationContext(),detailspart.class);
+        intent.putExtra("path",imageList.get(position).getImageurl());
         intent.putExtra("partname",imageList.get(position).getPartname());
         intent.putExtra("partnumber",imageList.get(position).getPartnumber());
         intent.putExtra("price",imageList.get(position).getPrice());
         intent.putExtra("description",imageList.get(position).getDescription());
-        intent.putExtra("username",imageList.get(position).getUsername());
+        intent.putExtra("partowner",imageList.get(position).getUsername());
         intent.putExtra("id",imageList.get(position).getId());
         intent.putExtra("model",imageList.get(position).getModel());
+        intent.putExtra("username",username);
         startActivity(intent);
     }
 }

@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -27,6 +28,7 @@ String store;
 ImageButton ordertruck,ordermec;
     private RequestQueue queue;
     int x=0,x1=0;
+    TextView welcome;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ ImageButton ordertruck,ordermec;
          ordermec=findViewById(R.id.ordermec);
          ordertruck=findViewById(R.id.ordertruck);
         queue = Volley.newRequestQueue(this);
+        welcome=findViewById(R.id.welcome);
+        welcome.setText("اهلا بك "+store+" في صفحة المتجر ");
          check_truck();
          check_mec();
     }
@@ -174,5 +178,13 @@ ImageButton ordertruck,ordermec;
         Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",store);
         startActivity(intent);
+    }
+
+    public void partreq(View view) {
+        Intent intent = new Intent(this ,partrequest.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
+
+
     }
 }
