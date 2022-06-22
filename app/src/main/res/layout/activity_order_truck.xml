@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#D0D3D4"
     tools:context=".order_truck">
 
     <TextView
@@ -13,9 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:textColor="@color/black"
         android:text="قائمة الطلبات "
-        android:layout_marginRight="40dp"
-        android:textSize="25dp"
+        android:layout_marginRight="20dp"
+        android:textSize="35dp"
         android:textStyle="bold"/>
 
     <ListView
@@ -25,19 +27,20 @@
         android:layout_marginTop="20dp"
         />
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:layout_marginTop="79dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_marginTop="590dp"
+            android:layout_width="match_parent"
+            android:background="#B3B6B7"
+            android:layout_height="70dp">
 
             <ImageButton
                 android:id="@+id/home"
                 android:layout_width="46dp"
                 android:layout_height="51dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="380dp"
                 android:background="@drawable/homee"
                 android:onClick="home" />
 
@@ -46,7 +49,6 @@
                 android:layout_width="48dp"
                 android:layout_height="49dp"
                 android:layout_marginLeft="160dp"
-                android:layout_marginTop="380dp"
                 android:background="@drawable/order"
                 android:onClick="orders" />
 
@@ -55,31 +57,10 @@
                 android:layout_width="51dp"
                 android:layout_height="51dp"
                 android:layout_marginLeft="290dp"
-                android:layout_marginTop="380dp"
                 android:background="@drawable/user"
                 android:onClick="user" />
 
         </RelativeLayout>
-
-
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="222dp">
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp">
-
-
-        </RelativeLayout>
-
-
 
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

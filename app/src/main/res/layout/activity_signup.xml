@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+     android:background="#D0D3D4"
     tools:context=".signup"
     android:orientation="vertical"
    >
@@ -23,6 +24,8 @@
         android:layout_height="44dp"
         android:fontFamily="sans-serif-condensed-light"
         android:text="@string/signup_word"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="40sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="2dp"
@@ -34,7 +37,7 @@
             android:padding="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="15dp"
             android:orientation="vertical"
             tools:ignore="MissingConstraints">
 

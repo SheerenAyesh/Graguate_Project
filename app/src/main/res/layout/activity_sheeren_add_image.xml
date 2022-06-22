@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/btnSelectImage"
-            android:text="Select Image"
+            android:text="اختر صورة"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:layout_marginTop="10dp"
@@ -27,19 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/btnUploadImage"
-            android:text="Upload Image"
+            android:text="تحميل الصورة"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/btnShowImages"
-            android:text="Show Images"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:onClick="btnShowImages"
             android:layout_marginTop="10dp"
             />
     </LinearLayout>

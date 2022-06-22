@@ -137,9 +137,9 @@ ImageButton ordertruck,ordermec;
                         Log.d("Error", exception.toString());
                     }
                 }
-                if(x==0){
-                    ordermec.setVisibility(View.INVISIBLE);
-                }
+//                if(x==0){
+//                    ordermec.setVisibility(View.INVISIBLE);
+//                }
 
 
 
@@ -177,9 +177,9 @@ ImageButton ordertruck,ordermec;
                         Log.d("Error", exception.toString());
                     }
                 }
-                if(x1==0){
-                    ordertruck.setVisibility(View.INVISIBLE);
-                }
+//                if(x1==0){
+//                    ordertruck.setVisibility(View.INVISIBLE);
+//                }
 
 
 

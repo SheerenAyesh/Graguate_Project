@@ -208,4 +208,18 @@ String id;
 
 
     }
+    public void user(View view) {
+    }
+//    public void cart(View view) {
+//        Intent intent = new Intent(this ,cart.class);
+//        intent.putExtra("username",store);
+//        startActivity(intent);
+//    }
+//    public void home(View view) {
+//        Intent intent = new Intent(this ,homepagestore.class);
+//        intent.putExtra("username",store);
+//        startActivity(intent);
+//    }
+
+
 }

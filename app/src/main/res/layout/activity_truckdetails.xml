@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#D0D3D4"
     tools:context=".truckdetails">
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -15,12 +17,14 @@
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:hint="اسم مالك الترك"
+
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="20dp"
                 android:id="@+id/truckname"/>
             <TextView
                 android:layout_width="100dp"
-
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
                 android:text="اسم سائق الترك : :"
@@ -37,7 +41,8 @@
                 android:id="@+id/truckphone"/>
             <TextView
                 android:layout_width="100dp"
-
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:layout_marginTop="20dp"
                 android:layout_height="wrap_content"
                 android:text="رقم الهاتف :"
@@ -59,7 +64,8 @@
 
             <TextView
                 android:layout_width="wrap_content"
-
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="المسافه بينك وبين الترك :" />
@@ -75,7 +81,8 @@
 
             <TextView
                 android:layout_width="wrap_content"
-
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="الوزن" />
@@ -91,7 +98,8 @@
 
             <TextView
                 android:layout_width="wrap_content"
-
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="ايميل سائق الترك :" />
@@ -102,34 +110,37 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="اطلب الترك "
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:textSize="25dp"
         android:layout_marginLeft="280dp"
         android:layout_marginTop="30dp"/>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
         android:text="اضغط هنا"
-        android:layout_marginLeft="280dp"
+       android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:onClick="senddata"/>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <RelativeLayout
-            android:layout_marginTop="1dp"
-            android:layout_width="wrap_content"
-            android:layout_height="350dp">
+            android:layout_marginTop="350dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
 
             <ImageButton
                 android:id="@+id/home"
                 android:layout_width="46dp"
                 android:layout_height="51dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="300dp"
                 android:background="@drawable/homee"
                 android:onClick="home" />
 
@@ -140,31 +151,10 @@
                 android:layout_width="51dp"
                 android:layout_height="51dp"
                 android:layout_marginLeft="290dp"
-                android:layout_marginTop="300dp"
                 android:background="@drawable/user"
                 android:onClick="user" />
 
         </RelativeLayout>
-
-
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="222dp">
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp">
-
-
-        </RelativeLayout>
-
-
 
     </LinearLayout>
 

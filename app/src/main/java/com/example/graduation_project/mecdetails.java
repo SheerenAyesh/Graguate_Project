@@ -272,4 +272,9 @@ public class mecdetails extends AppCompatActivity {
 
     public void user(View view) {
     }
+    public void cart(View view) {
+        Intent intent = new Intent(this ,cart.class);
+        intent.putExtra("username",s);
+        startActivity(intent);
+    }
 }

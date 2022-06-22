@@ -17,6 +17,18 @@
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".help"
+            android:exported="true" />
+        <activity
+            android:name=".welcoming"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ApproveOrRejectPartRequest"
             android:exported="true" />
         <activity
@@ -42,9 +54,6 @@
             android:exported="true" />
         <activity
             android:name=".search_part_by_user"
-            android:exported="true" />
-        <activity
-            android:name=".add_image"
             android:exported="true" />
         <activity
             android:name=".confpass"
@@ -108,13 +117,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>

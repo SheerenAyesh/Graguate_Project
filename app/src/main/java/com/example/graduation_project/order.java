@@ -68,7 +68,7 @@ String store;
                     try {
                         JSONObject obj = response.getJSONObject(i);
 
-                        String s=obj.getString("username")+" "+obj.getString("phonenumber")+" "+obj.getString("city")+" "+obj.getString("email")+" "+obj.getString("distance");
+                        String s= "username" + "  " + obj.getString("username")+"  , "+ "phone number" + "  " + obj.getString("phonenumber")+" ,  " + "city" + "  " + obj.getString("city")+"  , "+ "Email" + "  " + obj.getString("email")+"   , " + "distance " + "  " + obj.getString("distance");
                       System.out.println(s);
                         orders.add(s);
 

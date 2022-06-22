@@ -7,144 +7,192 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="#DAA520" >
+    android:background="#D0D3D4" >
+
+    <TextView
+        android:layout_width="340dp"
+        android:layout_gravity="center"
+        android:layout_height="100dp"
+        android:layout_marginTop="5dp"
+        android:text="اختر الخدمة التي تريد!"
+        android:textSize="40dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="250dp"
-        android:layout_weight="1">
+        android:layout_marginTop="10dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_width="190dp"
+            android:layout_height="200dp"
             android:layout_margin="8dp"
-            >
+            android:orientation="vertical">
             <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:elevation="8dp"
-                android:layout_margin="10dp">
-
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:elevation="8dp">
 
                 <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
                     android:background="@drawable/immg"
                     android:onClick="truck" />
 
-
             </RelativeLayout>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="@string/truck"
-                android:textColor="@color/white"
-                android:textSize="22dp"
-                android:textStyle="bold"
-
-                />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="8dp"
-            >
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:elevation="8dp"
-                android:layout_margin="10dp">
-
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/mechanic"
-                    android:onClick="mechanic" />
-
-
-            </RelativeLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="@string/mecanic"
-                android:textSize="22dp"
-                android:textColor="@color/white"
+                android:text="نقل"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
                 android:textStyle="bold"/>
 
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/linearlayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="8dp">
-            <RelativeLayout
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:elevation="8dp"
-                android:layout_margin="10dp">
+        <LinearLayout android:layout_width="190dp"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
 
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:elevation="8dp">
 
                 <ImageButton
-                    android:id="@+id/search"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/sarch_icon"
-                    android:onClick="searchPart" />
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/mechanic"
+                    android:onClick="mechanic" />
 
+            </RelativeLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/mecanic"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:elevation="8dp">
+
+                <ImageButton
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/question"
+                    android:onClick="question" />
             </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/search"
-                android:textAlignment="center"
-                android:gravity="center"
-               android:layout_marginLeft="30dp"
-                android:textColor="@color/white"
-                android:textSize="22dp"
-                android:textStyle="bold" />
+                android:text="مساعدة"
+                android:textColor="@color/black"
+                android:textSize="25dp" android:textStyle="bold"
+                android:layout_gravity="center"/>
+
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
 
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:elevation="8dp"
+                android:layout_gravity="center"
+                >
+
+                <ImageButton
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@drawable/brake"
+                    android:foregroundGravity="center"
+                    android:onClick="searchPart" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="قطع"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/login_and_reg"
+        android:layout_marginTop="5dp"
         >
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="تسجيل الدخول"
-            android:textColor="@color/white"
-            android:textSize="22dp"
-            android:textStyle="bold"
-            android:onClick="login"
-            >
-        </Button>
+        <!--        <Button-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="تسجيل الدخول"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            android:textSize="22dp"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:onClick="login"-->
+        <!--            >-->
+        <!--        </Button>-->
 
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:text="@string/register"
-            android:onClick="register"
-            android:layout_marginLeft="112dp">
-
-        </Button>
     </LinearLayout>
+
+    <Button
+        android:layout_marginTop="80dp"
+        android:layout_width="170dp"
+        android:layout_height="60dp"
+        android:onClick="login"
+        android:layout_gravity="center"
+        android:text="تسجيل الدخول"
+        android:textColor="@color/white"
+        android:background="@drawable/shap"
+        android:textSize="22dp"
+        android:textStyle="bold">
+    </Button>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:text="انشاء حساب جديد"
+        android:layout_gravity="center"
+        android:id="@+id/textView"/>
 </androidx.appcompat.widget.LinearLayoutCompat>

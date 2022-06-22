@@ -4,50 +4,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".searchpart"
+    android:background="#D0D3D4"
     android:orientation="vertical"
-
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="20dp">
  <Button
-
-     android:layout_width="183dp"
-     android:layout_height="42dp"
-     android:layout_marginStart="8dp"
-     android:background="@drawable/shap"
+     android:layout_margin="8dp"
+     android:layout_width="160dp"
+     android:layout_height="60dp"
      android:hint="اضافة قطعة"
-     android:shadowColor="@color/white"
-     android:textColor="@color/black"
-     android:textSize="13dp"
+     android:textColorHint="@color/white"
+     android:textSize="20dp"
+     android:textColor="@color/white"
      android:textStyle="bold"
      android:id="@+id/seachpart"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.992"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toTopOf="parent"
-     app:layout_constraintVertical_bias="0.064"
-     tools:ignore="MissingConstraints"
      android:onClick="addpart"/>
 
  <Button
-     android:layout_width="183dp"
-     android:layout_height="42dp"
-     android:layout_marginStart="8dp"
-     android:background="@drawable/shap"
+     android:layout_margin="8dp"
+     android:layout_width="160dp"
+     android:layout_height="60dp"
+     android:layout_marginLeft="8dp"
      android:hint="البحث عن قطعة"
-     android:shadowColor="@color/white"
-     android:textColor="@color/black"
-     android:textSize="13dp"
+     android:textColorHint="@color/white"
+     android:textSize="20dp"
      android:textStyle="bold"
-     app:layout_constraintBottom_toBottomOf="parent"
-     app:layout_constraintEnd_toEndOf="parent"
-     app:layout_constraintHorizontal_bias="0.036"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintTop_toTopOf="parent"
-     app:layout_constraintVertical_bias="0.058"
-     tools:ignore="MissingConstraints"
      android:onClick="search"/>
+    </LinearLayout>
+
  <androidx.recyclerview.widget.RecyclerView
      android:id="@+id/recyclerView"
      android:layout_width="300dp"
@@ -57,42 +48,59 @@
 
  <LinearLayout
      android:layout_width="match_parent"
-     android:layout_height="550dp">
+     android:layout_height="match_parent"
+  >
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="70dp"
+         android:layout_marginTop="110dp"
+         android:background="#B3B6B7">
+
+         <ImageButton
+             android:id="@+id/home"
+             android:layout_width="46dp"
+             android:layout_height="51dp"
+             android:layout_marginLeft="10dp"
+             android:background="@drawable/homee"
+             android:onClick="home" />
 
 
+         <ImageButton
+             android:id="@+id/cart"
+             android:layout_width="46dp"
+             android:layout_height="51dp"
+             android:layout_marginLeft="80dp"
+             android:background="@drawable/shopping_cart"
+             android:onClick="cart" />
 
-   <ImageButton
-       android:id="@+id/home"
-       android:layout_width="46dp"
-       android:layout_height="51dp"
-       android:layout_marginLeft="10dp"
+         <ImageButton
+             android:id="@+id/ordermec"
+             android:layout_width="48dp"
+             android:layout_height="49dp"
+             android:layout_marginLeft="150dp"
+             android:background="@drawable/order"
+             android:onClick="orders_mec" />
 
-       android:background="@drawable/homee"
-       android:onClick="home" />
+         <ImageButton
+             android:id="@+id/ordertruck"
+             android:layout_width="48dp"
+             android:layout_height="49dp"
+             android:layout_marginLeft="230dp"
 
-   <ImageButton
-       android:id="@+id/personal"
-       android:layout_width="51dp"
-       android:layout_height="51dp"
-       android:layout_marginLeft="290dp"
+             android:background="@drawable/truckimg"
+             android:onClick="orders_truck" />
 
-       android:background="@drawable/user"
-       android:onClick="user" />
+         <ImageButton
+             android:id="@+id/personal"
+             android:layout_width="51dp"
+             android:layout_height="51dp"
+             android:layout_marginLeft="320dp"
+             android:background="@drawable/user"
+             android:onClick="user" />
 
-
-
-
-
-
-
-
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+     </RelativeLayout>
 
 
- </LinearLayout>
-
+</LinearLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

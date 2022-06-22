@@ -40,6 +40,9 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
         searchpart=findViewById(R.id.seachpart);
         Intent intent=getIntent();
         username=intent.getStringExtra("username");
+        if(username.equals("ge")){//////////////////////////////////////////////////////////////////////////////here
+
+        }
         type=intent.getStringExtra("type");
         if(type.equals("user")){
             searchpart.setVisibility(View.INVISIBLE);
@@ -169,4 +172,25 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
         intent.putExtra("username",username);
         startActivity(intent);
     }
+
+    public void orders_mec(View view) {
+        Intent intent = new Intent(this ,order.class);
+        intent.putExtra("username",username);
+        startActivity(intent);
+
+    }
+    public void orders_truck(View view) {
+        Intent intent = new Intent(this ,order_truck.class);
+        intent.putExtra("username",username);
+        startActivity(intent);
+
+    }
+
+
+    public void cart(View view) {
+        Intent intent = new Intent(this ,cart.class);
+        intent.putExtra("username",username);
+        startActivity(intent);
+    }
+
 }

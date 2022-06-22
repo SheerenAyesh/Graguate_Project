@@ -295,4 +295,24 @@ private RequestQueue queue;
 
     }
 
+    public void orders_mec(View view) {
+        Intent intent = new Intent(this ,order.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
+
+    }
+    public void orders_truck(View view) {
+        Intent intent = new Intent(this ,order_truck.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
+
+    }
+
+
+    public void cart(View view) {
+        Intent intent = new Intent(this ,cart.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
+    }
+
 }
