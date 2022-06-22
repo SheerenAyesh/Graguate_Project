@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -28,6 +29,8 @@ ListView orderlist;
 String store;
     private RequestQueue queue;
     String[] arr;
+    ArrayList<String> id=new ArrayList<>();
+    ArrayList<String> idfromorg=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,9 +71,14 @@ String store;
                     try {
                         JSONObject obj = response.getJSONObject(i);
 
-                        String s= "username" + "  " + obj.getString("username")+"  , "+ "phone number" + "  " + obj.getString("phonenumber")+" ,  " + "city" + "  " + obj.getString("city")+"  , "+ "Email" + "  " + obj.getString("email")+"   , " + "distance " + "  " + obj.getString("distance");
+                        String s= "اسم المستخدم" + "  " + obj.getString("username")+"  \n "+ "رقم الهاتف" + "  " + obj.getString("phonenumber")+" \n  " + "المدينة" + "  " + obj.getString("city")+"  \n "+ "ايميل المستخدم" + "  " + obj.getString("email")+"   \n " + "المسافة بينكما " + "  " + obj.getString("distance");
+
+
+                        //  String s= "username" + "  " + obj.getString("username")+"  \n "+ "phone number" + "  " + obj.getString("phonenumber")+" \n  " + "city" + "  " + obj.getString("city")+"  \n "+ "Email" + "  " + obj.getString("email")+"   \n " + "distance " + "  " + obj.getString("distance");
                       System.out.println(s);
                         orders.add(s);
+                        id.add(obj.getString("id"));
+                        idfromorg.add(obj.getString("idFromOrg"));
 
                     }catch(JSONException exception){
                         Log.d("Error", exception.toString());
@@ -82,6 +90,21 @@ String store;
                         order.this, android.R.layout.simple_list_item_1,
                         arr);
                 orderlist.setAdapter(adapter);
+                AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                                            View view,
+                                            int position,
+                                            long id) {
+                        for(int i=0;i<arr.length;i++){
+                            if(position == i){
+                                go_to_det(i);
+
+
+                            }}
+                    }
+                };
+                orderlist.setOnItemClickListener(itemClickListener);
 
             }
         }, new Response.ErrorListener() {
@@ -95,5 +118,12 @@ String store;
 
         queue.add(request);
 
+    }
+
+    public void go_to_det(int i) {
+        Intent intent = new Intent(this ,ApproveOrRejectMecReq.class);
+        intent.putExtra("id",id.get(i));
+        intent.putExtra("idfromorg",idfromorg.get(i));
+        startActivity(intent);
     }
 }

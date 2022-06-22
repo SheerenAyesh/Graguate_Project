@@ -66,9 +66,10 @@ public class order_truck extends AppCompatActivity {
                     try {
                         JSONObject obj = response.getJSONObject(i);
 
-                        String s=obj.getString("username")+" "+obj.getString("phonenumber")+" "+obj.getString("city")+" "+obj.getString("email")+" "+obj.getString("distance");
+                        String s= "اسم المستخدم" + "  " + obj.getString("username")+"  \n "+ "رقم الهاتف" + "  " + obj.getString("phonenumber")+" \n  " + "المدينة" + "  " + obj.getString("city")+"  \n "+ "ايميل المستخدم" + "  " + obj.getString("email")+"   \n " + "المسافة بينكما " + "  " + obj.getString("distance");
                         System.out.println(s);
                         orders.add(s);
+
 
                     }catch(JSONException exception){
                         Log.d("Error", exception.toString());

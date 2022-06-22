@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.appcompat.widget.LinearLayoutCompat
 
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -9,6 +10,7 @@
     android:orientation="vertical"
     android:background="#D0D3D4"
     tools:context=".addpart">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,6 +30,12 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginTop="25dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        tools:layout_editor_absoluteX="0dp"
+
+        tools:layout_editor_absoluteY="-127dp">
 
     <TableLayout
         android:layout_gravity="center"
@@ -103,6 +111,28 @@
 
 
         </TableRow>
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="80dp"
+                android:hint="نوع السيارة :"
+                android:id="@+id/family"
+                android:layout_marginRight="90dp"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:text="نوع السيارة :"
+                android:layout_marginRight="15dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
 
         <TableRow>
 
@@ -215,6 +245,7 @@
 
 
     </TableLayout>
+    </ScrollView>
 
     <TextView
         android:layout_width="match_parent"
@@ -233,6 +264,7 @@
         android:textSize="25dp"
         android:text="اضافة صوره للقطعة"
         android:onClick="addimage"/>
+
 
 
 

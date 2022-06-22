@@ -152,6 +152,8 @@ public class mecaccount extends AppCompatActivity {
 else
                     params.put("longitude", "18.55");
 
+params.put("status","Available");
+
 
                 return params;
             }

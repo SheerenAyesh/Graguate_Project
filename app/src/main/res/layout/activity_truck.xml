@@ -6,87 +6,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".truck">
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        tools:layout_editor_absoluteX="0dp"-->
-<!--        tools:layout_editor_absoluteY="7dp"-->
-<!--        tools:ignore="MissingConstraints">-->
-
-<!--        <RelativeLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="70dp"-->
-<!--            android:layout_marginLeft="40dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:layout_marginRight="40dp"-->
-<!--            android:layout_marginBottom="20dp"-->
-<!--            android:background="@color/white"-->
-<!--            >-->
-
-<!--            <EditText-->
-<!--                android:layout_width="380dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="40dp"-->
-<!--                android:hint="بحث"-->
-<!--                android:textSize="25dp" />-->
-
-<!--            <ImageButton-->
-<!--                android:layout_width="80dp"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:layout_alignParentRight="true"-->
-<!--                android:layout_marginRight="294dp"-->
-<!--                android:background="@drawable/sss" />-->
-<!--        </RelativeLayout>-->
-<!--    </LinearLayout>-->
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="171dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-
-        android:background="@drawable/shap"
-        android:hint="أقرب شاحنة نقل"
-        android:shadowColor="@color/white"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031"
-        tools:ignore="MissingConstraints,OnClick"
-        android:onClick="nearest"
-        />
+    tools:context=".truck"
+    android:background="#D0D3D4">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="8dp"
+            android:hint="أقرب شاحنة نقل"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:onClick="nearest"
+            />
 
 
-    <Button
-        android:layout_width="171dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:id="@+id/truck"
-
-        android:background="@drawable/shap"
-        android:hint="تسجيل كشاحنة للنقل  "
-        android:onClick="truuck"
-        android:shadowColor="@color/white"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:textColorHint="@color/white"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/truck"
+            android:background="@drawable/shap"
+            android:hint="تسجيل كشاحنة للنقل  "
+            android:onClick="truuck"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -98,57 +52,70 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-       <LinearLayout
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/listmec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
-            android:layout_marginTop="79dp"
-            android:layout_width="wrap_content"
-            android:layout_height="680dp">
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="600dp"
+            android:background="#B3B6B7">
 
             <ImageButton
                 android:id="@+id/home"
                 android:layout_width="46dp"
                 android:layout_height="51dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="400dp"
                 android:background="@drawable/homee"
                 android:onClick="home" />
 
 
+            <ImageButton
+                android:id="@+id/cart"
+                android:layout_width="46dp"
+                android:layout_height="51dp"
+                android:layout_marginLeft="80dp"
+                android:background="@drawable/shopping_cart"
+                android:onClick="cart" />
+
+            <ImageButton
+                android:id="@+id/ordermec"
+                android:layout_width="48dp"
+                android:layout_height="49dp"
+                android:layout_marginLeft="150dp"
+                android:background="@drawable/order"
+                android:onClick="orders_mec" />
+
+            <ImageButton
+                android:id="@+id/ordertruck"
+                android:layout_width="48dp"
+                android:layout_height="49dp"
+                android:layout_marginLeft="230dp"
+                android:background="@drawable/truckimg"
+                android:onClick="orders_truck" />
 
             <ImageButton
                 android:id="@+id/personal"
                 android:layout_width="51dp"
                 android:layout_height="51dp"
-                android:layout_marginLeft="290dp"
-                android:layout_marginTop="400dp"
+                android:layout_marginLeft="320dp"
                 android:background="@drawable/user"
                 android:onClick="user" />
 
         </RelativeLayout>
 
 
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="222dp">
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp">
-
-
-        </RelativeLayout>
-
-
-
     </LinearLayout>
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>

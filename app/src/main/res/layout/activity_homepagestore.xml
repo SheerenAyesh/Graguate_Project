@@ -159,6 +159,25 @@
         android:text="انقر هنا لرؤية الطلبات"
         android:textColor="@color/purple_700"
         android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/cardview_dark_background"
+        android:id="@+id/notificationmec"
+        android:layout_marginRight="15dp"
+        android:textSize="20dp"
+        android:layout_marginTop="0dp"/>
+
+    <TextView
+        android:id="@+id/reqPagemec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:text="انقر هنا لرؤية الطلبات"
+        android:textColor="@color/purple_700"
+        android:textSize="20dp" />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -169,7 +188,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginTop="415dp"
+        android:layout_marginTop="365dp"
         android:background="#B3B6B7">
 
         <ImageButton

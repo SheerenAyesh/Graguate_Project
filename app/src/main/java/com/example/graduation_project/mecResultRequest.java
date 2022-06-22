@@ -20,42 +20,27 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class partResResult extends AppCompatActivity {
-    TextView partname,partnumber,price,username,desc,model,result,resultdelete;
-    String userReqPart,id,path,idfromorg;
+public class mecResultRequest extends AppCompatActivity {
+    TextView result,resultdelete;
+    String userReqmec,id,idfromorg;
     private RequestQueue queue;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_part_res_result);
-        partname=findViewById(R.id.partname);
-        partnumber=findViewById(R.id.partnumber);
-        price=findViewById(R.id.price);
-        username=findViewById(R.id.username);
-        desc=findViewById(R.id.desc);
-        model=findViewById(R.id.model);
+        setContentView(R.layout.activity_mec_result_request);
+
         result=findViewById(R.id.result);
         resultdelete=findViewById(R.id.result_delete);
         queue = Volley.newRequestQueue(this);
-
         Intent intent=getIntent();
-        partnumber.setText(intent.getStringExtra("partnumber"));
-        partname.setText(intent.getStringExtra("partname"));
-        price.setText(intent.getStringExtra("price"));
-        username.setText(intent.getStringExtra("partowner"));
-        desc.setText(intent.getStringExtra("description"));
-        model.setText(intent.getStringExtra("model"));
-        userReqPart=intent.getStringExtra("username");
-        path=intent.getStringExtra("path");
-        id=intent.getStringExtra("id");
+        userReqmec=intent.getStringExtra("username");
         idfromorg=intent.getStringExtra("idFromOrg");
 
+        id=intent.getStringExtra("id");
         getstatus();
     }
-
     public void getstatus() {
-        String url =" http://10.0.2.2:84/graduation_project/sel_by_id.php?id="+id;
+        String url =" http://10.0.2.2:84/graduation_project/sel_by_id_mec_status.php?id="+id;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new Response.Listener<JSONArray>() {
@@ -67,12 +52,15 @@ public class partResResult extends AppCompatActivity {
                         JSONObject obj = response.getJSONObject(i);
 
 
-                       String status=obj.getString("status");
-                       if(status.equals("Aproved")){
-                         result.setText("لقد تمت الموافقة من قبل صاحب القطعة على بيعها لك وسيتم التواصل معك في اقرب وقت");
-                       }else{
-                           result.setText("لم يتم الموافقة من قبل صاحب القطعة بعد ...بامكانك الانتظار او حذف الطلب");
-                       }
+                        String status=obj.getString("status");
+                        if(status.equals("Aproved")){
+                            result.setText("لقد تمت الموافقة من قبل الميكانيكي وسيتم التواصل معك في اقرب وقت");
+                        }else if(status.equals("Rejected")){
+                            result.setText("لقد تم الرفض من قبل الميكانيكي ");
+                        }else{
+                            result.setText("لم يتم الموافقة من قبل الميكانيكي بعد ...بامكانك الانتظار او حذف الطلب");
+
+                        }
 
 
 
@@ -90,7 +78,7 @@ public class partResResult extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(partResResult.this, error.toString(),
+                Toast.makeText(mecResultRequest.this, error.toString(),
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -98,9 +86,9 @@ public class partResResult extends AppCompatActivity {
         queue.add(request);
     }
 
-    public void delete(View view) {
 
-        String url =" http://10.0.2.2:84/graduation_project/delete_request_part.php?id="+id+"&&idFromOrg="+idfromorg;
+    public void delete(View view) {
+        String url =" http://10.0.2.2:84/graduation_project/delete_request_mec.php?id="+id+"&&idFromOrg="+idfromorg;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new Response.Listener<JSONArray>() {

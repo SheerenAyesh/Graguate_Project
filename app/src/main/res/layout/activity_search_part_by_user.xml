@@ -4,53 +4,34 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".search_part_by_user"
+    android:background="#D0D3D4"
+
     >
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="اختر طريقة البحث عن القطعة"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/purple_700"
-        android:textStyle="bold"
-        android:textSize="25dp"
+        android:layout_height="wrap_content">
 
-        />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+        <AutoCompleteTextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="30dp"
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="80dp"
-        android:text="اضغط عندما تختار الطريقة"
-        android:onClick="method"
-        />
-    <Spinner
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_gravity="center"
-        android:id="@+id/spinner"
-        />
-</LinearLayout>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_gravity="center"
-        android:id="@+id/searchtype"/>
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:text="ابحث"
-        android:textSize="25dp"
-        android:onClick="search"
-        android:id="@+id/btn"/>
+            android:id="@+id/family"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:text="نوع السيارة :"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
 
 </LinearLayout>

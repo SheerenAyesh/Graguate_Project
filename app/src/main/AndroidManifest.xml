@@ -17,6 +17,12 @@
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".mecResultRequest"
+            android:exported="true" />
+        <activity
+            android:name=".ApproveOrRejectMecReq"
+            android:exported="true" />
+        <activity
             android:name=".help"
             android:exported="true" />
         <activity

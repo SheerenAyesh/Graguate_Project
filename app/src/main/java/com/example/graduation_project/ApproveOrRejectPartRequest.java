@@ -151,4 +151,19 @@ String username, id,idfromorg;
 
 
     }
+
+    public void home(View view) {
+    }
+
+    public void cart(View view) {
+    }
+
+    public void orders_mec(View view) {
+    }
+
+    public void orders_truck(View view) {
+    }
+
+    public void user(View view) {
+    }
 }

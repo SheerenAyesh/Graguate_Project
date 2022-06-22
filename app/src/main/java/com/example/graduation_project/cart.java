@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -37,6 +39,10 @@ String store;
     ModelImage modelImage;
     LinearLayoutManager linearLayoutManager;
     MyAdapter.OnClickl listener;
+    ArrayList<String> id=new ArrayList<>();
+    ArrayList<String>idfromorg=new ArrayList<>();
+    ArrayList<String>idfromorg2=new ArrayList<>();
+    int count=0;
 
 
     @Override
@@ -84,6 +90,7 @@ String store;
                         String price=obj.getString("price");
                         String partnumber=obj.getString("partnumber");
                         String status=obj.getString("status");
+                        idfromorg.add(obj.getString("idFromOrg"));
 
                         String url = "http://10.0.2.2:84/graduation_project/uploads/"+imageurl;
 
@@ -177,7 +184,8 @@ String store;
                         JSONObject obj = response.getJSONObject(i);
 
                       String s=obj.getString("mecname")+"  "+obj.getString("mecphone");
-
+                      id.add(obj.getString("id"));
+                      idfromorg2.add(obj.getString("idFromOrg"));
 
                         orders.add(s);
 
@@ -191,6 +199,21 @@ String store;
                         cart.this, android.R.layout.simple_list_item_1,
                         arr);
                 meclist.setAdapter(adapter);
+                AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                                            View view,
+                                            int position,
+                                            long id) {
+                        for(int i=0;i<arr.length;i++){
+                            if(position == i){
+                                go_to_det(i);
+
+
+                            }}
+                    }
+                };
+                meclist.setOnItemClickListener(itemClickListener);
 
             }
 ////////////////////////////////////////////////////////////////////////////
@@ -212,6 +235,18 @@ String store;
         queue.add(request);
 
     }
+
+    private void go_to_det(int i) {
+        Intent intent =new Intent(getApplicationContext(),mecResultRequest.class);
+        intent.putExtra("id",id.get(i));
+        intent.putExtra("username",store);
+        intent.putExtra("idFromOrg",idfromorg2.get(i));
+        startActivity(intent);
+
+
+
+    }
+
     public void onClick( int position) {
         Intent intent =new Intent(getApplicationContext(),partResResult.class);
         intent.putExtra("path",imageList.get(position).getImageurl());
@@ -223,6 +258,7 @@ String store;
         intent.putExtra("id",imageList.get(position).getId());
         intent.putExtra("model",imageList.get(position).getModel());
         intent.putExtra("username",store);
+        intent.putExtra("ifFromOrg",idfromorg.get(position));
         startActivity(intent);
     }
 

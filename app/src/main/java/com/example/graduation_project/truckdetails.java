@@ -284,4 +284,23 @@ public class truckdetails extends AppCompatActivity {
     ///////////////////////////////////////////////////////////////////////////////
         public void user (View view){
         }
+
+    public void orders_mec(View view) {
+        Intent intent = new Intent(this ,order.class);
+        intent.putExtra("username",s);
+        startActivity(intent);
+
     }
+    public void orders_truck(View view) {
+        Intent intent = new Intent(this ,order_truck.class);
+        intent.putExtra("username",s);
+        startActivity(intent);
+
+    }
+    public void cart(View view) {
+        Intent intent = new Intent(this ,cart.class);
+        intent.putExtra("username",s);
+        startActivity(intent);
+    }
+
+}

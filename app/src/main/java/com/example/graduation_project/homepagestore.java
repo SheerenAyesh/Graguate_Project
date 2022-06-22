@@ -30,16 +30,18 @@ import java.util.ArrayList;
 
 public class homepagestore extends AppCompatActivity {
 String store;
-TextView notification ,reqPage;
+TextView notification ,reqPage,reqPagemec,notificationmec;
 ImageButton ordertruck,ordermec;
     private RequestQueue queue;
     int x=0,x1=0;
     int counter=0;
+    int countermec=0;
     TextView welcome;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_homepagestore);
         Intent intent=getIntent();
          store=intent.getStringExtra("username");
@@ -47,14 +49,74 @@ ImageButton ordertruck,ordermec;
          ordertruck=findViewById(R.id.ordertruck);
         reqPage=findViewById(R.id.reqPage);
         reqPage.setVisibility(View.INVISIBLE);
+        reqPagemec=findViewById(R.id.reqPagemec);
+        reqPagemec.setVisibility(View.INVISIBLE);
+        notificationmec=findViewById(R.id.notificationmec);
 
         notification=findViewById(R.id.notification);
         queue = Volley.newRequestQueue(this);
         welcome=findViewById(R.id.welcome);
         welcome.setText("اهلا بك "+store+" في صفحة المتجر ");
-         check_truck();
+         //check_truck();
          check_mec();
          check_notification();
+
+        check_notificationmec();
+    }
+
+    public void check_notificationmec() {
+        String url = "http://10.0.2.2:84/graduation_project/check_if_user_have_mecreq.php?mecname=" + store;
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
+                null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject obj = response.getJSONObject(i);
+
+                        ++countermec;
+
+                    }catch(JSONException exception){
+                        Log.d("Error", exception.toString());
+                    }
+                }
+                if(countermec>0){
+                    notificationmec.setText("لديك "+countermec+" من طلبات الميكانيكي لم تقم بقبولها او برفضها");
+                    reqPagemec.setVisibility(View.VISIBLE);
+                    go_to_req_page1();
+
+                }
+
+
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(homepagestore.this, error.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(request);
+
+
+
+    }
+
+    public void go_to_req_page1() {
+        reqPagemec.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(homepagestore.this ,order.class);
+                intent.putExtra("username",store);
+                startActivity(intent);
+            }
+        });
+        reqPagemec.setPaintFlags(reqPagemec.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
     }
 
     public void check_notification() {
@@ -126,10 +188,10 @@ ImageButton ordertruck,ordermec;
             public void onResponse(JSONArray response) {
 
                 for (int i = 0; i < response.length(); i++) {
-                    x++;
+
                     try {
                         JSONObject obj = response.getJSONObject(i);
-
+                        ++x;
 
 
 

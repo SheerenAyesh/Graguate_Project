@@ -30,6 +30,7 @@ public class mecdetails extends AppCompatActivity {
     String s,lat,log,storereq;
     String username,city,email,phonenumber,dec,type;
     double result;
+    String id,idfromOrg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,6 +104,7 @@ public class mecdetails extends AppCompatActivity {
 
                         mecdes.setText(String.valueOf(result));
                         mecstore.setText(obj.getString("mecname"));
+                        idfromOrg=obj.getString("id");
 
 
                     }catch(JSONException exception){
@@ -237,6 +239,7 @@ public class mecdetails extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
+                params.put("idFromOrg",idfromOrg);
                 params.put("mecname", s);
                 params.put("username", username);
 
@@ -248,6 +251,7 @@ public class mecdetails extends AppCompatActivity {
                 params.put("distance", dec);
                 params.put("city", city);
                 params.put("mecphone",mecphone.getText().toString());
+                params.put("status","InProgress");
 
 
                 return params;
