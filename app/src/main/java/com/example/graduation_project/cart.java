@@ -32,6 +32,7 @@ ListView meclist,trucklist;
 String store;
     private RequestQueue queue;
     String []arr;
+    String []arr2;
     String phone;
     RecyclerView recyclerView;
     MyAdapter myAdapter;
@@ -40,9 +41,11 @@ String store;
     LinearLayoutManager linearLayoutManager;
     MyAdapter.OnClickl listener;
     ArrayList<String> id=new ArrayList<>();
+    ArrayList<String>idtruck=new ArrayList<>();
     ArrayList<String>idfromorg=new ArrayList<>();
     ArrayList<String>idfromorg2=new ArrayList<>();
-    int count=0;
+    ArrayList<String>idfromorgtruck=new ArrayList<>();
+
 
 
     @Override
@@ -134,19 +137,35 @@ String store;
 
                         String s=obj.getString("truckname")+"  "+obj.getString("truckphone");
 
-
+                        idtruck.add(obj.getString("id"));
+                        idfromorgtruck.add(obj.getString("idFromOrg"));
                         orders.add(s);
 
                     }catch(JSONException exception){
                         Log.d("Error", exception.toString());
                     }
                 }
-                arr = new String[orders.size()];
-                arr = orders.toArray(arr);
+                arr2 = new String[orders.size()];
+                arr2 = orders.toArray(arr2);
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(
                         cart.this, android.R.layout.simple_list_item_1,
-                        arr);
+                        arr2);
                 trucklist.setAdapter(adapter);
+                AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                                            View view,
+                                            int position,
+                                            long id) {
+                        for(int i=0;i<arr2.length;i++){
+                            if(position == i){
+                                go_to_det_truck(i);
+
+
+                            }}
+                    }
+                };
+                trucklist.setOnItemClickListener(itemClickListener);
 
             }
 ////////////////////////////////////////////////////////////////////////////
@@ -169,6 +188,14 @@ String store;
 
 
 
+    }
+
+    private void go_to_det_truck(int i) {
+        Intent intent =new Intent(getApplicationContext(),truckResultRequest.class);
+        intent.putExtra("id",idtruck.get(i));
+        intent.putExtra("username",store);
+        intent.putExtra("idFromOrg",idfromorgtruck.get(i));
+        startActivity(intent);
     }
 
     public void fillmec() {

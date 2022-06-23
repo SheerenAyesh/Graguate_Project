@@ -27,7 +27,7 @@ import java.util.Map;
 public class truckdetails extends AppCompatActivity {
     TextView truckname, truckphone, truckdes, truckemail, truckweight;
     private RequestQueue queue;
-    String s, lat, log, storereq;
+    String s, lat, log, storereq,idFromOrg;
     String username, city, email, phonenumber, dec, type;
 
     double result;
@@ -108,6 +108,7 @@ public class truckdetails extends AppCompatActivity {
                             result = c * r;
                             truckdes.setText(String.valueOf(result));
                             truckweight.setText(obj.getString("truckweight"));
+                            idFromOrg=obj.getString("id");
                         }
 
                     } catch (JSONException exception) {
@@ -243,6 +244,7 @@ public class truckdetails extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
+                params.put("idFromOrg", idFromOrg);
                 params.put("truckname", s);
                 params.put("username", username);
 
@@ -254,6 +256,7 @@ public class truckdetails extends AppCompatActivity {
                 params.put("distance", dec);
                 params.put("city", city);
                 params.put("truckphone", truckphone.getText().toString());
+                params.put("status","InProgress");
 
 
                 return params;

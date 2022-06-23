@@ -30,12 +30,12 @@ import java.util.ArrayList;
 
 public class homepagestore extends AppCompatActivity {
 String store;
-TextView notification ,reqPage,reqPagemec,notificationmec;
+TextView notification ,reqPage,reqPagemec,notificationmec,reqPagetruck,notificationtruck;
 ImageButton ordertruck,ordermec;
     private RequestQueue queue;
     int x=0,x1=0;
     int counter=0;
-    int countermec=0;
+    int countermec=0,countertruck=0;
     TextView welcome;
     @Override
 
@@ -43,6 +43,8 @@ ImageButton ordertruck,ordermec;
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_homepagestore);
+        reqPagetruck=findViewById(R.id.reqPagetruck);
+        notificationtruck=findViewById(R.id.notificationtruck);
         Intent intent=getIntent();
          store=intent.getStringExtra("username");
          ordermec=findViewById(R.id.ordermec);
@@ -51,6 +53,7 @@ ImageButton ordertruck,ordermec;
         reqPage.setVisibility(View.INVISIBLE);
         reqPagemec=findViewById(R.id.reqPagemec);
         reqPagemec.setVisibility(View.INVISIBLE);
+        reqPagetruck.setVisibility(View.INVISIBLE);
         notificationmec=findViewById(R.id.notificationmec);
 
         notification=findViewById(R.id.notification);
@@ -62,6 +65,62 @@ ImageButton ordertruck,ordermec;
          check_notification();
 
         check_notificationmec();
+        check_notificationtruck();
+    }
+
+    private void check_notificationtruck() {
+        String url = "http://10.0.2.2:84/graduation_project/check_if_user_have_truckreq.php?truckname=" + store;
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
+                null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject obj = response.getJSONObject(i);
+                        if(obj.getString("status").equals("InProgress"))
+                        ++countertruck;
+
+                    }catch(JSONException exception){
+                        Log.d("Error", exception.toString());
+                    }
+                }
+                if(countertruck>0){
+                    notificationtruck.setText("لديك "+countertruck+" من طلبات الترك(نقل المركبات) لم تقم بقبولها او برفضها");
+                    reqPagetruck.setVisibility(View.VISIBLE);
+                    go_to_req_page2();
+
+                }
+
+
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(homepagestore.this, error.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(request);
+
+
+
+    }
+
+    private void go_to_req_page2() {
+        reqPagetruck.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(homepagestore.this ,order_truck.class);
+                intent.putExtra("username",store);
+                startActivity(intent);
+            }
+        });
+        reqPagetruck.setPaintFlags(reqPagetruck.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
     }
 
     public void check_notificationmec() {
@@ -75,7 +134,7 @@ ImageButton ordertruck,ordermec;
                 for (int i = 0; i < response.length(); i++) {
                     try {
                         JSONObject obj = response.getJSONObject(i);
-
+                        if(obj.getString("status").equals("InProgress"))
                         ++countermec;
 
                     }catch(JSONException exception){
@@ -134,7 +193,8 @@ ImageButton ordertruck,ordermec;
                     try {
                         JSONObject obj = response.getJSONObject(i);
 
-                        counter++;
+                        if(obj.getString("status").equals("inProgress"))
+                        ++counter;
 
                     }catch(JSONException exception){
                         Log.d("Error", exception.toString());

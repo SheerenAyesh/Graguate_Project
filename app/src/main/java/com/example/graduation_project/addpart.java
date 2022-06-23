@@ -32,7 +32,7 @@ public class addpart extends AppCompatActivity {
 String username1;
 TextView welcome;
 TextView username,phonenumber,city,alarm;
-EditText desc,price,partname,model,partnumber,family;
+EditText desc,price,partname,model,partnumber,family,year;
 private RequestQueue queue;
 
     @Override
@@ -49,6 +49,7 @@ private RequestQueue queue;
         model=findViewById(R.id.model);
         partnumber=findViewById(R.id.partnumber);
         family=findViewById(R.id.family);
+        year=findViewById(R.id.year);
         Intent intent=getIntent();
         username1=intent.getStringExtra("username");
         welcome=findViewById(R.id.welcome);
@@ -160,7 +161,8 @@ private RequestQueue queue;
 
         Intent intent = new Intent(this ,sheeren_add_image.class);
         if(!(partnumber.getText().toString().isEmpty()||partname.getText().toString().isEmpty()
-        ||model.getText().toString().isEmpty()||desc.getText().toString().isEmpty()||price.getText().toString().isEmpty()||family.getText().toString().isEmpty())
+        ||model.getText().toString().isEmpty()||desc.getText().toString().isEmpty()||
+                price.getText().toString().isEmpty()||family.getText().toString().isEmpty()||year.getText().toString().isEmpty())
                 ){
         intent.putExtra("username",username1);
         intent.putExtra("partnumber",partnumber.getText().toString());
@@ -171,6 +173,7 @@ private RequestQueue queue;
         intent.putExtra("description",desc.getText().toString());
         intent.putExtra("price",price.getText().toString());
         intent.putExtra("family",family.getText().toString());
+            intent.putExtra("year",year.getText().toString());
 
         startActivity(intent);}
         else{

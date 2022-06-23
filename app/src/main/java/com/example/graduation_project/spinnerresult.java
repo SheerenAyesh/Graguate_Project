@@ -49,18 +49,20 @@ String username;
         recyclerView.setAdapter(myAdapter);
         value=intent.getStringExtra("value");
 
-if(intent.getStringExtra("type").equals("partname"))
-        fetchImages();
-else if(intent.getStringExtra("type").equals("partnumber"))
-    fetchImages1();
-else if(intent.getStringExtra("type").equals("model"))
-    fetchImages2();
+//if(intent.getStringExtra("type").equals("partname"))
+  //      fetchImages();
+//else if(intent.getStringExtra("type").equals("partnumber"))
+  //  fetchImages1();
+//else if(intent.getStringExtra("type").equals("model"))
+  //  fetchImages2();
+
+        fetchImages(intent.getStringExtra("family"),intent.getStringExtra("model"),intent.getStringExtra("year"));
     }
 
 
-    public void fetchImages(){
+    public void fetchImages(String family,String model,String year){
 
-        String url =" http://10.0.2.2:84/graduation_project/sel_by_partname.php?partname="+value;
+        String url =" http://10.0.2.2:84/graduation_project/sel_result.php?family="+family+"&&model="+model+"&&year="+year;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new Response.Listener<JSONArray>() {

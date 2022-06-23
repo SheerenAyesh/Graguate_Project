@@ -71,10 +71,9 @@ String store;
                     try {
                         JSONObject obj = response.getJSONObject(i);
 
-                        String s= "اسم المستخدم" + "  " + obj.getString("username")+"  \n "+ "رقم الهاتف" + "  " + obj.getString("phonenumber")+" \n  " + "المدينة" + "  " + obj.getString("city")+"  \n "+ "ايميل المستخدم" + "  " + obj.getString("email")+"   \n " + "المسافة بينكما " + "  " + obj.getString("distance");
 
 
-                        //  String s= "username" + "  " + obj.getString("username")+"  \n "+ "phone number" + "  " + obj.getString("phonenumber")+" \n  " + "city" + "  " + obj.getString("city")+"  \n "+ "Email" + "  " + obj.getString("email")+"   \n " + "distance " + "  " + obj.getString("distance");
+                        String s= "username" + "  " + obj.getString("username")+"  \n "+ "phone number" + "  " + obj.getString("phonenumber")+" \n  " + "city" + "  " + obj.getString("city")+"  \n "+ "Email" + "  " + obj.getString("email")+"   \n " + "distance " + "  " + obj.getString("distance");
                       System.out.println(s);
                         orders.add(s);
                         id.add(obj.getString("id"));

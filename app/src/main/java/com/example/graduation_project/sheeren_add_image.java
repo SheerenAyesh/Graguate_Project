@@ -43,7 +43,7 @@ public class sheeren_add_image extends AppCompatActivity {
     Bitmap bitmap;
 
     String encodedImage;
-    String user,partname,model,price,latitude,longitude,description,partnumber,family;
+    String user,partname,model,price,latitude,longitude,description,partnumber,family,year;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +58,7 @@ public class sheeren_add_image extends AppCompatActivity {
         description=intent.getStringExtra("description");
         partnumber=intent.getStringExtra("partnumber");
         family=intent.getStringExtra("family");
+        year=intent.getStringExtra("year");
 
 
 
@@ -122,6 +123,7 @@ public class sheeren_add_image extends AppCompatActivity {
                         params.put("file_name", encodedImage);
                         params.put("username",user);
                         params.put("family",family);
+                        params.put("year",year);
                         params.put("partname",partname);
                         params.put("model",model);
                         params.put("price",price);

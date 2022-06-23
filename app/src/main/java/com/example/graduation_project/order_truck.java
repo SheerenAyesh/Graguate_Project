@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -28,6 +29,8 @@ public class order_truck extends AppCompatActivity {
     String store;
     private RequestQueue queue;
     String[] arr;
+    ArrayList<String> id=new ArrayList<>();
+    ArrayList<String> idfromorg=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +72,8 @@ public class order_truck extends AppCompatActivity {
                         String s= "اسم المستخدم" + "  " + obj.getString("username")+"  \n "+ "رقم الهاتف" + "  " + obj.getString("phonenumber")+" \n  " + "المدينة" + "  " + obj.getString("city")+"  \n "+ "ايميل المستخدم" + "  " + obj.getString("email")+"   \n " + "المسافة بينكما " + "  " + obj.getString("distance");
                         System.out.println(s);
                         orders.add(s);
-
+                        id.add(obj.getString("id"));
+                        idfromorg.add(obj.getString("idFromOrg"));
 
                     }catch(JSONException exception){
                         Log.d("Error", exception.toString());
@@ -81,6 +85,21 @@ public class order_truck extends AppCompatActivity {
                         order_truck.this, android.R.layout.simple_list_item_1,
                         arr);
                 orderlist.setAdapter(adapter);
+                AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                                            View view,
+                                            int position,
+                                            long id) {
+                        for(int i=0;i<arr.length;i++){
+                            if(position == i){
+                                go_to_det(i);
+
+
+                            }}
+                    }
+                };
+                orderlist.setOnItemClickListener(itemClickListener);
 
             }
         }, new Response.ErrorListener() {
@@ -94,5 +113,12 @@ public class order_truck extends AppCompatActivity {
 
         queue.add(request);
 
+    }
+
+    private void go_to_det(int i) {
+        Intent intent = new Intent(this ,ApproveOrRejecttruckReq.class);
+        intent.putExtra("id",id.get(i));
+        intent.putExtra("idfromorg",idfromorg.get(i));
+        startActivity(intent);
     }
 }
