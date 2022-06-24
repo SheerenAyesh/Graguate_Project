@@ -126,7 +126,6 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
                                     String partnumber=object.getString("partnumber");
 
                                     String url = "http://10.0.2.2:84/graduation_project/uploads/"+imageurl;
-
                                     modelImage = new ModelImage(id,url,username,partnumber,model,description,price,partname);
 
                                     imageList.add(modelImage);

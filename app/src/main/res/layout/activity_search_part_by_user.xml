@@ -7,6 +7,14 @@
     android:background="#D0D3D4"
 
     >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="550dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="900dp"
+    android:orientation="vertical"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,8 +40,19 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
-
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/typecar"
+        />
+        </LinearLayout>
+    </ScrollView>
 
 
     <LinearLayout
@@ -41,12 +60,12 @@
         android:layout_height="wrap_content">
 
         <AutoCompleteTextView
+            android:id="@+id/model"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="30dp"
 
-            android:id="@+id/model"
+            android:layout_marginTop="30dp"
             android:textStyle="bold" />
 
         <TextView
@@ -60,6 +79,20 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/modelcar"
+                />
+        </LinearLayout>
+    </ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -84,6 +117,64 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/yearcar"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="30dp"
+
+            android:id="@+id/part"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:text=" اسم القطعة:"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/partcar"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
+
+</ScrollView>
+
 
     <Button
         android:layout_width="wrap_content"
@@ -94,12 +185,6 @@
         android:textStyle="bold"
         android:textSize="25dp"
         android:onClick="search"/>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="40dp"
-    android:id="@+id/test"/>
-
 
 
 

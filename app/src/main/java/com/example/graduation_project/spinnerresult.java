@@ -56,13 +56,15 @@ String username;
 //else if(intent.getStringExtra("type").equals("model"))
   //  fetchImages2();
 
-        fetchImages(intent.getStringExtra("family"),intent.getStringExtra("model"),intent.getStringExtra("year"));
+        fetchImages(intent.getStringExtra("family"),intent.getStringExtra("model"),intent.getStringExtra("year")
+        ,intent.getStringExtra("part"));
     }
 
 
-    public void fetchImages(String family,String model,String year){
+    public void fetchImages(String family,String model,String year,String part){
 
-        String url =" http://10.0.2.2:84/graduation_project/sel_result.php?family="+family+"&&model="+model+"&&year="+year;
+        String url =" http://10.0.2.2:84/graduation_project/sel_result.php?family="+family+"&&model="+model+"&&year="+year+"&&partname="+
+                part;
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new Response.Listener<JSONArray>() {

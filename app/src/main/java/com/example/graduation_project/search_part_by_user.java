@@ -16,6 +16,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,16 +44,18 @@ public class search_part_by_user extends AppCompatActivity {
 //Spinner spinner;
 //EditText searchtype;
 //Button btn;
-    AutoCompleteTextView family,model,year;
+    AutoCompleteTextView family,model,year,part;
     String []familyy;
     String []yearr;
     String[]modell;
-    String []selection=new String[3];
+    String []partt;
+    String []selection=new String[4];
 
 String username;
 private RequestQueue queue;
     ArrayAdapter<String> adapter;
     TextView test;
+    ListView typecar,modelcar,yearcar,partcar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,22 +69,28 @@ private RequestQueue queue;
         //btn=findViewById(R.id.btn);
         //searchtype.setVisibility(View.INVISIBLE);
         //btn.setVisibility(View.INVISIBLE);
-        test=findViewById(R.id.test);
+
         queue = Volley.newRequestQueue(this);
         family=findViewById(R.id.family);
         model=findViewById(R.id.model);
        year=findViewById(R.id.year);
-
+       typecar=findViewById(R.id.typecar);
+       modelcar=findViewById(R.id.modelcar);
+        yearcar=findViewById(R.id.yearcar);
+        part=findViewById(R.id.part);
+        partcar=findViewById(R.id.partcar);
         Intent intent=getIntent();
         username=intent.getStringExtra("username");
 
        getfamily();
+       filltypecar();
+
         family.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View arg1, int position, long arg3) {
                 String   familyselected =(String) parent.getItemAtPosition(position);
-                getmodel(familyselected);
+                getmodel(selection[0]);
 
             }
         });
@@ -101,6 +110,15 @@ private RequestQueue queue;
             public void onItemClick(AdapterView<?> parent, View arg1, int position, long arg3) {
                 String  yearselected =(String) parent.getItemAtPosition(position);
                 teeest(yearselected);
+                getpart(selection[0],selection[1],selection[2]);
+            }
+        });
+        part.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View arg1, int position, long arg3) {
+                String  partselected =(String) parent.getItemAtPosition(position);
+                teeest2(partselected);
 
             }
         });
@@ -114,6 +132,154 @@ private RequestQueue queue;
 
     }
 
+    private void teeest2(String partselected) {
+        selection[3]=partselected;
+    }
+
+    private void getpart(String s, String s1, String s2) {
+        selection[2]=s2;
+        String url = "http://10.0.2.2:84/graduation_project/get_part.php?family="+selection[0]+
+                "&&model="+selection[1]+"&&year="+selection[2];
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
+                null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                ArrayList<String>part2=new ArrayList<>();
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject obj = response.getJSONObject(i);
+                        part2.add(obj.getString("partname"));
+
+
+                    } catch (JSONException exception) {
+                        Log.d("Error", exception.toString());
+                    }
+                }
+                ArrayList<String> partnew=new ArrayList<>();
+                for(int i=0;i<part2.size();i++){
+                    if(!partnew.contains(part2.get(i))){
+                        partnew.add(part2.get(i));
+                    }
+                }
+                partt=new String[partnew.size()];
+                partt=partnew.toArray(partt);
+
+                ArrayAdapter<String> adapter5 = new ArrayAdapter<>(
+                        search_part_by_user.this, android.R.layout.simple_list_item_1,
+                        partt);
+                partcar.setAdapter(adapter5);
+
+
+                AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                                            View view,
+                                            int position,
+                                            long id) {
+                        for(int i=0;i<partt.length;i++){
+                            if(position == i){
+                                selection[3]=partt[i];
+                                part.setText(partt[i]);
+                                break;
+
+
+                            }}
+                    }
+                };
+                partcar.setOnItemClickListener(itemClickListener);
+                setautopart();
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(search_part_by_user.this, error.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(request);
+
+    }
+
+    private void setautopart() {
+        adapter = new ArrayAdapter<String>(this,android.R.layout.select_dialog_item, partt);
+
+        part.setThreshold(1);
+        part.setAdapter(adapter);
+    }
+
+    ///////////////////////////////////////////////////////////////////////
+    private void filltypecar() {
+
+        String url = "http://10.0.2.2:84/graduation_project/get_family.php";
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.POST, url,
+                null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                ArrayList<String>family2=new ArrayList<>();
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject obj = response.getJSONObject(i);
+                        family2.add(obj.getString("family"));
+
+
+                    } catch (JSONException exception) {
+                        Log.d("Error", exception.toString());
+                    }
+                }
+                ArrayList<String> familynew=new ArrayList<>();
+                for(int i=0;i<family2.size();i++){
+                    if(!familynew.contains(family2.get(i))){
+                        familynew.add(family2.get(i));
+                    }
+                }
+                familyy=new String[familynew.size()];
+                familyy=familynew.toArray(familyy);
+                ArrayAdapter<String> adapterr = new ArrayAdapter<>(
+                        search_part_by_user.this, android.R.layout.simple_list_item_1,
+                        familyy);
+                typecar.setAdapter(adapterr);
+
+
+                AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                                            View view,
+                                            int position,
+                                            long id) {
+                        for(int i=0;i<familyy.length;i++){
+                            if(position == i){
+                                selection[0]=familyy[i];
+                                family.setText(familyy[i]);
+                                break;
+
+
+                            }}
+                    }
+                };
+                typecar.setOnItemClickListener(itemClickListener);
+                setauto();
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(search_part_by_user.this, error.toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(request);
+
+
+
+    }
+
     private void teeest(String yearselected) {
         selection[2]=yearselected;
 
@@ -121,7 +287,7 @@ private RequestQueue queue;
 
     private void getyear(String s, String modelyselected) {
         selection[1]=modelyselected;
-        String url = "http://10.0.2.2:84/graduation_project/get_year.php?family="+s+"&&model="+modelyselected;
+        String url = "http://10.0.2.2:84/graduation_project/get_year.php?family="+selection[0]+"&&model="+selection[1];
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
                 null, new Response.Listener<JSONArray>() {
@@ -146,6 +312,30 @@ private RequestQueue queue;
                 }
                 yearr=new String[yearnew.size()];
                 yearr=yearnew.toArray(yearr);
+
+                ArrayAdapter<String> adapter4 = new ArrayAdapter<>(
+                        search_part_by_user.this, android.R.layout.simple_list_item_1,
+                        yearr);
+                yearcar.setAdapter(adapter4);
+
+
+                AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                                            View view,
+                                            int position,
+                                            long id) {
+                        for(int i=0;i<yearr.length;i++){
+                            if(position == i){
+                                selection[2]=yearr[i];
+                                year.setText(yearr[i]);
+                                break;
+
+
+                            }}
+                    }
+                };
+                yearcar.setOnItemClickListener(itemClickListener);
                 setautoyeaer();
 
             }
@@ -200,6 +390,29 @@ private RequestQueue queue;
                 modell=new String[modelnew.size()];
                 modell=modelnew.toArray(modell);
                 setautomodel();
+                ArrayAdapter<String> adapter3 = new ArrayAdapter<>(
+                        search_part_by_user.this, android.R.layout.simple_list_item_1,
+                        modell);
+                modelcar.setAdapter(adapter3);
+
+
+                AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                                            View view,
+                                            int position,
+                                            long id) {
+                        for(int i=0;i<modell.length;i++){
+                            if(position == i){
+                                selection[1]=modell[i];
+                                model.setText(modell[i]);
+                                break;
+
+
+                            }}
+                    }
+                };
+                modelcar.setOnItemClickListener(itemClickListener);
 
             }
         }, new Response.ErrorListener() {
@@ -217,45 +430,6 @@ private RequestQueue queue;
     }
 
     public void getfamily() {
-
-        String url = "http://10.0.2.2:84/graduation_project/get_family.php";
-
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.POST, url,
-                null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                ArrayList<String>family2=new ArrayList<>();
-                for (int i = 0; i < response.length(); i++) {
-                    try {
-                        JSONObject obj = response.getJSONObject(i);
-                        family2.add(obj.getString("family"));
-
-
-                    } catch (JSONException exception) {
-                        Log.d("Error", exception.toString());
-                    }
-                }
-                ArrayList<String> familynew=new ArrayList<>();
-                for(int i=0;i<family2.size();i++){
-                    if(!familynew.contains(family2.get(i))){
-                        familynew.add(family2.get(i));
-                    }
-                }
-                familyy=new String[familynew.size()];
-                familyy=familynew.toArray(familyy);
-                setauto();
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Toast.makeText(search_part_by_user.this, error.toString(),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        queue.add(request);
 
 
     }
@@ -276,11 +450,12 @@ private RequestQueue queue;
 
 
     public void search(View view) {
-       // test.setText(selection[0]+"\n"+selection[1]+"\n"+selection[2]+"\n");
+
         Intent intent=new Intent(this,spinnerresult.class);
         intent.putExtra("family",selection[0]);
         intent.putExtra("model",selection[1]);
         intent.putExtra("year",selection[2]);
+        intent.putExtra("part",selection[3]);
         intent.putExtra("username",username);
         startActivity(intent);
     }
