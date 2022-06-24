@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,11 +26,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class detailspart extends AppCompatActivity {
-TextView partname,partnumber,price,username,desc,model;
+TextView partname,partnumber,price,username,desc,model,note;
 String userReqPart,useremail,usernumber,usercity;
 String partowneremail,partownernumber;
 String path;
 String id;
+Button forguest,signup,login;
     private RequestQueue queue;
 
     @Override
@@ -42,10 +44,21 @@ String id;
         username=findViewById(R.id.username);
         desc=findViewById(R.id.desc);
         model=findViewById(R.id.model);
+        forguest=findViewById(R.id.forguest);
+        note=findViewById(R.id.note);
+        signup=findViewById(R.id.signup);
+        login=findViewById(R.id.login);
         queue = Volley.newRequestQueue(this);
 
         FillTextFromIntent();
-
+if(userReqPart.equals("guest")){
+    forguest.setVisibility(View.INVISIBLE);
+}
+if(!userReqPart.equals("guest")){
+    note.setVisibility(View.INVISIBLE);
+    signup.setVisibility(View.INVISIBLE);
+    login.setVisibility(View.INVISIBLE);
+}
 
     }
 
@@ -209,6 +222,16 @@ String id;
 
     }
     public void user(View view) {
+    }
+
+    public void signup(View view) {
+        Intent intent=new Intent(this,signup.class);
+        startActivity(intent);
+    }
+
+    public void login(View view) {
+        Intent intent=new Intent(this,login.class);
+        startActivity(intent);
     }
 //    public void cart(View view) {
 //        Intent intent = new Intent(this ,cart.class);

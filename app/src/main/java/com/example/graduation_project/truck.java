@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -54,6 +55,7 @@ ListView listtruck;
     Button truck;
     private LocationRequest locationRequest;
     String user="";
+    LinearLayout forguest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +63,7 @@ ListView listtruck;
         listtruck=findViewById(R.id.listtruck);
         queue = Volley.newRequestQueue(this);
         truck=findViewById(R.id.truck);
+        forguest=findViewById(R.id.forguest);
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
@@ -68,6 +71,10 @@ ListView listtruck;
          user=intent.getStringExtra("type");
         if(user.equals("user")){
             truck.setVisibility(View.INVISIBLE);
+        }
+        if(user.equals("guest")){
+            truck.setVisibility(View.INVISIBLE);
+            forguest.setVisibility(View.INVISIBLE);
         }
         button2.setOnClickListener(new View.OnClickListener() {
             @Override

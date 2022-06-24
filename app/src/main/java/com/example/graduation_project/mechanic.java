@@ -2,6 +2,7 @@ package com.example.graduation_project;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
@@ -19,6 +20,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -54,10 +56,12 @@ ListView listmec;
 private RequestQueue queue;
     private LocationRequest locationRequest;
     Button LocationButto,mec;
+    LinearLayout forguest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mechanic);
+        forguest=findViewById(R.id.forguest);
         Intent intent=getIntent();
         store=intent.getStringExtra("username");
         type=intent.getStringExtra("type");
@@ -66,6 +70,10 @@ private RequestQueue queue;
         mec=findViewById(R.id.mec);
 
         if(type.equals("user")){
+            mec.setVisibility(View.INVISIBLE);
+        }
+        if(store.equals("guest")){
+            forguest.setVisibility(View.INVISIBLE);
             mec.setVisibility(View.INVISIBLE);
         }
         LocationButto=findViewById(R.id.LocationButto);

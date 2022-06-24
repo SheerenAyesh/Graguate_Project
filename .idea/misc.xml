@@ -42,7 +42,13 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_approve_or_reject_mec_req.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_approve_or_reject_part_request.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_approve_or_rejecttruck_req.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_cart.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_confpass.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_detailspart.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_google.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_home_page.xml" value="0.24456521739130435" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_homepagestore.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_mec_result_request.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_mecaccount.xml" value="0.24320652173913043" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_mecdetails.xml" value="0.25416666666666665" />
@@ -58,6 +64,9 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_truck_result_request.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_truckaccount.xml" value="0.24320652173913043" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_truckdetails.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_update_profile.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/activity_welcoming.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/Graguate_Project5/app/src/main/res/layout/custom_layout_item.xml" value="0.24456521739130435" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/Graguate_Project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.246875" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/Graguate_Project/app/src/main/res/drawable/border.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Shireen/AndroidStudioProjects/Graguate_Project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.246875" />

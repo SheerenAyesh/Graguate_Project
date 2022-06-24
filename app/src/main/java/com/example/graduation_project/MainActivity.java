@@ -43,24 +43,24 @@ public class MainActivity extends AppCompatActivity
     public void searchPart(View view) {
         Intent intent = new Intent(this ,searchpart.class);
        // intent.putExtra("username",uname);
-        intent.putExtra("type","ge");
-        intent.putExtra("username","ge");
+        intent.putExtra("type","guest");
+        intent.putExtra("username","guest");
         startActivity(intent);
     }
 
     public void mechanic(View view) {
         Intent intent = new Intent(this ,mechanic.class);
         // intent.putExtra("username",uname);
-        intent.putExtra("type","ge");
-        intent.putExtra("username","ge");
+        intent.putExtra("type","guest");
+        intent.putExtra("username","guest");
         startActivity(intent);
     }
 
     public void truck(View view) {
         Intent intent = new Intent(this ,truck.class);
         // intent.putExtra("username",uname);
-        intent.putExtra("type","ge");
-        intent.putExtra("username","ge");
+        intent.putExtra("type","guest");
+        intent.putExtra("username","guest");
         startActivity(intent);
     }
 

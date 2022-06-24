@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -33,15 +34,18 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
     ModelImage modelImage;
     LinearLayoutManager linearLayoutManager;
     MyAdapter.OnClickl listener;
+    LinearLayout forguest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchpart);
         searchpart=findViewById(R.id.seachpart);
+        forguest=findViewById(R.id.forguest);
         Intent intent=getIntent();
         username=intent.getStringExtra("username");
-        if(username.equals("ge")){//////////////////////////////////////////////////////////////////////////////here
-
+        if(username.equals("guest")){//////////////////////////////////////////////////////////////////////////////here
+            searchpart.setVisibility(View.INVISIBLE);
+            forguest.setVisibility(View.INVISIBLE);
         }
         type=intent.getStringExtra("type");
         if(type.equals("user")){

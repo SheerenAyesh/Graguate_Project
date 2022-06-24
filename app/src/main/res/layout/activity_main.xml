@@ -69,15 +69,15 @@
                 <ImageButton
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:background="@drawable/mechanic"
-                    android:onClick="mechanic" />
+                    android:background="@drawable/brake"
+                    android:onClick="searchPart"/>
 
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mecanic"
+                android:text="قطع"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25dp"
@@ -137,16 +137,18 @@
                 <ImageButton
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:background="@drawable/brake"
+                    android:background="@drawable/mechanic"
                     android:foregroundGravity="center"
-                    android:onClick="searchPart" />
+
+                    android:onClick="mechanic"/>
 
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="قطع"
+
+                android:text="@string/mecanic"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25dp"

@@ -1,11 +1,14 @@
 package com.example.graduation_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +34,9 @@ public class mecdetails extends AppCompatActivity {
     String username,city,email,phonenumber,dec,type;
     double result;
     String id,idfromOrg;
+    LinearLayout forguest ,guest;
+    Button senddata;
+    TextView note;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +46,10 @@ public class mecdetails extends AppCompatActivity {
         mecdes=findViewById(R.id.mecdes);
         mecstore=findViewById(R.id.mecstore);
         mecemail=findViewById(R.id.mecemail);
+        forguest=findViewById(R.id.forguest);
+        note=findViewById(R.id.note);
+        guest=findViewById(R.id.guest);
+        senddata=findViewById(R.id.senddata);
         Intent intent=getIntent();
          s=intent.getStringExtra("username");
          lat=intent.getStringExtra("latitude");
@@ -50,6 +60,14 @@ public class mecdetails extends AppCompatActivity {
         queue = Volley.newRequestQueue(this);
         fill_text1();
         fill_text2();
+        if(!(storereq.equals("guest"))){
+            note.setVisibility(View.INVISIBLE);
+            guest.setVisibility(View.INVISIBLE);
+        }
+        if(storereq.equals("guest")){
+            senddata.setVisibility(View.INVISIBLE);
+            forguest.setVisibility(View.INVISIBLE);
+        }
 
     }
 
@@ -279,6 +297,18 @@ public class mecdetails extends AppCompatActivity {
     public void cart(View view) {
         Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",s);
+        startActivity(intent);
+    }
+
+    public void signup(View view) {
+        Intent intent = new Intent(this ,signup.class);
+
+        startActivity(intent);
+    }
+
+    public void login(View view) {
+        Intent intent = new Intent(this ,login.class);
+
         startActivity(intent);
     }
 }

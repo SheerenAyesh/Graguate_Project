@@ -109,6 +109,7 @@
     </TableLayout>
 
 
+
     <TextView
         android:layout_width="120dp"
         android:layout_height="wrap_content"
@@ -124,7 +125,41 @@
         android:text="اضغط هنا"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:onClick="senddata"/>
+        android:onClick="senddata"
+        android:id="@+id/senddata"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="لكي تحجز شاحنة النقل(الترك) يجب عليك ان تقوم بتسجيل الدخول او انشاء حساب "
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/note"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:id="@+id/guest">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="انشاء حساب"
+            android:textSize="20dp"
+            android:id="@+id/signup"
+            android:onClick="signup"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="تسجيل الدخول"
+            android:textSize="20dp"
+            android:id="@+id/login"
+            android:onClick="login"/>
+
+    </LinearLayout>
 
 
     <LinearLayout

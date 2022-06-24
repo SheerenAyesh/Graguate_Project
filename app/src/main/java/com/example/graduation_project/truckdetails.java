@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,11 +27,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class truckdetails extends AppCompatActivity {
-    TextView truckname, truckphone, truckdes, truckemail, truckweight;
+    TextView truckname, truckphone, truckdes, truckemail, truckweight,note;
     private RequestQueue queue;
     String s, lat, log, storereq,idFromOrg;
     String username, city, email, phonenumber, dec, type;
-
+    Button senddata;
+LinearLayout guest;
     double result;
 
     @Override
@@ -41,6 +44,9 @@ public class truckdetails extends AppCompatActivity {
         truckdes = findViewById(R.id.truckdes);
         truckphone = findViewById(R.id.truckphone);
         truckweight = findViewById(R.id.truckweight);
+        senddata=findViewById(R.id.senddata);
+        note=findViewById(R.id.note);
+        guest=findViewById(R.id.guest);
         Intent intent = getIntent();
         s = intent.getStringExtra("username");
         lat = intent.getStringExtra("latitude");
@@ -52,7 +58,13 @@ public class truckdetails extends AppCompatActivity {
         queue = Volley.newRequestQueue(this);
         fill_text1();
         fill_text2();
-
+if(storereq.equals("guest")){
+senddata.setVisibility(View.INVISIBLE);
+}
+        if(!storereq.equals("guest")){
+           guest.setVisibility(View.INVISIBLE);
+           note.setVisibility(View.INVISIBLE);
+        }
     }
 
 
@@ -306,4 +318,14 @@ public class truckdetails extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void signup(View view) {
+        Intent intent = new Intent(this ,signup.class);
+
+        startActivity(intent);
+    }
+
+    public void login(View view) {
+        Intent intent = new Intent(this ,login.class);
+                startActivity(intent);
+    }
 }

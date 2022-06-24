@@ -373,10 +373,7 @@ ImageButton ordertruck,ordermec;
         startActivity(intent);
     }
 
-    public void partreq(View view) {
-        Intent intent = new Intent(this ,partrequest.class);
-        intent.putExtra("username",store);
-        startActivity(intent);
 
-    }
+
+
 }
