@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class signup extends AppCompatActivity {
-    private TextInputLayout firstname,lastname,password,email,username,phonenumber,street,city;
+    private TextInputLayout firstname,lastname,password,email,username,phonenumber,street,city,qu;
     private RadioButton jawwal, palpay, cash,user,store,male,female;
     private RadioGroup payment,type,gender;
     private String user1 , store1 ,jawwal1, palpay1, cash1,male1,female1;
@@ -37,6 +37,7 @@ public class signup extends AppCompatActivity {
         firstname=findViewById(R.id.firstname);
         lastname=findViewById(R.id.lastname);
         password=findViewById(R.id.password);
+        qu=findViewById(R.id.qu);
         email=findViewById(R.id.email);
         username=findViewById(R.id.username);
         phonenumber=findViewById(R.id.phonenumber);
@@ -100,7 +101,7 @@ public class signup extends AppCompatActivity {
                 break;
         }
     }
-    public void creat(View view) {
+    public void create(View view) {
         String uname=username.getEditText().getText().toString();
         String fname=firstname.getEditText().getText().toString();
         String lname=lastname.getEditText().getText().toString();
@@ -231,6 +232,7 @@ public class signup extends AppCompatActivity {
 
                 params.put("firstname", fname);
                 params.put("lastname", lname);
+                params.put("security", qu.getEditText().getText().toString());
 
                 return params;
             }

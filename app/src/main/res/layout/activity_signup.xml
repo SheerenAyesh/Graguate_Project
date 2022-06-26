@@ -124,6 +124,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/qu"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="سؤال الامان: المقولة التي تؤمن بها؟">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
 **************************************************************************
             <TextView
                 android:layout_width="match_parent"
@@ -252,7 +270,7 @@
                 android:background="#000"
                 android:text="اٍنشاء حساب "
                 android:textColor="#fff"
-                android:onClick="creat"/>
+                android:onClick="create"/>
 
 
         </LinearLayout>

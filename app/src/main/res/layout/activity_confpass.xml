@@ -1,9 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D0D3D4"
     tools:context=".confpass">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="الرجاء ادخال اسم المستخدم الخاص بك :"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:text="تأكيد اسم المستخدم"
+            android:onClick="confusername"
+            android:textStyle="bold"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/username"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:id="@+id/errorusername"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="سؤال الامان: المقولة التي تؤمن بها؟ "
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:id="@+id/conf"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:id="@+id/errorcode"
+        android:textStyle="bold"
+        android:textColor="@color/purple_700"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تأكيد الرمز"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="confcode"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:id="@+id/change"
+
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <EditText
+                    android:layout_width="100dp"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="40dp"
+                    android:id="@+id/newpass"
+
+                    />
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="50dp"
+                    android:textStyle="bold"
+                    android:text="كلمة المرور الجديدة:"/>
+            </TableRow>
+
+        </TableLayout>
+
+
+
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="تغير كلمة المرور"
+        android:onClick="changepass"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
