@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,12 +31,13 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class information extends AppCompatActivity {
-String username="";
+String username="",type;
 TextView welcoming,ifuserdonthavepart,addpart;
 ListView listpart;
     private RequestQueue queue;
 
    ArrayList<String> partid=new ArrayList<>();
+   Button displaypart;
    String []arr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +46,27 @@ ListView listpart;
         Intent intent =getIntent();
         queue = Volley.newRequestQueue(this);
         username=intent.getStringExtra("username");
+        type=intent.getStringExtra("type");
         welcoming=findViewById(R.id.welcoming);
         ifuserdonthavepart=findViewById(R.id.ifuserdonthavepart);
+        displaypart=findViewById(R.id.displaypart);
         ifuserdonthavepart.setVisibility(View.INVISIBLE);
         listpart=findViewById(R.id.listpart);
         addpart=findViewById(R.id.addpart);
         addpart.setVisibility(View.INVISIBLE);
         welcoming.setText("اهلا بك "+username+" في صفحة المعلومات الشخصيه");
 
-
+        addpart.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(information.this,searchpart.class);
+                intent.putExtra("username",username);
+                intent.putExtra("type",type);
+                startActivity(intent);
+            }
+        });
+        addpart.setPaintFlags(addpart.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+if(type.equals("user"))
+    displaypart.setVisibility(View.INVISIBLE);
 
     }
 

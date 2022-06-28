@@ -86,11 +86,24 @@ private RequestQueue queue;
         LocationButto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getCurrentLocation();
-                getmec();
+              go_to_search();
             }
         });
+
+        on();
+    }
+
+    private void go_to_search() {
+        Intent intent = new Intent(this ,searchmec.class);
+        intent.putExtra("username",store);
+        intent.putExtra("type",type);
+        startActivity(intent);
+
+    }
+
+    private void on() {
+        getCurrentLocation();
+        getmec();
     }
 
     public void nearset(View view) {

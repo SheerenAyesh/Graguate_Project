@@ -29,7 +29,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class homepagestore extends AppCompatActivity {
-String store;
+String store,type;
 TextView notification ,reqPage,reqPagemec,notificationmec,reqPagetruck,notificationtruck;
 ImageButton ordertruck,ordermec;
     private RequestQueue queue;
@@ -55,6 +55,7 @@ ImageButton ordertruck,ordermec;
         reqPagemec.setVisibility(View.INVISIBLE);
         reqPagetruck.setVisibility(View.INVISIBLE);
         notificationmec=findViewById(R.id.notificationmec);
+        type=intent.getStringExtra("type");
 
         notification=findViewById(R.id.notification);
         queue = Volley.newRequestQueue(this);
@@ -367,12 +368,15 @@ ImageButton ordertruck,ordermec;
     public void user(View view) {
         Intent intent = new Intent(this ,information.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
     }
 
     public void cart(View view) {
         Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",store);
+
+        intent.putExtra("type",type);
         startActivity(intent);
     }
 

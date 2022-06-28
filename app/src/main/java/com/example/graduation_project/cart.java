@@ -29,7 +29,7 @@ import java.util.List;
 
 public class cart extends AppCompatActivity implements MyAdapter.OnClickl {
 ListView meclist,trucklist;
-String store;
+String store,type;
     private RequestQueue queue;
     String []arr;
     String []arr2;
@@ -56,6 +56,7 @@ String store;
         trucklist=findViewById(R.id.trucklist);
         Intent intent=getIntent();
         store= intent.getStringExtra("username");
+        type=intent.getStringExtra("type");
         queue = Volley.newRequestQueue(this);
         fillmec();
         filltruck();
@@ -297,9 +298,16 @@ String store;
     }
 
     public void home(View view) {
+        if(type.equals("store")){
         Intent intent = new Intent(this ,homepagestore.class);
         intent.putExtra("username",store);
-        startActivity(intent);
+            intent.putExtra("type",type);
+        startActivity(intent);}
+        else {
+            Intent intent = new Intent(this ,homepageuser.class);
+        intent.putExtra("username",store);
+        intent.putExtra("type",type);
+        startActivity(intent);}
     }
 
     public void user(View view) {

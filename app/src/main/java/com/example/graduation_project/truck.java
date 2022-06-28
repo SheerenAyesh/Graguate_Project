@@ -79,11 +79,24 @@ ListView listtruck;
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getCurrentLocation();
-                gettruck();
+                go_to_search();
             }
         });
+
+        on();
+    }
+
+    private void go_to_search() {
+        Intent intent = new Intent(truck.this ,searchtruck.class);
+        intent.putExtra("username",username);
+        intent.putExtra("type",user);
+        startActivity(intent);
+
+    }
+
+    private void on() {
+        getCurrentLocation();
+        gettruck();
     }
 
     public void gettruck(){

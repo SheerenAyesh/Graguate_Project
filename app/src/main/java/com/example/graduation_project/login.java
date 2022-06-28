@@ -96,10 +96,12 @@ String uname;
         if(type.equals("user")){
         Intent intent = new Intent(this ,homepageuser.class);
          intent.putExtra("username",user);
+         intent.putExtra("type",type);
         startActivity(intent);}
         else {
             Intent intent = new Intent(this ,homepagestore.class);
             intent.putExtra("username",user);
+            intent.putExtra("type",type);
             startActivity(intent);
 
         }

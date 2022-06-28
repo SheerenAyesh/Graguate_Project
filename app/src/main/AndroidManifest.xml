@@ -17,6 +17,12 @@
         android:theme="@style/Theme.Graduation_project"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".searchtruck"
+            android:exported="true" />
+        <activity
+            android:name=".searchmec"
+            android:exported="true" />
+        <activity
             android:name=".updatepartinfo"
             android:exported="true" />
         <activity

@@ -32,7 +32,8 @@
         android:text="عرض قطعي"
         android:textSize="17dp"
         android:textStyle="bold"
-        android:onClick="displaypart"/>
+        android:onClick="displaypart"
+        android:id="@+id/displaypart"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
