@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D0D3D4"
+    tools:context=".updatepartinfo">
+    <TableLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="10dp"
+        >
+
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="80dp"
+                android:hint="نوع السيارة :"
+                android:id="@+id/family"
+                android:layout_marginRight="90dp"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:text="نوع السيارة :"
+                android:layout_marginRight="15dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
+
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="90dp"
+                android:hint="اسم القطعة :"
+                android:id="@+id/partname"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:text="اسم القطعة :"
+                android:layout_marginRight="15dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+
+
+        </TableRow>
+        <TableRow
+            >
+
+            <EditText
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="90dp"
+                android:hint="رقم القطعة"
+                android:id="@+id/partnumber"
+                android:textSize="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="رقم القطعة :"
+                android:layout_marginRight="15dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                />
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="80dp"
+                android:hint="الموديل :"
+                android:id="@+id/model"
+                android:textSize="20dp"
+                android:layout_marginRight="90dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="الموديل :"
+                android:layout_marginRight="15dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="80dp"
+                android:hint="السنة :"
+                android:id="@+id/year"
+                android:textSize="20dp"
+                android:layout_marginRight="90dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="السنة :"
+                android:layout_marginRight="15dp"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="80dp"
+                android:hint="وصف القطعة :"
+                android:id="@+id/desc"
+                android:textSize="20dp"
+                android:layout_marginRight="90dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView android:text="وصف القطعة :"
+                android:layout_marginRight="15dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+
+
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:layout_marginLeft="80dp"
+                android:hint="سعر القطعة:"
+                android:id="@+id/price"
+                android:textSize="20dp"
+                android:layout_marginRight="90dp"
+                />
+
+            <TextView android:text="سعر القطعة :"
+                android:layout_marginRight="15dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+
+
+
+        </TableRow>
+
+
+
+
+
+    </TableLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:text="تعديل المعلومات"
+        android:onClick="update"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

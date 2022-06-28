@@ -74,7 +74,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="تأكيد الرمز"
+        android:text="تأكيد الاجابة"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:onClick="confcode"/>
@@ -107,6 +107,21 @@
                     android:layout_marginLeft="50dp"
                     android:textStyle="bold"
                     android:text="كلمة المرور الجديدة:"/>
+            </TableRow>
+            <TableRow>
+                <EditText
+                    android:layout_width="100dp"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="40dp"
+                    android:id="@+id/confnewpass"
+
+                    />
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:textStyle="bold"
+                    android:text="تأكيد كلمة المرور الجديدة:"/>
             </TableRow>
 
         </TableLayout>

@@ -56,12 +56,52 @@
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:textSize="25dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="20dp"
         android:id="@+id/recyclerView"
         android:layout_width="300dp"
         android:layout_marginLeft="50dp"
-        android:layout_height="500dp" />
+        android:layout_height="400dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:background="#B3B6B7"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="46dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/homee"
+            android:onClick="home" />
+
+        <ImageButton
+            android:id="@+id/order"
+            android:layout_width="48dp"
+            android:layout_height="49dp"
+            android:layout_marginLeft="160dp"
+            android:background="@drawable/order"
+            android:onClick="orders" />
+
+        <ImageButton
+            android:id="@+id/personal"
+            android:layout_width="51dp"
+            android:layout_height="51dp"
+            android:layout_marginLeft="290dp"
+            android:background="@drawable/user"
+            android:onClick="user" />
+
+    </RelativeLayout>
+    </LinearLayout>
+
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

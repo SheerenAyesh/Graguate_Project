@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -163,19 +166,64 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
 
     @Override
     public void onClick( int position) {
-        Intent intent =new Intent(getApplicationContext(),detailspart.class);
-        intent.putExtra("path",imageList.get(position).getImageurl());
-        intent.putExtra("partname",imageList.get(position).getPartname());
-        intent.putExtra("partnumber",imageList.get(position).getPartnumber());
-        intent.putExtra("price",imageList.get(position).getPrice());
-        intent.putExtra("description",imageList.get(position).getDescription());
-        intent.putExtra("partowner",imageList.get(position).getUsername());
-        intent.putExtra("id",imageList.get(position).getId());
-        intent.putExtra("model",imageList.get(position).getModel());
-        intent.putExtra("username",username);
-        startActivity(intent);
-    }
+        show(position);
 
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void show(int position) {
+        final Dialog dialog = new Dialog(searchpart.this);
+        //We have added a title in the custom layout. So let's disable the default title.
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //The user will be able to cancel the dialog bu clicking anywhere outside the dialog.
+        dialog.setCancelable(true);
+        //Mention the name of the layout of your custom dialog.
+        dialog.setContentView(R.layout.partdet);
+
+       final TextView partname,partnumber,price,Username,desc,model;
+       final Button showdet;
+        partname=dialog.findViewById(R.id.partname);
+        partnumber=dialog.findViewById(R.id.partnumber);
+        price=dialog.findViewById(R.id.price);
+        Username=dialog.findViewById(R.id.username);
+        desc=dialog.findViewById(R.id.desc);
+        model=dialog.findViewById(R.id.model);
+       Username.setText(imageList.get(position).getUsername());
+        partname.setText(imageList.get(position).getPartname());
+        partnumber.setText(imageList.get(position).getPartnumber());
+        price.setText(imageList.get(position).getPrice());
+        desc.setText(imageList.get(position).getDescription());
+        model.setText((imageList.get(position).getModel()));
+        showdet=dialog.findViewById(R.id.showdet);
+
+        showdet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getApplicationContext(),detailspart.class);
+                intent.putExtra("path",imageList.get(position).getImageurl());
+                intent.putExtra("partname",imageList.get(position).getPartname());
+                intent.putExtra("partnumber",imageList.get(position).getPartnumber());
+                intent.putExtra("price",imageList.get(position).getPrice());
+                intent.putExtra("description",imageList.get(position).getDescription());
+                intent.putExtra("partowner",imageList.get(position).getUsername());
+                intent.putExtra("id",imageList.get(position).getId());
+                intent.putExtra("model",imageList.get(position).getModel());
+                intent.putExtra("username",username);
+                startActivity(intent);
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+        Window window = dialog.getWindow();
+        window.setLayout(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+
+
+
+
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void orders_mec(View view) {
         Intent intent = new Intent(this ,order.class);
         intent.putExtra("username",username);

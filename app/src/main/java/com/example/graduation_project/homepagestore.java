@@ -365,6 +365,9 @@ ImageButton ordertruck,ordermec;
     }
 
     public void user(View view) {
+        Intent intent = new Intent(this ,information.class);
+        intent.putExtra("username",store);
+        startActivity(intent);
     }
 
     public void cart(View view) {

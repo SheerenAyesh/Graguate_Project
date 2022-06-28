@@ -45,7 +45,7 @@ TextView errorusername,errorcode;
         username=findViewById(R.id.username);
         conf=findViewById(R.id.conf);
         newpass=findViewById(R.id.newpass);
-      //  confnewpass=findViewById(R.id.confnewpass);
+       confnewpass=findViewById(R.id.confnewpass);
         errorusername=findViewById(R.id.errorusername);
         errorcode=findViewById(R.id.errorcode);
         queue = Volley.newRequestQueue(this);
@@ -56,43 +56,47 @@ TextView errorusername,errorcode;
     }
 
     public void changepass(View view) {
+              if(newpass.getText().toString().equals(confnewpass.getText().toString())) {
+                  String url = "http://10.0.2.2:84/graduation_project/updatepassword.php?username=" +
+                          username.getText().toString() + "&&password=" + newpass.getText().toString();
 
-        String url = "http://10.0.2.2:84/graduation_project/updatepassword.php?username=" +
-                username.getText().toString()+"&&password="+ newpass.getText().toString();
+                  JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
+                          null, new Response.Listener<JSONArray>() {
+                      @Override
+                      public void onResponse(JSONArray response) {
 
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
-                null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
+                          for (int i = 0; i < response.length(); i++) {
+                              try {
+                                  JSONObject obj = response.getJSONObject(i);
 
-                for (int i = 0; i < response.length(); i++) {
-                    try {
-                        JSONObject obj = response.getJSONObject(i);
+                                  if (obj.getString("message").equals("done")){
 
-if(obj.getString("message").equals("تم تغيير كلمة المرور بنجاح"));
-                        go_to_login();
-
-
-
-                    }catch(JSONException exception){
-                        Log.d("Error", exception.toString());
-                    }
-                }
+                                  }
 
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(confpass.this, error.toString(),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        queue.add(request);
+                              } catch (JSONException exception) {
+                                  Log.d("Error", exception.toString());
+                              }
+                          }
 
 
+                      }
+                  }, new Response.ErrorListener() {
+                      @Override
+                      public void onErrorResponse(VolleyError error) {
+
+                          Toast.makeText(confpass.this, error.toString(),
+                                  Toast.LENGTH_SHORT).show();
+                      }
+                  });
+                  go_to_login();
+                  queue.add(request);
+
+              }
+              else{
+                  Toast.makeText(confpass.this,"تأكد من تطابق كلمات المرور",Toast.LENGTH_LONG).show();
+              }
     }
 
     private void go_to_login() {

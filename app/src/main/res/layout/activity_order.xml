@@ -63,23 +63,5 @@
 
 
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="222dp">
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp">
-
-
-        </RelativeLayout>
-
-
-
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

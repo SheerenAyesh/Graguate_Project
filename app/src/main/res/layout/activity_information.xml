@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D0D3D4"
+    tools:context=".information">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:textSize="18dp"
+    android:layout_marginTop="40dp"
+    android:id="@+id/welcoming"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:onClick="updateinfo"
+        android:text="تعديل المعلومات الشخصية"
+        android:textStyle="bold"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="عرض قطعي"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:onClick="displaypart"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ifuserdonthavepart"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_gravity="center"
+        android:textColor="@color/purple_700"
+        android:text="لم تعرض اي قطعه بعد ...."
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addpart"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_gravity="center"
+        android:textColor="@color/purple_700"
+        android:text="لعرض القطع اضغط هنا"
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#D0D3D4">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listpart"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="تسجيل الخروج"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:onClick="logout"/>
+        </LinearLayout>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
