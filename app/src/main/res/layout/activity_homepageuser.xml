@@ -167,7 +167,6 @@
                 android:onClick="cart" />
 
 
-
             <ImageButton
                 android:id="@+id/personal"
                 android:layout_width="51dp"

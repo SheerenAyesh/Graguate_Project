@@ -160,11 +160,13 @@ public class signup extends AppCompatActivity {
         if(user1!=null){
             Intent intent = new Intent(this ,homepageuser.class);
              intent.putExtra("username",uname);
+             intent.putExtra("type","user");
             startActivity(intent);
         }
         else if(store1!=null){
             Intent intent = new Intent(this ,homepagestore.class);
             intent.putExtra("username",uname);
+            intent.putExtra("type","store");
             startActivity(intent);
         }
    }

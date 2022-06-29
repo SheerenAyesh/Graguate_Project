@@ -349,12 +349,14 @@ ImageButton ordertruck,ordermec;
     public void orders_mec(View view) {
         Intent intent = new Intent(this ,order.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
     public void orders_truck(View view) {
         Intent intent = new Intent(this ,order_truck.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
@@ -362,6 +364,7 @@ ImageButton ordertruck,ordermec;
     public void home(View view) {
         Intent intent = new Intent(this ,homepagestore.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
     }
 
@@ -375,7 +378,6 @@ ImageButton ordertruck,ordermec;
     public void cart(View view) {
         Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",store);
-
         intent.putExtra("type",type);
         startActivity(intent);
     }

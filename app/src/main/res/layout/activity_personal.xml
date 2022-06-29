@@ -25,6 +25,7 @@
                 android:layout_height="150dp"
                 android:layout_marginLeft="90dp"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/infooo"
                 android:foregroundGravity="center" />
 
             <EditText
@@ -75,6 +76,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="#FFFFFFFF"
                 android:text="كلمة المرور"
+                android:password="true"
                 android:textAlignment="center"
                 android:textColorHint="@color/black"
                 android:textSize="25dp" />
@@ -156,11 +158,12 @@
                 android:textColor="@color/white"
                 android:textSize="22dp" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:onClick="logout"
-                android:text="تسجيل الخروج" />
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:onClick="logout"-->
+<!--                android:text="تسجيل الخروج" />-->
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -113,6 +113,7 @@ private RequestQueue queue;
     public void orders(View view) {
         Intent intent = new Intent(this ,order.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
@@ -121,16 +122,22 @@ private RequestQueue queue;
         if(!type.equals("user")){
         Intent intent = new Intent(this ,homepagestore.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);}
         else{
             Intent intent = new Intent(this ,homepageuser.class);
             intent.putExtra("username",store);
+            intent.putExtra("type",type);
             startActivity(intent);
 
         }
     }
 
     public void user(View view) {
+        Intent intent = new Intent(this ,information.class);
+        intent.putExtra("username",store);
+        intent.putExtra("type",type);
+        startActivity(intent);
     }
     public void getmec() {
 
@@ -202,6 +209,7 @@ private RequestQueue queue;
     public void mecacount(View view) {
         Intent intent = new Intent(this ,mecaccount.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
@@ -319,12 +327,14 @@ private RequestQueue queue;
     public void orders_mec(View view) {
         Intent intent = new Intent(this ,order.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
     public void orders_truck(View view) {
         Intent intent = new Intent(this ,order_truck.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
@@ -333,6 +343,7 @@ private RequestQueue queue;
     public void cart(View view) {
         Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
     }
 

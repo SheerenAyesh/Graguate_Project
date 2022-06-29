@@ -48,7 +48,7 @@ TextView welcome1;
 
             Intent intent = new Intent(this ,homepageuser.class);
             intent.putExtra("username",user);
-        intent.putExtra("type",type);
+            intent.putExtra("type",type);
             startActivity(intent);
 
     }
@@ -56,7 +56,6 @@ TextView welcome1;
     public void cart(View view) {
         Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",user);
-
         intent.putExtra("type",type);
         startActivity(intent);
     }

@@ -278,8 +278,9 @@
         />
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:textSize="25dp"
         android:text="اضافة صوره للقطعة"

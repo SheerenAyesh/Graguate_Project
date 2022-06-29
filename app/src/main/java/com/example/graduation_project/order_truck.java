@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class order_truck extends AppCompatActivity {
     ListView orderlist;
-    String store;
+    String store,type;
     private RequestQueue queue;
     String[] arr;
     ArrayList<String> id=new ArrayList<>();
@@ -38,6 +38,7 @@ public class order_truck extends AppCompatActivity {
         orderlist=findViewById(R.id.orderlist);
         Intent intent=getIntent();
         store= intent.getStringExtra("username");
+        type=intent.getStringExtra("type");
         queue = Volley.newRequestQueue(this);
 
         filllist();
@@ -45,18 +46,32 @@ public class order_truck extends AppCompatActivity {
     public void orders(View view) {
         Intent intent = new Intent(this ,order.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
 
     public void home(View view) {
-        Intent intent = new Intent(this ,homepagestore.class);
-        intent.putExtra("username",store);
-        startActivity(intent);
+        if(type.equals("store")){
+            Intent intent = new Intent(this ,homepagestore.class);
+            intent.putExtra("username",store);
+            intent.putExtra("type",type);
+            startActivity(intent);}
+        else {
+            Intent intent = new Intent(this ,homepageuser.class);
+            intent.putExtra("username",store);
+            intent.putExtra("type",type);
+            startActivity(intent);}
+
     }
 
     public void user(View view) {
-    }
+        Intent intent = new Intent(this ,information.class);
+        intent.putExtra("username",store);
+        intent.putExtra("type",type);
+        startActivity(intent);}
+
+
 
     public void filllist() {
         String url = "http://10.0.2.2:84/graduation_project/show_to_truck_his_orders.php?truckname="+store;

@@ -71,7 +71,7 @@
         android:layout_height="wrap_content">
     <RelativeLayout
         android:background="#B3B6B7"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="70dp">
 
@@ -88,8 +88,8 @@
             android:layout_width="48dp"
             android:layout_height="49dp"
             android:layout_marginLeft="160dp"
-            android:background="@drawable/order"
-            android:onClick="orders" />
+            android:background="@drawable/shopping_cart"
+            android:onClick="carts" />
 
         <ImageButton
             android:id="@+id/personal"

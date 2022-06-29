@@ -76,7 +76,7 @@
 
          <ImageButton
              android:id="@+id/ordermec"
-             android:layout_width="48dp"
+             android:layout_width="52dp"
              android:layout_height="49dp"
              android:layout_marginLeft="150dp"
              android:background="@drawable/order"

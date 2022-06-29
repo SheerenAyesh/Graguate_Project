@@ -223,6 +223,7 @@ public class mecdetails extends AppCompatActivity {
     }
     public void go_to_order_page()
     {
+
         dec=String.valueOf(result);
         String url = "http://10.0.2.2:84/graduation_project/send_request_to_mec.php";
         RequestQueue queue = Volley.newRequestQueue(mecdetails.this);
@@ -264,7 +265,7 @@ public class mecdetails extends AppCompatActivity {
                 params.put("phonenumber", phonenumber);
 
 
-                    params.put("email", email);
+                params.put("email", email);
 
                 params.put("distance", dec);
                 params.put("city", city);
@@ -284,10 +285,12 @@ public class mecdetails extends AppCompatActivity {
         if (!type.equals("user")) {
             Intent intent = new Intent(this, homepagestore.class);
             intent.putExtra("username", storereq);
+            intent.putExtra("type",type);
             startActivity(intent);
         } else {
             Intent intent = new Intent(this, homepageuser.class);
             intent.putExtra("username", storereq);
+            intent.putExtra("type",type);
             startActivity(intent);
         }
     }
@@ -297,18 +300,17 @@ public class mecdetails extends AppCompatActivity {
     public void cart(View view) {
         Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",s);
+        intent.putExtra("type",type);
         startActivity(intent);
     }
 
     public void signup(View view) {
         Intent intent = new Intent(this ,signup.class);
-
         startActivity(intent);
     }
 
     public void login(View view) {
         Intent intent = new Intent(this ,login.class);
-
         startActivity(intent);
     }
 }

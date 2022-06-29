@@ -53,6 +53,7 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
         type=intent.getStringExtra("type");
         if(type.equals("user")){
             searchpart.setVisibility(View.INVISIBLE);
+            forguest.setVisibility(View.INVISIBLE);
         }
         recyclerView = findViewById(R.id.recyclerView);
         linearLayoutManager = new LinearLayoutManager(this);
@@ -69,6 +70,8 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
 
         Intent intent = new Intent(this ,addpart.class);
         intent.putExtra("username",username);
+        intent.putExtra("type",type);
+
         startActivity(intent);
     }
 
@@ -77,6 +80,7 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
 
         Intent intent=new Intent(this,search_part_by_user.class);
         intent.putExtra("username",username);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
@@ -85,10 +89,12 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
         if (!type.equals("user")) {
             Intent intent = new Intent(this, homepagestore.class);
             intent.putExtra("username", username);
+            intent.putExtra("type",type);
             startActivity(intent);
         } else {
             Intent intent = new Intent(this, homepageuser.class);
             intent.putExtra("username", username);
+            intent.putExtra("type",type);
             startActivity(intent);
         }
 
@@ -96,6 +102,11 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
     }
 
     public void user(View view) {
+        Intent intent = new Intent(this, information.class);
+        intent.putExtra("username", username);
+        intent.putExtra("type",type);
+        startActivity(intent);
+
     }
 
 
@@ -224,24 +235,29 @@ public class searchpart extends AppCompatActivity implements MyAdapter.OnClickl 
 
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void orders_mec(View view) {
-        Intent intent = new Intent(this ,order.class);
-        intent.putExtra("username",username);
-        startActivity(intent);
+public void orders_mec(View view) {
+    Intent intent = new Intent(this ,order.class);
+    intent.putExtra("username",username);
+    intent.putExtra("type",type);
+    startActivity(intent);
 
-    }
+}
     public void orders_truck(View view) {
         Intent intent = new Intent(this ,order_truck.class);
         intent.putExtra("username",username);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
+
 
 
     public void cart(View view) {
         Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",username);
+        intent.putExtra("type",type);
         startActivity(intent);
     }
+
 
 }

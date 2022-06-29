@@ -97,6 +97,10 @@ if(type.equals("user"))
                         Log.d("Error", exception.toString());
                     }
                 }
+                if(partid.isEmpty()){
+                    ifuserdonthavepart.setVisibility(View.VISIBLE);
+                    addpart.setVisibility(View.VISIBLE);
+                }
                 arr = new String[part.size()];
                 arr = part.toArray(arr);
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(

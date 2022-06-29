@@ -68,7 +68,7 @@ ListView listtruck;
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
         button2=findViewById(R.id.button2);
-         user=intent.getStringExtra("type");
+        user=intent.getStringExtra("type");
         if(user.equals("user")){
             truck.setVisibility(View.INVISIBLE);
         }
@@ -174,6 +174,7 @@ ListView listtruck;
     public void truuck(View view) {
         Intent intent = new Intent(this ,truckaccount.class);
         intent.putExtra("username",username);
+        intent.putExtra("type",user);
         startActivity(intent);
     }
 
@@ -181,19 +182,24 @@ ListView listtruck;
         if(!user.equals("user")){
         Intent intent = new Intent(this ,homepagestore.class);
         intent.putExtra("username",username);
+            intent.putExtra("type",user);
         startActivity(intent);}
         else{
             Intent intent = new Intent(this ,homepageuser.class);
             intent.putExtra("username",username);
+            intent.putExtra("type",user);
             startActivity(intent);
 
         }
     }
 
-    public void orders(View view) {
-    }
+
 
     public void user(View view) {
+        Intent intent = new Intent(this, information.class);
+        intent.putExtra("username", username);
+        intent.putExtra("type",user);
+        startActivity(intent);
     }
 
 
@@ -298,12 +304,14 @@ ListView listtruck;
     public void orders_mec(View view) {
         Intent intent = new Intent(this ,order.class);
         intent.putExtra("username",username);
+        intent.putExtra("type",user);
         startActivity(intent);
 
     }
     public void orders_truck(View view) {
         Intent intent = new Intent(this ,order_truck.class);
         intent.putExtra("username",username);
+        intent.putExtra("type",user);
         startActivity(intent);
 
     }
@@ -312,6 +320,7 @@ ListView listtruck;
     public void cart(View view) {
         Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",username);
+        intent.putExtra("type",user);
         startActivity(intent);
     }
 

@@ -290,9 +290,10 @@ String store,type;
         startActivity(intent);
     }
 
-    public void orders(View view) {
-        Intent intent = new Intent(this ,order.class);
+    public void carts(View view) {
+        Intent intent = new Intent(this ,cart.class);
         intent.putExtra("username",store);
+        intent.putExtra("type",type);
         startActivity(intent);
 
     }
@@ -311,6 +312,10 @@ String store,type;
     }
 
     public void user(View view) {
+        Intent intent = new Intent(this ,information.class);
+        intent.putExtra("username",store);
+        intent.putExtra("type",type);
+        startActivity(intent);}
     }
 
-    }
+
